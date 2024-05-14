@@ -5,3 +5,19 @@
 [x-cloak] {
     display: none;
 }
+
+.bg-cartas{
+    background: #E2F3FB;
+}
+
+.bg-contenidocartas{
+    background: #02B9F3;
+}
+
+.bg-contenidocarta{
+    background: #93E1ED;
+}
+
+.bg-login{
+    background-color: #02B9F3;
+}

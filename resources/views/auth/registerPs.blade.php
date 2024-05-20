@@ -19,7 +19,7 @@
                     <div class="text-center">
                         <h1 class="text-2xl xl:text-3xl font-extrabold">Bienvenidos a Psyheal!</h1>
                     </div>
-                    <h1 class="text-2xl xl:text-2xl font-extrabold mt-12 text-center">Registro</h1>
+                    <h1 class="text-2xl xl:text-2xl font-extrabold mt-12 text-center">Registro Psicólogos</h1>
 
                     <div class="mb-4">
                         <div class="flex items-center">
@@ -27,7 +27,7 @@
                             <div class="flex-1 h-2 bg-gray-300"></div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span id="stepIndicator">Paso 1 de 2</span>
+                            <span id="stepIndicator">Paso 1 de 3</span>
                         </div>
                     </div>
 
@@ -95,9 +95,32 @@
                                 </div>
 
                                 <div>
-                                    <x-label for="birthdate" value="{{ __('Fcha. Nacimiento:') }}" />
+                                    <x-label for="birthdate" value="{{ __('Fecha. Nacimiento:') }}" />
                                     <x-input id="birthdate" class="block mt-1 w-full" type="date" name="birthdate" :value="old('birthdate')" required />
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Información Psicólogo -->
+                        <div class="step hidden">
+                            <div class="mt-4">
+                                <x-label for="universidad" value="{{ __('Universidad:') }}" />
+                                <x-input id="universidad" class="block mt-1 w-full" type="text" name="universidad" :value="old('universidad')" required autocomplete="off" />
+                            </div>
+
+                            <div class="mt-4">
+                                <x-label for="diploma" value="{{ __('Diploma:') }}" />
+                                <x-input id="diploma" class="block mt-1 w-full" type="text" name="diploma" :value="old('diploma')" required autocomplete="off" />
+                            </div>
+
+                            <div class="mt-4">
+                                <x-label for="especialidad" value="{{ __('Especialidad:') }}" />
+                                <x-input id="especialidad" class="block mt-1 w-full" type="text" name="especialidad" :value="old('especialidad')" required autocomplete="off" />
+                            </div>
+
+                            <div class="mt-4">
+                                <x-label for="descripcion" value="{{ __('Descripción:') }}" />
+                                <textarea id="descripcion" class="block mt-1 w-full border-gray-300 rounded-md" name="descripcion" rows="4" :value="old('descripcion')" required></textarea>
                             </div>
                         </div>
 
@@ -119,8 +142,6 @@
                 <div class="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat" style="background-image: url('https://www.dropbox.com/scl/fi/5bztcsif7p9zwp49ia9oc/login.png?rlkey=44h12n5jxic27o7e1r41aemth&st=am3lccvj&raw=1');">
                 </div>
             </div>
-</div>
-
         </div>
     </div>
 
@@ -145,7 +166,7 @@
             prevBtn.classList.toggle('hidden', n === 0);
             nextBtn.textContent = n === steps.length - 1 ? 'Registrarse' : 'Siguiente';
             stepIndicator.textContent = `Paso ${n + 1} de ${steps.length}`;
-            progressBar.style.width = `${(n + 1) * 50}%`;
+            progressBar.style.width = `${(n + 1) * (100 / steps.length)}%`;
         }
 
         nextBtn.addEventListener('click', () => {

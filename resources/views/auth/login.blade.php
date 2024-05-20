@@ -67,7 +67,7 @@
             </div>
             <div class="flex-1 bg-cartas text-center hidden lg:flex rounded-3xl">
                 
-                <div class="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat" style="background-image: url('https://previews.dropbox.com/p/thumb/ACRJF5h8uTkASUvvRJBbOu1rZtho-woqbaMCaOPJoBupvREt6NpshQI7CtS1vq8DJUkEeVNF4OoV1elyYGC7i8qOZhw5B3I40Xaee2XZ11fvUeKCGlZGkGFZmXiUhV-Q3c0yWdP2aJkjoNsURiNrm5PHrQEu1TuRrfw-08OhzhAuWbP36ks6LuzQ9AiDIhYBsXBMdNOfr2W5LwI05RhQapbptdVYv3eMKuQTNGPSqmjumkUst8l1FS-QO2bPMYvvKnLmmlOfWBFR5hWT7W59JzZjktZZRGYi1nYBBtgqMn_w9R9klDL-eDcbMmCdMsYxga7njP6RJvdnCSoWCPqpSXc_R_ImvuFTidMCMd8RQTiK5Q/p.png');">
+                <div class="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat" style="background-image: url('https://www.dropbox.com/scl/fi/5bztcsif7p9zwp49ia9oc/login.png?rlkey=44h12n5jxic27o7e1r41aemth&st=am3lccvj&raw=1');">
                 </div>
             </div>
         </div>

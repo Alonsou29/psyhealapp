@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psyheal</title>
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div>
@@ -36,7 +37,7 @@
                         @else
                             <a href="{{ route('login') }}" class="text-lg font-semibold leading-6 text-gray-900 pr-5">Iniciar Sesion</a>
                             @if (Route::has('register'))
-                                <a href="{{ route('registerPs') }}" class="ml-4 inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4  text-base font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Registro</a>
+                                <a href="{{ route('register') }}" class="ml-4 inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4  text-base font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Registro</a>
                             @endif
                         @endauth
                     @endif

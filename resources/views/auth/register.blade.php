@@ -37,6 +37,10 @@
                         <!-- Step 1: Información de cuenta -->
                         <div class="step">
                             <div class="mt-4">
+                                <x-label for="Name" value="{{ __('Name:') }}" />
+                                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('email')" required autocomplete="username" />
+                            </div>
+                            <div class="mt-4">
                                 <x-label for="email" value="{{ __('Email:') }}" />
                                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
                             </div>

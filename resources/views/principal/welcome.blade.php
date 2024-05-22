@@ -1,4 +1,6 @@
-@extends('layouts.navbar')
+@extends('layouts.navbar')    
+@vite('resources/css/app.css')
+
     <div class="bg-white">
 
 

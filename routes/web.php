@@ -22,6 +22,10 @@ Route::get('/panelPs', function () {
     return view('panelPs.index');
 })->name('panelPs');
 
+Route::get('/tablaPa', function () {
+    return view('panelPs.inicio.tabla_pacientes');
+})->name('tabla_pacientes');
+
 
 Route::middleware([
     'auth:sanctum',

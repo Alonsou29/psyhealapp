@@ -22,12 +22,14 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
-            // 'first_name'=> ['required', 'string', 'max:255'],
-            // 'second_name'=> ['required', 'string', 'max:255'],
-            // 'last_name'=> ['required', 'string', 'max:255'],
-            // 'second_last_name'=> ['required', 'string', 'max:255'],
-            // 'cedula'=> ['required', 'integer', 'max:9'],
-            // 'telefono'=> ['required', 'integer', 'max:12'],
+            //esto es lo que esta en duda
+            'first_name'=> ['required', 'string', 'max:255', 'min:4'],
+            'second_name'=> ['required', 'string', 'max:255', 'min:4'],
+            'last_name'=> ['required', 'string', 'max:255', 'min:4'],
+            'second_last_name'=> ['required', 'string', 'max:255', 'min:4'],
+            'cedula'=> ['required', 'integer', 'max:10', 'min:7'],
+            'telefono'=> ['required', 'integer', 'max:12'],
+            //hasta aqui
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 

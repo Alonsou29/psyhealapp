@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('psicologos', function (Blueprint $table) {
             $table->id();
+            $table->string('Diploma');
+            $table->string('Universidad');
+            $table->string('Especialistas');
+            $table->string('Descripcion');
+            //$table->foreignId('users_id');
             $table->timestamps();
         });
     }

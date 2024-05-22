@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('recursos', function (Blueprint $table) {
             $table->id();
+            $table->string('tipoRecurso');
+            $table->string('urlRecurso');
+            $table->string('descripRecursos');
+            //$table->string(destinatario);
             $table->timestamps();
         });
     }

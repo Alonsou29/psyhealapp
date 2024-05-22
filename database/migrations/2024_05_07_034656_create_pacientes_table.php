@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('descripcion_problema');
             $table->string('fecha_ingreso');
+            //$table->foreignId('users_id');
+            //$table->foreignId('psicologos_id');
             $table->timestamps();
         });
     }

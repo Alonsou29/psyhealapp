@@ -70,4 +70,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function paciente(){
+        return $this->hasOne('App\Models\Paciente');
+    }
 }

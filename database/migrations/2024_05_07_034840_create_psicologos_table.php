@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('Universidad');
             $table->string('Especialistas');
             $table->string('Descripcion');
-            //$table->foreignId('users_id');
+            $table->unsignedBigInteger('id_user')->unique();
+            //Foreign keys
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

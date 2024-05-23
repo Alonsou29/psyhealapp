@@ -15,8 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('descripcion_problema');
             $table->string('fecha_ingreso');
-            //$table->foreignId('users_id');
-            //$table->foreignId('psicologos_id');
+            $table->unsignedBigInteger('id_user')->unique();
+            $table->unsignedBigInteger('id_psicologo')->unique()->nullable();  
+            //foreign keys 
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_psicologo')->references('id')->on('psicologo')->onDelete('cascade');
+            //end fk
             $table->timestamps();
         });
     }

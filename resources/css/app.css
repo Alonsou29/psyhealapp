@@ -21,3 +21,7 @@
 .bg-login{
     background-color: #02B9F3;
 }
+
+.bg-gradiente{
+    background: linear-gradient(to right, #93E1ED, #02B9F3);
+}

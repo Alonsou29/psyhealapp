@@ -317,6 +317,12 @@ return [
         ],
         ['header' => 'INICIO'],
         [
+            'text' => 'Pagina Principal',
+            'url' => '/panelPs',
+            'icon' => 'far fa-fw fa-file',
+            'label_color' => 'success',
+        ],
+        [
             'text' => 'Pacientes',
             'url' => 'admin/pages',
             'icon' => 'far fa-fw fa-file',
@@ -331,32 +337,32 @@ return [
         ],
         [
             'text' => 'Recursos',
-            'url' => 'admin/pages',
+            'url' => '/recursosPs',
             'icon' => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
         ['header' => 'FOROS'],
         [
-            'text' => 'Ver Foros',
-            'url' => 'admin/pages',
+            'text' => 'Lista de Foros',
+            'url' => 'Ps/listaForos',
             'icon' => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
         [
             'text' => 'Crear Foro',
-            'url' => 'admin/pages',
+            'url' => 'Ps/crearForos',
             'icon' => 'far fa-fw fa-file',
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url' => 'admin/settings',
+            'url' => '/perfilPs',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'change_password',
-            'url' => 'admin/settings',
+            'url' => '/cambiarContraseñaPs',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [

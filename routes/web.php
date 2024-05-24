@@ -26,6 +26,26 @@ Route::get('/tablaPa', function () {
     return view('panelPs.inicio.tabla_pacientes');
 })->name('tabla_pacientes');
 
+Route::get('/recursosPs', function () {
+    return view('panelPs.inicio.recursosPs');
+})->name('recursosPs');
+
+Route::get('Ps/listaForos', function () {
+    return view('panelPs.foros.listaForosPs');
+})->name('listaForosPs');
+
+Route::get('Ps/crearForos', function () {
+    return view('panelPs.foros.crearForosPs');
+})->name('crearForosPs');
+
+Route::get('/perfilPs', function () {
+    return view('panelPs.ajustesCuentaPs.perfilPs');
+})->name('perfilPs');
+
+Route::get('/cambiarContraseñaPs', function () {
+    return view('panelPs.ajustesCuentaPs.cambiarContraseñaPs');
+})->name('cambiarContraseñaPs');
+
 
 Route::middleware([
     'auth:sanctum',

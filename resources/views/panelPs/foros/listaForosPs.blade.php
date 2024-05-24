@@ -12,16 +12,16 @@
   <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
     <thead class="bg-contenidocarta">
       <tr>
-        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Titulo</th>
-        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Conducta</th>
-        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Descripciòn</th>
-        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Nº Integrantes</th>
+        <th scope="col" class="px-6 py-4 font-medium text-gray-900 centrar-texto">Titulo</th>
+        <th scope="col" class="px-6 py-4 font-medium text-gray-900 centrar-texto">Conducta</th>
+        <th scope="col" class="px-6 py-4 font-medium text-gray-900 centrar-texto">Descripciòn</th>
+        <th scope="col" class="px-6 py-4 font-medium text-gray-900 centrar-texto">Nº Integrantes</th>
         <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th>
       </tr>
     </thead>
     <tbody class="divide-y divide-gray-100 border-t border-gray-100">
       <tr class="hover:bg-gray-50">
-        <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
+        <th class=" centrar-texto flex gap-3 px-6 py-4 font-normal text-gray-900">
           <div class="text-sm">
             <div class="font-medium text-gray-700">Foro de apoyo grupal</div>
           </div>
@@ -30,15 +30,15 @@
           <span
             class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600"
           >
-            <span class="h-1.5 w-1.5 rounded-full bg-green-600"></span>
-            Ansiedad-Depresion
+            <span class=" centrar-texto h-1.5 w-1.5 rounded-full bg-green-600"></span>
+            Ansiedad
           </span>
         </td>
-        <td class=" inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600">Grupo dedicado para servir como apoyo a los pacientes con conductas de ansiedad y depresion.</td>
-        <td class="px-6 py-4">
-          <div class="flex gap-2">
+        <td class=" centrar-texto inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600">Grupo dedicado para servir como apoyo a los pacientes con conductas de ansiedad.</td>
+        <td class=" centrar-texto px-6 py-4 ">
+          <div class="centrar-texto flex gap-2">
             <span
-              class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 "
+              class=" centrar-texto inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 "
             >
               7
             </span>

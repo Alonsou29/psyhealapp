@@ -31,7 +31,7 @@
                         </div>
                     </div>
 
-                    <form id="regForm" method="POST" action="{{ route('register') }}" class="w-full mt-8">
+                    <form id="regForm" method="POST" action="{{ route('registrops') }}" class="w-full mt-8" name="resgiP">
                         @csrf
 
                         <!-- Step 1: Información de cuenta -->

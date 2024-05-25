@@ -46,6 +46,8 @@ Route::get('/cambiarContraseñaPs', function () {
     return view('panelPs.ajustesCuentaPs.cambiarContraseñaPs');
 })->name('cambiarContraseñaPs');
 
+Route::post('/', 'App\Http\Controllers\loginPaciente@registroPsicologo')->name('registrops');
+
 
 Route::middleware([
     'auth:sanctum',

@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\Paciente;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -27,13 +28,13 @@ class CreateNewUser implements CreatesNewUsers
             'second_name'=> ['required', 'string', 'max:255', 'min:4'],
             'last_name'=> ['required', 'string', 'max:255', 'min:4'],
             'second_last_name'=> ['required', 'string', 'max:255', 'min:4'],
-            'cedula'=> ['required', 'integer', 'max:10', 'min:7'],
-            'telefono'=> ['required', 'integer', 'max:12'],
+            //'cedula'=> ['required', 'integer', 'max:1', 'min:7'],
+            //'telefono'=> ['required', 'integer', 'max:12'],
             //hasta aqui
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
-        return User::create([
+        $user= User::create([
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
             'first_name' => $input['first_name'],
@@ -45,5 +46,13 @@ class CreateNewUser implements CreatesNewUsers
             'genero' => $input['genero'],
             'birthdate' => $input['birthdate'],
         ]);
+
+        $paciente=Paciente::create([
+            'id_user'=>$user->id,
+            'descripcion_problema'=>'',
+        ]);
+
+        return $user;$paciente;
+   
     }
 }

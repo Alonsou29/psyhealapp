@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion_problema');
-            $table->string('fecha_ingreso');
+            $table->string('descripcion_problema')->nullable();
+            $table->text('Biografia')->nullable();
             $table->unsignedBigInteger('id_user')->unique();
-            $table->unsignedBigInteger('id_psicologo')->unique()->nullable();  
+            $table->unsignedBigInteger('id_psicologo')->nullable();  
             //foreign keys 
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_psicologo')->references('id')->on('psicologo')->onDelete('cascade');
+            //$table->foreign('id_psicologo')->references('id')->on('psicologos');
             //end fk
             $table->timestamps();
         });

@@ -36,7 +36,7 @@ class User extends Authenticatable
         'cedula', 
         'telefono', 
         'genero', 
-        'birthdate' 
+        'birthdate',
     ];
 
     /**
@@ -75,5 +75,9 @@ class User extends Authenticatable
 
     public function paciente(){
         return $this->hasOne('App\Models\Paciente');
+    }
+
+    public function psicologo(){
+        return $this->hasOne('App\Models\Psicologos');
     }
 }

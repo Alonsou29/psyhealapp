@@ -52,7 +52,7 @@ class loginPaciente extends Controller
             'id_user' => $user->id,
         ]);
 
-        redirect($psicologo) ;
+        redirect(panelPs) ;
 
     }
 

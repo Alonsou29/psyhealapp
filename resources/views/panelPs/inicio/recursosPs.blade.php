@@ -1,7 +1,6 @@
 @extends('adminlte::page')
 @vite('resources/css/app.css')
 
-@section('title', 'Dashboard')
 
 @section('content')
 
@@ -62,13 +61,12 @@
                 </div> 
             </div>
 
-            <h1 class="text-4xl font-bold mt-8">Recursos en formato Audiovisual:</h1>
-            <div class="mt-4 flex space-x-56 content-center">
+            <h1 class="centrar-texto text-4xl font-bold mt-8">Recursos en formato Audiovisual:</h1>
+            <div class="mt-4 flex content-center mb-5 video-container">
+    <iframe width="360" height="210" src="https://www.youtube.com/embed/hvQZs3k6Ytk?si=Elx8nbSjxjjiBRod" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="360" height="210" src="https://www.youtube.com/embed/hvQZs3k6Ytk?si=Elx8nbSjxjjiBRod" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/JmM04_OgajU?si=1sTQGfVAOZnCpnTo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/6BawyJf4aKs?si=h9sZT9Hr1zD7pbv_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
         </div>
     </div>
 </div>

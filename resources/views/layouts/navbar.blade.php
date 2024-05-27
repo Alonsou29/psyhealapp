@@ -13,8 +13,7 @@
             <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
                     <a href="{{ route('welcome') }}" class="flex items-center -m-1.5 p-1.5">
-                        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-                        <span class="ml-2 text-lg font-semibold text-gray-900">Psyheal</span>
+                        <img class="h-8 w-auto" src="https://www.dropbox.com/scl/fi/4n4wdkem2wqbem18a2psx/logo.png?rlkey=devzl4gbkqlzc5mwehmvo7d8r&st=93ywi7dl&raw=1" alt="">
                     </a>
                 </div>
                 <div class="flex lg:hidden">
@@ -37,7 +36,7 @@
                         @else
                             <a href="{{ route('login') }}" class="text-lg font-semibold leading-6 text-gray-900 pr-5">Iniciar Sesion</a>
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4  text-base font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Registro</a>
+                                <a href="{{ route('register') }}" class="ml-4 inline-flex items-center justify-center rounded-md border border-transparent bg-fondo px-4  text-base font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:bg-fondo focus:ring-offset-2">Registro</a>
                             @endif
                         @endauth
                     @endif
@@ -49,8 +48,7 @@
                 <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div class="flex items-center justify-between">
                         <a href="#" class="flex items-center -m-1.5 p-1.5">
-                            <span class="sr-only">Psyheal</span>
-                            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                            <img class="h-8 w-auto" src="https://www.dropbox.com/scl/fi/4n4wdkem2wqbem18a2psx/logo.png?rlkey=devzl4gbkqlzc5mwehmvo7d8r&st=93ywi7dl&raw=1" alt="">
                             <span class="ml-2 text-lg font-semibold text-gray-900">Psyheal</span>
                         </a>
                         <button type="button" id="close-mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
@@ -74,7 +72,7 @@
                                     @else
                                         <a href="{{ route('login') }}" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Iniciar Sesion</a>
                                         @if (Route::has('register'))
-                                            <a href="{{ route('register') }}" class="mt-4 block w-full text-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Registro</a>
+                                            <a href="{{ route('register') }}" class="mt-4 block w-full text-center rounded-md border border-transparent bg-fondo px-4 py-2 text-base font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2  focus:ring-offset-2">Registro</a>
                                         @endif
                                     @endauth
                                 @endif

@@ -28,7 +28,7 @@
               </div>
             </div>
 
-            <a href="{{ route('register') }}" class="inline-block rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">Comienza Ahora!</a>
+            <a href="{{ route('register') }}" class="inline-block rounded-md border border-transparent bg-fondo py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">Comienza Ahora!</a>
           </div>
         </div>
       </div>
@@ -150,7 +150,7 @@
                         <i class="fas fa-check-circle mr-2"></i> 
                         <p>Complementa tu terapia liberando todo con nuestros expertos.</p> 
                     </div> 
-                    <a href="{{ route('psicologos') }}" class="items-center text-left inline-block rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">Ver Psicólogos</a>
+                    <a href="{{ route('psicologos') }}" class="items-center text-left inline-block rounded-md border border-transparent bg-fondo py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">Ver Psicólogos</a>
                 </div>
             </div>
         </div>
@@ -176,7 +176,7 @@
                     </p>
                     <div class="content-center">
 
-                        <a href="{{ route('registerPs') }}" class=" items-center text-left inline-block rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">Registrate aqui si eres psicologo!</a>
+                        <a href="{{ route('registerPs') }}" class=" items-center text-left inline-block rounded-md border border-transparent bg-fondo py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">Registrate aqui si eres psicologo!</a>
                     </div>
                 </div>
             </div>
@@ -195,8 +195,7 @@
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
               <a href="https://flowbite.com/" class="flex items-center">
-                  <img src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" class="h-8 me-3" alt="FlowBite Logo" />
-                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-black">Psyheal</span>
+                  <img src="https://www.dropbox.com/scl/fi/4n4wdkem2wqbem18a2psx/logo.png?rlkey=devzl4gbkqlzc5mwehmvo7d8r&st=93ywi7dl&raw=1" class="h-8 me-3" alt="FlowBite Logo" />
               </a>
           </div>
           <div class="grid grid-cols-3 gap-8 sm:gap-6 sm:grid-cols-3">

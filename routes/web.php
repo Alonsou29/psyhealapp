@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+// principal
+
 Route::get('/', function () {
     return view('principal.welcome');
 })->name('welcome');
@@ -14,9 +16,12 @@ Route::get('/psicologos', function () {
     return view('principal.psicologos');
 })->name('psicologos');
 
+//login psicologos
 Route::get('/registerPs', function () {
     return view('auth.registerPs');
 })->name('registerPs');
+
+//panel psicologos (colocar en su respectiva validacion)
 
 Route::get('/panelPs', function () {
     return view('panelPs.index');
@@ -25,6 +30,10 @@ Route::get('/panelPs', function () {
 Route::get('/tablaPa', function () {
     return view('panelPs.inicio.tabla_pacientes');
 })->name('tabla_pacientes');
+
+Route::get('/tablaPa/verPa', function () {
+    return view('panelPs.inicio.ver_pacientes');
+})->name('verPacientes');
 
 Route::get('/recursosPs', function () {
     return view('panelPs.inicio.recursosPs');
@@ -38,6 +47,10 @@ Route::get('Ps/crearForos', function () {
     return view('panelPs.foros.crearForosPs');
 })->name('crearForosPs');
 
+Route::get('Ps/editarForos', function () {
+    return view('panelPs.foros.editarForosPs');
+})->name('editarForos');
+
 Route::get('/perfilPs', function () {
     return view('panelPs.ajustesCuentaPs.perfilPs');
 })->name('perfilPs');
@@ -45,8 +58,6 @@ Route::get('/perfilPs', function () {
 Route::get('/cambiarContraseñaPs', function () {
     return view('panelPs.ajustesCuentaPs.cambiarContraseñaPs');
 })->name('cambiarContraseñaPs');
-
-Route::post('/', 'App\Http\Controllers\loginPaciente@registroPsicologo')->name('registrops');
 
 
 Route::middleware([

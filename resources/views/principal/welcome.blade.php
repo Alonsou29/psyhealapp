@@ -6,7 +6,7 @@
 
   <div class="relative isolate px-6  lg:px-8">
     <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-      <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+      <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#02B9F3] to-[#93E1ED] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
     </div>
 <div >
     <div class="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
@@ -73,7 +73,7 @@
 </section>
 
 <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
-      <div class="relative left-[calc(30%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+      <div class="relative left-[calc(30%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#02B9F3] to-[#93E1ED] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
     </div>
   </div>
 </div>
@@ -114,75 +114,68 @@
 </section>
 
 
-
-
-<div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
-    <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+<div class="relative isolate px-6  lg:px-8">
+    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+      <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#02B9F3] to-[#93E1ED] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
     </div>
 
-
-
-    <section>
-
-        <div class="text-center mt-20 p-8">
-            
-            <div class="flex flex-wrap items-center  text-left text-center">
-                <div class="w-full md:w-3/5 lg:w-1/2 px-4">
-                    <img src="https://www.dropbox.com/scl/fi/drmn2dt75pallqwd8ld0l/psico4.png?rlkey=o5f42qi097fj7fsyn8lh3d700&st=mtbxsm5i&raw=1" alt="gem" class="inline-block ">
-                </div>
-                <div class=" md:w-3/5 lg:w-1/2 px-4">
-                    <div class="font-heading text-2xl leading-[1.1] sm:text-2xl md:text-2xl font-bold">
-
-                        <h2 class=" pb-20 ">
-                                Psyheal, un espacio seguro para ti
-                        </h2>
-
-                    </div>
-                    <div class="mt-2 text-gray-600 flex items-center justify-start"> 
-                        <i class="fas fa-check-circle mr-2"></i> 
-                        <p>Recibe apoyo psicologico profesional, calido y humano.</p> 
-                    </div> 
-                    <div class="mt-2 text-gray-600 flex items-center justify-start"> 
-                        <i class="fas fa-check-circle mr-2"></i> 
-                        <p>Lleva tu terapia psicologica a tu propio ritmo, desde donde estes.</p> 
-                    </div> 
-                    <div class="mt-2 text-gray-600 flex items-center justify-start"> 
-                        <i class="fas fa-check-circle mr-2"></i> 
-                        <p>Complementa tu terapia liberando todo con nuestros expertos.</p> 
-                    </div> 
-                    <a href="{{ route('psicologos') }}" class="items-center text-left inline-block rounded-md border border-transparent bg-fondo py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">Ver Psicólogos</a>
-                </div>
-            </div>
-        </div>
-
-    </section>
+    <section> 
+    <div class="text-center mt-20 p-8"> 
+        <div class="flex flex-wrap items-center justify-center text-left text-center"> 
+            <div class="w-full md:w-3/5 lg:w-1/2 px-4"> 
+                <img src="https://www.dropbox.com/scl/fi/drmn2dt75pallqwd8ld0l/psico4.png?rlkey=o5f42qi097fj7fsyn8lh3d700&st=mtbxsm5i&raw=1" alt="gem" class="inline-block w-7/12" > 
+            </div> 
+            <div class="w-full md:w-3/5 lg:w-1/2 px-4"> 
+                <div class="font-heading text-2xl leading-[1.1] sm:text-2xl md:text-2xl font-bold"> 
+                    <h2 class="pb-6"> 
+                        Psyheal, un espacio seguro para ti 
+                    </h2> 
+                </div> 
+                <div class="mt-2 text-gray-600 flex items-center justify-center md:justify-start">  
+                    <i class="fas fa-check-circle ml-40"></i>  
+                    <p>Recibe apoyo psicologico profesional, calido y humano.</p>  
+                </div>  
+                <div class="mt-2 text-gray-600 flex items-center justify-center md:justify-start">  
+                    <i class="fas fa-check-circle ml-32"></i>  
+                    <p>Lleva tu terapia psicologica a tu propio ritmo, desde donde estes.</p>  
+                </div>  
+                <div class="mt-2 text-gray-600 flex items-center justify-center md:justify-start">  
+                    <i class="fas fa-check-circle ml-40"></i>  
+                    <p>Complementa tu terapia liberando todo con nuestros expertos.</p>  
+                </div>  
+                <div class="flex justify-center mt-4"> 
+                    <a href="{{ route('psicologos') }}" class="inline-block rounded-md border border-transparent bg-fondo py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">Ver Psicólogos</a> 
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+</section>
+ 
     <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
-        <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+      <div class="relative left-[calc(30%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#02B9F3] to-[#93E1ED] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
     </div>
-    
-    <section>
-        <div class="text-center p-8">
-            
-            <div class="flex flex-wrap items-center mt-20 text-left text-center">
-                <div class=" md:w-3/5 lg:w-1/2 px-4">
-                    <img src="https://www.dropbox.com/scl/fi/wwbuz63vrs4rvj4c5d7sd/psico5.png?rlkey=9s8ir43xj1q1gg606vc3v1prk&st=mc0jqijw&raw=1" alt="bulk editing" class="inline-block   size-2/3">
-                </div>
-                <div class="w-full md:w-2/5 lg:w-1/2 px-4 md:order-first text-center md:text-left lg:pr-12">
-                    <h2 class="text-center font-heading text-2xl leading-[1.1] sm:text-2xl md:text-2xl font-bold">
-                        Si eres un psicologo experimentado, listo para ayudar a construir una vida con mayor bienestar a tus pacientes, forma parte de Psyheal y registrate!
-                    </h2>
-                    <p class="sm:text-lg mt-6">
-                       
-                    </p>
-                    <div class="content-center">
-
-                        <a href="{{ route('registerPs') }}" class=" items-center text-left inline-block rounded-md border border-transparent bg-fondo py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">Registrate aqui si eres psicologo!</a>
-                    </div>
-                </div>
-            </div>
-        
-        </div>
-    </section>
+  </div>
+</div>
+<section> 
+    <div class="text-center p-8"> 
+        <div class="flex flex-wrap items-center justify-center mt-20 text-center"> 
+            <div class="md:w-3/5 lg:w-1/2 px-4"> 
+                <img src="https://www.dropbox.com/scl/fi/wwbuz63vrs4rvj4c5d7sd/psico5.png?rlkey=9s8ir43xj1q1gg606vc3v1prk&st=mc0jqijw&raw=1" alt="bulk editing" class="inline-block size-2/3"> 
+            </div> 
+            <div class="w-full md:w-2/5 lg:w-1/2 px-4 md:order-first lg:pr-12"> 
+                <h2 class="font-heading text-2xl leading-[1.1] sm:text-2xl md:text-2xl font-bold"> 
+                    Si eres un psicologo experimentado, listo para ayudar a construir una vida con mayor bienestar a tus pacientes, forma parte de Psyheal y registrate! 
+                </h2> 
+                <p class="sm:text-lg mt-6"> 
+                    Únete a nuestra red de profesionales comprometidos con el bienestar mental. Ofrecemos una plataforma de apoyo y recursos para optimizar tu práctica y maximizar el impacto positivo en tus pacientes. ¡Forma parte de nuestra comunidad hoy!
+                </p> 
+                <div class="flex justify-center mt-4"> 
+                    <a href="{{ route('registerPs') }}" class="inline-block rounded-md border border-transparent bg-fondo py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">Registrate aqui si eres psicologo!</a> 
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+</section>
 
       </div>
   </div>
@@ -274,16 +267,4 @@
     </div>
 </footer>
 
-
-          <script src="https://cdn.tailwindcss.com"></script>
-          <script>
-              tailwind.config = {
-                theme: {
-                  extend: {
-                    colors: {
-                      clifford: '#da373d',
-                    }
-                  }
-                }
-              }
-            </script>
+     

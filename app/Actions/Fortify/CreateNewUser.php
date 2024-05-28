@@ -4,6 +4,7 @@ namespace App\Actions\Fortify;
 
 use App\Models\Paciente;
 use App\Models\User;
+use App\Models\Roles;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -52,6 +53,9 @@ class CreateNewUser implements CreatesNewUsers
             'descripcion_problema'=>'',
         ]);
 
+        $user1 = User::find($user->id);
+        $user1->assignRole(1);
+    
         return $user;$paciente;
    
     }

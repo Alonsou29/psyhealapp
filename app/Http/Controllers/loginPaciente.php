@@ -14,7 +14,7 @@ class loginPaciente extends Controller
 {
     use PasswordValidationRules;
 
-    public function registroPsicologo(Request $input):User
+    public function registroPsicologo(Request $input)
     {
         // Validator::make($input, [
         //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -52,9 +52,10 @@ class loginPaciente extends Controller
             'id_user' => $user->id,
         ]);
 
-        redirect(panelPs) ;
+        $psico=User::find($user->id);
+        $psico->assignRole(3);
 
+        return redirect('panelPs');
     }
-
 }
 

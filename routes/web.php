@@ -21,6 +21,29 @@ Route::get('/registerPs', function () {
     return view('auth.registerPs');
 })->name('registerPs');
 
+Route::get('logout', function ()
+{
+    auth()->logout();
+    Session()->flush();
+
+    return Redirect::to('/');
+})->name('logout');
+
+
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function(){
+//     Route::post('registerPs','App\Http\Controllers\loginPaciente@registroPsicologo')->name('registrops');
+// });
+
+Route::get('login', function (){
+auth()->login();
+
+return Redirect('/panelPs');
+})->name('login');
+
 //panel psicologos (colocar en su respectiva validacion)
 
 Route::get('/panelPs', function () {

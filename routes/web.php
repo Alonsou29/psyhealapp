@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Redirect;
+
 
 // principal
 
@@ -38,49 +40,57 @@ Route::get('logout', function ()
 //     Route::post('registerPs','App\Http\Controllers\loginPaciente@registroPsicologo')->name('registrops');
 // });
 
-Route::get('login', function (){
-auth()->login();
+Route::get('logout', function () {
+    auth()->logout();
+    Session()->flush();
 
-return Redirect('/panelPs');
-})->name('login');
+    return Redirect::to('/');
+})->name('logout');
 
 //panel psicologos (colocar en su respectiva validacion)
+Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class]], function () {
+    Route::get('/panelPs', function () {
+        return view('panelPs.index');
+    })->name('panelPs');
 
-Route::get('/panelPs', function () {
-    return view('panelPs.index');
-})->name('panelPs');
+    // Otras rutas...
+    Route::get('/tablaPa', function () {
+        return view('panelPs.inicio.tabla_pacientes');
+    })->name('tabla_pacientes');
+    
+    Route::get('/tablaPa/verPa', function () {
+        return view('panelPs.inicio.ver_pacientes');
+    })->name('verPacientes');
+    
+    Route::get('/recursosPs', function () {
+        return view('panelPs.inicio.recursosPs');
+    })->name('recursosPs');
+    
+    Route::get('Ps/listaForos', function () {
+        return view('panelPs.foros.listaForosPs');
+    })->name('listaForosPs');
+    
+    Route::get('Ps/crearForos', function () {
+        return view('panelPs.foros.crearForosPs');
+    })->name('crearForosPs');
+    
+    Route::get('Ps/editarForos', function () {
+        return view('panelPs.foros.editarForosPs');
+    })->name('editarForos');
+    
+    Route::get('/perfilPs', function () {
+        return view('panelPs.ajustesCuentaPs.perfilPs');
+    })->name('perfilPs');
+    
+    Route::get('/cambiarContraseñaPs', function () {
+        return view('panelPs.ajustesCuentaPs.cambiarContraseñaPs');
+    })->name('cambiarContraseñaPs');
+});
 
-Route::get('/tablaPa', function () {
-    return view('panelPs.inicio.tabla_pacientes');
-})->name('tabla_pacientes');
+// Route::get('/panelPs', function () {
+//     return view('panelPs.index');
+// })->name('panelPs');
 
-Route::get('/tablaPa/verPa', function () {
-    return view('panelPs.inicio.ver_pacientes');
-})->name('verPacientes');
-
-Route::get('/recursosPs', function () {
-    return view('panelPs.inicio.recursosPs');
-})->name('recursosPs');
-
-Route::get('Ps/listaForos', function () {
-    return view('panelPs.foros.listaForosPs');
-})->name('listaForosPs');
-
-Route::get('Ps/crearForos', function () {
-    return view('panelPs.foros.crearForosPs');
-})->name('crearForosPs');
-
-Route::get('Ps/editarForos', function () {
-    return view('panelPs.foros.editarForosPs');
-})->name('editarForos');
-
-Route::get('/perfilPs', function () {
-    return view('panelPs.ajustesCuentaPs.perfilPs');
-})->name('perfilPs');
-
-Route::get('/cambiarContraseñaPs', function () {
-    return view('panelPs.ajustesCuentaPs.cambiarContraseñaPs');
-})->name('cambiarContraseñaPs');
 
 
 Route::middleware([

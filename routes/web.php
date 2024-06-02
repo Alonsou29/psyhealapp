@@ -37,7 +37,7 @@ Route::get('logout', function ()
 //     config('jetstream.auth_session'),
 //     'verified',
 // ])->group(function(){
-//     Route::post('registerPs','App\Http\Controllers\loginPaciente@registroPsicologo')->name('registrops');
+    Route::post('registerPs','App\Http\Controllers\loginPaciente@registroPsicologo')->name('registrops');
 // });
 
 Route::get('logout', function () {
@@ -47,13 +47,13 @@ Route::get('logout', function () {
     return Redirect::to('/');
 })->name('logout');
 
-//panel psicologos (colocar en su respectiva validacion)
+//Paneles 
 Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class]], function () {
     Route::get('/panelPs', function () {
         return view('panelPs.index');
     })->name('panelPs');
 
-    // Otras rutas...
+    // Rutas panel psicologos
     Route::get('/tablaPa', function () {
         return view('panelPs.inicio.tabla_pacientes');
     })->name('tabla_pacientes');
@@ -85,6 +85,37 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
     Route::get('/cambiarContraseñaPs', function () {
         return view('panelPs.ajustesCuentaPs.cambiarContraseñaPs');
     })->name('cambiarContraseñaPs');
+
+    //rutas panel paciente
+     // Rutas panel psicologos
+     Route::get('/psicologo', function () {
+        return view('panelPa.inicio.tabla_psicologo');
+    })->name('psicologo');
+    
+    Route::get('/psicologo/ver', function () {
+        return view('panelPa.inicio.ver_psicologo');
+    })->name('verPsicologo');
+    
+    Route::get('/recursosPa', function () {
+        return view('panelPa.inicio.recursosPa');
+    })->name('recursosPa');
+    
+    Route::get('Pa/listaForos', function () {
+        return view('panelPa.foros.listaForosPa');
+    })->name('listaForosPs');
+    
+    Route::get('Pa/verForos', function () {
+        return view('panelPa.foros.verForosPa');
+    })->name('verForosPa');
+    
+    
+    Route::get('/perfilPa', function () {
+        return view('panelPa.ajustesCuentasPa.perfilPa');
+    })->name('perfilPa');
+    
+    Route::get('/cambiarContraseñaPa', function () {
+        return view('panelPa.ajustesCuentasPa.cambiarContraseñaPa');
+    })->name('cambiarContraseñaPa');
 });
 
 // Route::get('/panelPs', function () {

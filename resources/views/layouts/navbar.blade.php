@@ -25,7 +25,7 @@
                     </button>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12">
-                    <a href="{{ route('panelPs') }}" class="text-xl font-semibold leading-6 text-gray-900">Precios</a>
+                    <a href="#" class="text-xl font-semibold leading-6 text-gray-900">Precios</a>
                     <a href="{{ route('preguntasF') }}" class="text-xl font-semibold leading-6 text-gray-900">Preguntas Frecuentes</a>
                     <a href="{{ route('psicologos') }}" class="text-xl font-semibold leading-6 text-gray-900">Psicologos en linea</a>
                 </div>

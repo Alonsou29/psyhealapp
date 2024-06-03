@@ -80,4 +80,8 @@ class User extends Authenticatable
     public function psicologo(){
         return $this->hasOne('App\Models\Psicologos');
     }
+
+    public function comentarios(){
+        return $this->hasMany('App\Models\Comentario');
+    }
 }

@@ -10,6 +10,9 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Register any application services.
      */
+    public $bindings = [
+        ServerProvider::class => DigitalOceanServerProvider::class,
+    ];
     public function register(): void
     {
         //
@@ -22,4 +25,10 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
     }
+    public $singletons = [
+        DowntimeNotifier::class => PingdomDowntimeNotifier::class,
+        ServerProvider::class => ServerToolsProvider::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+    ];
 }

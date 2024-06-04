@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
+use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
 // principal
@@ -9,6 +11,13 @@ use Illuminate\Support\Facades\Redirect;
 Route::get('/', function () {
     return view('principal.welcome');
 })->name('welcome');
+
+//lista de categorias
+Route::get('/categoria',[App\Http\Controllers\FrontController::class, 'index']);
+//lista de post de una categoria
+Route::get('/categoria/{categoria}',[App\Http\Controllers\FrontController::class, 'categoria']);
+//lista de comentarios de un post
+Route::get('/categoria/{categoria}/{post}',[App\Http\Controllers\FrontController::class, 'post']);
 
 Route::get('/preguntas', function () {
     return view('principal.preguntasF');
@@ -32,14 +41,6 @@ Route::get('logout', function ()
 })->name('logout');
 
 
-// Route::middleware([
-//     'auth:sanctum',
-//     config('jetstream.auth_session'),
-//     'verified',
-// ])->group(function(){
-    Route::post('registerPs','App\Http\Controllers\loginPaciente@registroPsicologo')->name('registrops');
-// });
-
 Route::get('logout', function () {
     auth()->logout();
     Session()->flush();
@@ -47,13 +48,27 @@ Route::get('logout', function () {
     return Redirect::to('/');
 })->name('logout');
 
+Route::post('registerPs','App\Http\Controllers\loginPaciente@registroPsicologo')->name('registrops');
+
 //Paneles 
+
 Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class]], function () {
     Route::get('/panelPs', function () {
         return view('panelPs.index');
     })->name('panelPs');
-
+    
     // Rutas panel psicologos
+    Route::prefix('Ps')->group(function () {
+        Route::resource('categorias', App\Http\Controllers\Psicologo\CategoriasController::class);
+        Route::resource('posts', App\Http\Controllers\Psicologo\PostsController::class);
+        Route::resource('comentarios', App\Http\Controllers\Psicologo\ComentariosController::class);
+    });
+
+    // Route::group(['prefix'=>'paciente', 'middleware' =>['role:paciente']],function(){
+    //     //
+    //     Route::post('{post}/comentario',[App\Http\Controllers\Paciente\ComentariosController::class, 'store'])->name('store');
+    // });
+
     Route::get('/tablaPa', function () {
         return view('panelPs.inicio.tabla_pacientes');
     })->name('tabla_pacientes');

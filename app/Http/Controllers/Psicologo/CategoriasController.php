@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Categoria;
 
+/**
+ * Class CategoriaController
+ * @package App\Http\Controllers
+ */
 class CategoriasController extends Controller
 {
     public function index(){
@@ -20,24 +24,27 @@ class CategoriasController extends Controller
     public function store(Request $request){
         $categoria = new Categoria($request->all());
         $categoria->save();
-        return redirect('PanelPs/categorias');
+        return redirect('Ps/categorias');
     }
+
     public function edit($id){
         $categoria = Categoria::find($id);
-        return view('PanelPs.categorias.create', compact("categoria"));
+        return view('PanelPs.categorias.edit', compact("categoria"));
     }
 
     public function update(Request $request, $id){
         $categoria = Categoria::find($id);
-        $categoria->fill($request->all());
+        $categoria->nombre=$request->get('nombre');
+        $categoria->descripcion=$request->get('descripcion');
         $categoria->save();
-        return redirect('panelPs/categorias');
+        return redirect('Ps/categorias');
     }
 
     public function destroy($id){
         $categoria = Categoria::find($id);
         $categoria->delete();
-        return redirect('panelPs/categorias');
+        return redirect('Ps/categorias');
     }
+
 
 }

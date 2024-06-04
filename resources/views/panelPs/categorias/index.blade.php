@@ -10,17 +10,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <a href="{{route('categorias.create')}}"> Crear</a>
-            <table>
-                <tr><th>ID</th> <td>NOMBRE</td> <td>ACCION</td></tr>
+            <table class="table table-striped-columns">
+                <tr><th>ID</th> <td>NOMBRE</td> <td>DESCRIPCION</td> <td>ACCION</td></tr>
                 @foreach ($categorias as $categoria)
                     <tr>
                         <td>{{$categoria->id}}</td>
-                        <td>{{$categoria->Nombre}}</td>
+                        <td>{{$categoria->nombre}}</td>
+                        <td>{{$categoria->descripcion}}</td>                   
                         <td>
                             <a class="btn btn-success" href="{{route('categorias.edit', $categoria->id)}}">Editar</a>
-                            {!! Form::open(['method'=>'DELETE','route'=>['categorias.destroy', $categorias->id],'style'=>'display:inline']) !!}
-                                {!! Form::submit('Eliminar', ['class'=>'btn btn-success']) !!}
-                                {!! Form::close() !!}
+                            <form action="{{route('categorias.destroy', $categoria->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit">borrar</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

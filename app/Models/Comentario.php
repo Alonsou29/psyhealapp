@@ -10,6 +10,7 @@ class Comentario extends Model
     use HasFactory;
     protected $fillable = [
         'descripcion',
+        'estado',
         'parent_id',
         'user_id',
         'post_id'

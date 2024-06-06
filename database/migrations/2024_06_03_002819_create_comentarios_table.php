@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('comentarios', function (Blueprint $table) {
             $table->id();
             $table->text('descripcion');
+            $table->boolean('estado');
             $table->foreignId('parent_id')->nulleable()->references('id')
             ->on('comentarios')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('post_id')->references('id')->on('posts')

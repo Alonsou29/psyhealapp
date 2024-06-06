@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Psicologo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Categoria;
+use Session;
 
 /**
  * Class CategoriaController
@@ -30,6 +31,11 @@ class CategoriasController extends Controller
     public function edit($id){
         $categoria = Categoria::find($id);
         return view('PanelPs.categorias.edit', compact("categoria"));
+    }
+
+    public function show($id){
+        Session::put("categoria_id", $id);
+        return redirect('Ps/posts');
     }
 
     public function update(Request $request, $id){

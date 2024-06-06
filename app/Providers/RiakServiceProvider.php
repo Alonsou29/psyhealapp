@@ -11,9 +11,10 @@ class RiakServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(Connection::class, function (Application $app) {
-            return new Connection(config('riak'));
-        });
+        //$loader = RiakServiceProvider::getInstance();
+
+        // Add your aliases
+        //$loader->alias('Image', Intervention\Image\Facades\Image::class);
     }
 
     /**

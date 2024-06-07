@@ -14,11 +14,13 @@ Route::get('/', function () {
 })->name('welcome');
 
 //lista de categorias
-Route::get('/categoria',[App\Http\Controllers\FrontController::class, 'index']);
+Route::get('/categorias',[App\Http\Controllers\FrontController::class, 'index']);
 //lista de post de una categoria
-Route::get('/categoria/{categoria}',[App\Http\Controllers\FrontController::class, 'categoria']);
+Route::get('/categorias/{categoria}',[App\Http\Controllers\FrontController::class, 'categoria']);
 //lista de comentarios de un post
-Route::get('/categoria/{categoria}/{post}',[App\Http\Controllers\FrontController::class, 'post']);
+Route::get('/categorias/{categoria}/{post}',[App\Http\Controllers\FrontController::class, 'post']);
+
+// Route::get('/categorias/{categoria}/{post}',[App\Http\Controllers\FrontController::class, 'store']);
 
 Route::get('/preguntas', function () {
     return view('principal.preguntasF');

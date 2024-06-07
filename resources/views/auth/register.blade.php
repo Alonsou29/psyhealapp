@@ -1,5 +1,6 @@
 <x-guest-layout>
-
+    <title>Registro</title>
+    
     <x-slot name="logo">
         <x-authentication-card-logo />
     </x-slot>
@@ -120,8 +121,6 @@
                 <div class="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat" style="background-image: url('https://www.dropbox.com/scl/fi/5bztcsif7p9zwp49ia9oc/login.png?rlkey=44h12n5jxic27o7e1r41aemth&st=am3lccvj&raw=1');">
                 </div>
             </div>
-</div>
-
         </div>
     </div>
 
@@ -165,5 +164,4 @@
 
         showStep(currentStep);
     </script>
-
 </x-guest-layout>

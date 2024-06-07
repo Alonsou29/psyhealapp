@@ -22,13 +22,13 @@ return [
     ['header' => 'INICIO'],
     [
         'text' => 'Pagina Principal',
-        'url' => '/panelPa',
+        'url' => '/panelPaciente',
         'icon' => 'far fa-fw fa-file',
         'label_color' => 'success',
     ],
     [
         'text' => 'Psicologo',
-        'url' => '/Psico',
+        'url' => '/psicologo',
         'icon' => 'far fa-fw fa-file',
         'label_color' => 'success',
     ],

@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Panel Psicologos',
+    'title' => 'Panel',
     'title_prefix' => '',
     'title_postfix' => '',
 

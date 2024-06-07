@@ -30,17 +30,20 @@
                     <a href="{{ route('psicologos') }}" class="text-xl font-semibold leading-6 text-gray-900">Psicologos en linea</a>
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    @if (Route::has('login'))
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="text-lg font-semibold leading-6 text-gray-900 pr-5">Dashboard</a>
-                        @else
-                            <a href="{{ route('login') }}" class="text-lg font-semibold leading-6 text-gray-900 pr-5">Iniciar Sesion</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 inline-flex items-center justify-center rounded-md border border-transparent bg-fondo px-4  text-base font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:bg-fondo focus:ring-offset-2">Registro</a>
-                            @endif
-                        @endauth
-                    @endif
+                    @auth
+                        @if (Auth::user()->hasRole('psicologo'))
+                            <a href="{{ route('panelPs') }}" class="text-lg font-semibold leading-6 text-gray-900 pr-5">Panel</a>
+                        @elseif (Auth::user()->hasRole('paciente'))
+                            <a href="{{ route('panelPaciente') }}" class="text-lg font-semibold leading-6 text-gray-900 pr-5">Panel</a>
+                        @endif
+                    @else
+                        <a href="{{ route('login') }}" class="text-lg font-semibold leading-6 text-gray-900 pr-5">Iniciar Sesión</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 inline-flex items-center justify-center rounded-md border border-transparent bg-fondo px-4 text-base font-semibold text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:bg-fondo focus:ring-offset-2">Registro</a>
+                        @endif
+                    @endauth
                 </div>
+
             </nav>
             <!-- Mobile menu, show/hide based on menu open state. -->
             <div class="lg:hidden" id="mobile-menu" role="dialog" aria-modal="true" style="display: none;">

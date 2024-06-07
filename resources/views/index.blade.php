@@ -3,7 +3,7 @@
 
 @section('sidebar')
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        @foreach(config('adminlte.menu_paciente', []) as $item)
+        @foreach(config('adminlte.menu_psicologo', []) as $item)
             @if(isset($item['header']))
                 <li class="nav-header">{{ $item['header'] }}</li>
             @elseif(isset($item['submenu']))
@@ -41,10 +41,7 @@
 
 
 @section('content_header')
-    <h1>Panel Pacientes</h1>
+    <h1>Bienvenido a psyheal.</h1>
 @stop
 
-@section('content')
-    <p>Bienvenido a psyheal.</p>
-@stop
 

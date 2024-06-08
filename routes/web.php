@@ -42,6 +42,7 @@ Route::get('logout', function () {
 })->name('logout');
 
 Route::post('registerPs', [loginPaciente::class, 'registroPsicologo'])->name('registrops');
+Route::post('{post}/comentario', [App\Http\Controllers\Paciente\ComentariosController::class,'store'])->name('store');
 
 // Paneles
 Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class]], function () {
@@ -60,6 +61,10 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
             Route::resource('posts', App\Http\Controllers\Psicologo\PostsController::class);
             Route::resource('comentarios', App\Http\Controllers\Psicologo\ComentariosController::class);
         });
+
+    // Route::prefix('Pa')->group(function(){
+    //     });
+        
 
         Route::get('/tablaPa', function () {
             return view('panelPs.inicio.tabla_pacientes');

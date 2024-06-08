@@ -28,7 +28,5 @@ class AppServiceProvider extends ServiceProvider
     public $singletons = [
         DowntimeNotifier::class => PingdomDowntimeNotifier::class,
         ServerProvider::class => ServerToolsProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
-        'Image' => Intervention\Image\Facades\Image::class
     ];
 }

@@ -47,14 +47,14 @@ return [
     ],
     ['header' => 'FOROS'],
     [
-        'text' => 'Lista de Foros',
-        'url' => 'Ps/listaForos',
+        'text' => 'Lista de Categorías',
+        'url' => 'Ps/listaCategorias',
         'icon' => 'far fa-fw fa-file',
         'label_color' => 'success',
     ],
     [
-        'text' => 'Crear Foro',
-        'url' => 'Ps/crearForos',
+        'text' => 'Crear Categoría',
+        'url' => 'Ps/crearCategoria',
         'icon' => 'far fa-fw fa-file',
         'label_color' => 'success',
     ],

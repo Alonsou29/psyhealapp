@@ -42,7 +42,6 @@ Route::get('logout', function () {
 })->name('logout');
 
 Route::post('registerPs', [loginPaciente::class, 'registroPsicologo'])->name('registrops');
-Route::post('{post}/comentario', [App\Http\Controllers\Paciente\ComentariosController::class,'store'])->name('store');
 
 // Paneles
 Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class]], function () {
@@ -62,10 +61,6 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
             Route::resource('comentarios', App\Http\Controllers\Psicologo\ComentariosController::class);
         });
 
-    // Route::prefix('Pa')->group(function(){
-    //     });
-        
-
         Route::get('/tablaPa', function () {
             return view('panelPs.inicio.tabla_pacientes');
         })->name('tabla_pacientes');
@@ -78,16 +73,16 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
             return view('panelPs.inicio.recursosPs');
         })->name('recursosPs');
         
-        Route::get('Ps/listaForos', function () {
-            return view('panelPs.foros.listaForosPs');
+        Route::get('Ps/listaCategorias', function () {
+            return view('panelPs.categorias.index');
         })->name('listaForosPs');
         
-        Route::get('Ps/crearForos', function () {
-            return view('panelPs.foros.crearForosPs');
+        Route::get('Ps/crearCategoria', function () {
+            return view('panelPs.categorias.create');
         })->name('crearForosPs');
         
-        Route::get('Ps/editarForos', function () {
-            return view('panelPs.foros.editarForosPs');
+        Route::get('Ps/editarCategorias', function () {
+            return view('panelPs.categorias.edit');
         })->name('editarForos');
         
         Route::get('/perfilPs', function () {
@@ -116,6 +111,18 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
         Route::get('/recursosPa', function () {
             return view('panelPa.inicio.recursosPa');
         })->name('recursosPa');
+
+        Route::get('juegos/ansiedad', function () {
+            return view('panelPa.juegos.ansiedad');
+        })->name('JuegosAnsiedad');
+
+        Route::get('juegos/depresion', function () {
+            return view('panelPa.juegos.depresion');
+        })->name('JuegosDepresion');
+
+        Route::get('juegos/estres', function () {
+            return view('panelPa.juegos.estres');
+        })->name('JuegosEstres');
         
         Route::get('Pa/listaForos', function () {
             return view('panelPa.foros.listaForosPa');

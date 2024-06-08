@@ -48,7 +48,7 @@ return [
     ['header' => 'FOROS'],
     [
         'text' => 'Lista de Categorías',
-        'url' => 'Ps/listaCategorias',
+        'url' => 'Ps/categorias',
         'icon' => 'far fa-fw fa-file',
         'label_color' => 'success',
     ],

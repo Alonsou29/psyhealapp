@@ -84,4 +84,20 @@ class User extends Authenticatable
     public function comentarios(){
         return $this->hasMany('App\Models\Comentario');
     }
+
+    //relacion uno a muchos
+    public function contact(){
+        return $this->hasMany('App\Models\Contact');
+    }
+
+    public function mensajes(){
+        return $this->hasMany('App\Models\Mensaje');
+    }
+
+    //relacion muchos a muchos
+
+    public function chats(){
+        return $this->belongsToMany('App\Models\Chat')->withPivot('color','active')
+        ->withTimestamps();
+    }
 }

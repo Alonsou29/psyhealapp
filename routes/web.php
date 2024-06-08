@@ -73,7 +73,7 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
             return view('panelPs.inicio.recursosPs');
         })->name('recursosPs');
         
-        Route::get('Ps/listaCategorias', function () {
+        Route::get('Ps/Categorias', function () {
             return view('panelPs.categorias.index');
         })->name('listaForosPs');
         

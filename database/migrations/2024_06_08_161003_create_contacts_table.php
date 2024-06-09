@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->foreignId('user_id')->constrained();
-            $table-> unsignedBigInteger('contact_id');
+            // $table-> unsignedBigInteger('contact_id');
 
-            $table->foreing('contact_id')->references('user_id')->on('users');
+            $table->foreignId('contact_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

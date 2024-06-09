@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre',100);
             $table->text('descripcion');
-            $table->string('imagen',100)->nulleable();
+            $table->string('imagen',100)->nullable();
             $table->foreignId('categoria_id')->references('id')->on('categorias')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });

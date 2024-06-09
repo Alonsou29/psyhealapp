@@ -40,8 +40,8 @@ return [
     ],
     ['header' => 'FOROS'],
     [
-        'text' => 'Lista de Foros',
-        'url' => 'Pa/listaForos',
+        'text' => 'Lista de Categorias',
+        'url' => '/categorias',
         'icon' => 'far fa-fw fa-file',
         'label_color' => 'success',
     ],

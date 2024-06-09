@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('chat_id')->constrained();
 
-            $table->string('color')->nulleable();
+            $table->string('color')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
         });

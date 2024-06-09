@@ -2,33 +2,54 @@
 @vite('resources/css/app.css')
 
 @section('content_header')
-    <h1>Lista de Foros</h1>
+    <h1 class=" text-3xl font-semibold">Lista de Foros</h1>
 @stop
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <a href="{{route('posts.create')}}"> Crear</a>
-            <table class="table table-striped-columns">
-                <tr><th>ID</th> <td>NOMBRE</td> <td>DESCRIPCION</td> <td>ACCION</td></tr>
-                @foreach ($posts as $post)
-                    <tr>
-                        <td>{{$post->id}}</td>
-                        <td>{{$post->nombre}}</td>
-                        <td>{{$post->descripcion}}</td>                   
-                        <td>
-                            <a class="btn btn-success" href="{{route('posts.edit', $post->id)}}">Editar</a>
-                            {{-- <a class="btn btn-success" href="{{route('categorias.show', $post->id)}}">Ver</a> --}}
-                            <form action="{{route('posts.destroy', $post->id)}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger" type="submit">borrar</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            </table>
+        <div class="col-md-12">
+            <div class="mb-8 mt-2">
+                <a href="{{route('posts.create')}}" class="bg-sky-600 hover:bg-cyan-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-8 ">Crear</a>
+            </div>
+            <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-">
+                <table class="min-w-full border-collapse bg-white text-left text-sm text-gray-500">
+                    <thead class="bg-contenidocarta">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">ID</th>
+                            <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Nombre</th>
+                            <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Descripción</th>
+                            <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+                        @foreach ($posts as $post)
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 text-center">{{$post->id}}</td>
+                                <td class="px-6 py-4 text-center">{{$post->nombre}}</td>
+                                <td class="px-6 py-4 text-center">{{$post->descripcion}}</td>
+                                <td class="px-6 py-4 text-center">
+                                    <div class="flex justify-center gap-4">
+                                        <a href="{{route('posts.edit', $post->id)}}">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="{{route('posts.show', $post->id)}}">
+                                            <i class="fas fa-eye"></i>
+                                        </a> 
+                                        <form action="{{route('posts.destroy', $post->id)}}" method="POST" class="inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('descripcion');
             $table->boolean('estado');
-            $table->foreignId('parent_id')->nulleable()->references('id')
+            $table->foreignId('parent_id')->nullable()->references('id')
             ->on('comentarios')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('post_id')->references('id')->on('posts')
             ->onUpdate('cascade')->onDelete('cascade');

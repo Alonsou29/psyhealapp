@@ -1,16 +1,14 @@
-<head>    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<form action="{{route('store', $post)}}" method="post">
+@vite('resources/css/app.css')
+
+<form action="{{ route('store', $post) }}" method="post" class="mt-4">
     @csrf
     @if(isset($item->id))
-        <input type="hidden" name="parent_id" value="{{$item->id}}">
+        <input type="hidden" name="parent_id" value="{{ $item->id }}">
     @endif
-    <div class="form-group">
-        <textarea name="descripcion" id="descripcion" class="form-control" placeholder="Comentar.."></textarea>
+    <div class="mb-4">
+        <textarea name="descripcion" id="descripcion" class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" placeholder="Comentar.."></textarea>
     </div>
     <div class="text-right">
-        <button type="submit" class="btn btn-success btn-sn">ENVIAR</button>
+        <button type="submit" class="bg-sky-600 hover:bg-cyan-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">ENVIAR</button>
     </div>
 </form>

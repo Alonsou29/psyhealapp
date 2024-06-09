@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('deleted_mensajes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('mensaje_id')->constrained();
+            $table->foreignId('mensaje_id')->references('id')->on('mensaje');
 
             $table->timestamps();
         });

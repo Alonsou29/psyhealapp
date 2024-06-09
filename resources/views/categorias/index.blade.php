@@ -1,25 +1,41 @@
-
+@extends('adminlte::page')
 @vite('resources/css/app.css')
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-    <div class="container">
-        <div class="row justify-content-center">
-            @forelse ($categorias as $item)
-                <div class="col-sm-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>{{$item->nombre}}</h2>
-                        </div>
-                        <div class="card-body">
-                            <a href="/categorias/{{$item->id}}" class="btn btn-success btn-block">VER</a>
-                        </div>
-                    </div>
-                </div>
-                @empty
-                    
-                @endforelse
 
+@section('content_header')
+    <h1 class=" text-3xl font-semibold">Lista de Categorias</h1>
+@stop
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-7"> <!-- Reducir el ancho de la columna -->
+            <div class="max-w-2xl"> <!-- Establecer el ancho máximo -->
+                <table class="min-w-full table-auto border-collapse bg-white text-left text-sm text-gray-500">
+                    <thead class="bg-contenidocarta">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Nombre</th>
+                            <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Ver</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+                        @forelse ($categorias as $item)
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 ">{{$item->nombre}}</td>
+                                <td class="px-6 py-4 text-center"> <!-- Centrar el ícono del ojo -->
+                                    <a href="/categorias/{{$item->id}}">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="2" class="px-6 py-4 text-center">No hay categorías disponibles</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+</div>
+@stop

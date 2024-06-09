@@ -12,12 +12,7 @@ Route::get('/', function () {
     return view('principal.welcome');
 })->name('welcome');
 
-// lista de categorias
-Route::get('/categorias', [FrontController::class, 'index']);
-// lista de post de una categoria
-Route::get('/categorias/{categoria}', [FrontController::class, 'categoria']);
-// lista de comentarios de un post
-Route::get('/categorias/{categoria}/{post}', [FrontController::class, 'post']);
+
 
 // Route::get('/categorias/{categoria}/{post}',[App\Http\Controllers\FrontController::class, 'store']);
 
@@ -42,6 +37,7 @@ Route::get('logout', function () {
 })->name('logout');
 
 Route::post('registerPs', [loginPaciente::class, 'registroPsicologo'])->name('registrops');
+Route::post('{post}/comentario', [App\Http\Controllers\Paciente\ComentariosController::class,'store'])->name('store');
 
 // Paneles
 Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class]], function () {
@@ -139,6 +135,13 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
         Route::get('/cambiarContraseñaPa', function () {
             return view('panelPa.ajustesCuentasPa.cambiarContraseñaPa');
         })->name('cambiarContraseñaPa');
+
+        // lista de categorias
+        Route::get('/categorias', [FrontController::class, 'index']);
+        // lista de post de una categoria
+        Route::get('/categorias/{categoria}', [FrontController::class, 'categoria']);
+        // lista de comentarios de un post
+        Route::get('/categorias/{categoria}/{post}', [FrontController::class, 'post']);
     });
 });
 

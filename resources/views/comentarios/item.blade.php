@@ -11,4 +11,10 @@
         @include('comentarios.formulario', ['item' => $item])
     </div>
     @endauth
+
+    @if($item->respuestas)
+        <br>
+        @include('comentarios.lista',['lista'=>$item->respuestas])
+    
+    @endif
 </div>

@@ -6,12 +6,14 @@
     <div class="flex justify-center">
         <div class="w-full md:w-8/12 lg:w-6/12">
             <h2 class="text-center text-3xl font-bold my-4">{{$post->nombre}}</h2>
+            <p>{{$post->descripcion}}</p>
             @if($post->imagen)
                 <div class="flex justify-center mb-4">
                     <img src="/img/foros/{{$post->imagen}}" class="max-w-full h-auto rounded">
                 </div>
             @endif
             @include('comentarios.lista', ['lista' => $post->comentarios])
+            @include('comentarios.formulario')
         </div>
     </div>
 </div>

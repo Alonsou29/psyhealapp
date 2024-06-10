@@ -21,6 +21,6 @@ class Post extends Model
     }
 
     public function comentarios(){
-        return $this->hasMany('App\Models\Comentario');
+        return $this->hasMany('App\Models\Comentario')->whereNull('parent_id');
     }
 }

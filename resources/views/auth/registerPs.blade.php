@@ -31,7 +31,7 @@
                         </div>
                     </div>
 
-                    <form id="regForm" method="POST" action="{{ route('registrops') }}" class="w-full mt-8" name="resgiP">
+                    <form id="regForm" method="POST" action="{{ route('registrops') }}" class="w-full mt-8" name="resgiP" enctype="multipart/form-data">
                         @csrf
 
                         <!-- Step 1: Información de cuenta -->
@@ -122,6 +122,10 @@
                                 <x-label for="descripcion" value="{{ __('Descripción:') }}" />
                                 <textarea id="descripcion" class="block mt-1 w-full border-gray-300 rounded-md" name="descripcion" rows="4" :value="old('descripcion')" required></textarea>
                             </div>
+                            <div class="form-group mb-4">
+                                <label for="imagen" class="block text-gray-700 text-sm font-bold mb-2">Imagen</label>
+                                <input type="file" name="imagen" class="mt-2 bg-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            </div>
                         </div>
 
                         <div class="flex items-center justify-between mt-4">
@@ -134,6 +138,7 @@
                                 {{ __(' Estas registrado?') }}
                             </a>
                         </div>
+
                     </form>
 
                 </div>

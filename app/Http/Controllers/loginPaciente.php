@@ -50,8 +50,8 @@ class loginPaciente extends Controller
             'Especialistas' => $input['especialidad'],
             'Descripcion' => $input['descripcion'],
             'id_user' => $user->id,
-        ]);
-
+        ]);  
+           
         $psico=User::find($user->id);
         $psico->assignRole(3);
 

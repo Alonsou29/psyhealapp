@@ -43,10 +43,10 @@ class PostsController extends Controller
         return view('PanelPs.foros.edit', compact("post"));
     }
 
-    // public function show($id){
-    //     Session::put("categoria_id", $id);
-    //     return redirect('panelPs/posts');
-    // }
+    public function show($id){
+        Session::put("post_id", $id);
+        return redirect('Ps/comentarios');
+    }
 
     public function update(Request $request, $id){
         $post = Post::find($id);

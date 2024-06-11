@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-7">
-            <h2 class="">{{$categoria->nombre}}</h2>
+            <h2 class="text-center">{{$categoria->nombre}}</h2>
             <div class="max-w-2xl mx-auto">
                 <table class="min-w-full table-auto border-collapse bg-white text-left text-sm text-gray-500">
                     <thead class="bg-contenidocarta">

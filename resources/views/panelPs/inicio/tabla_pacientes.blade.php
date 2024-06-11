@@ -25,18 +25,18 @@
           <div class="relative h-10 w-10 flex-shrink-0">
             <img
               class="h-full w-full rounded-full object-cover object-center"
-              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              src="https://www.dropbox.com/scl/fi/5646yw6awekge8w10a2jj/photo_2024-04-16_13-51-43-copia.jpg?rlkey=k66lqex30c8mzqo897hdc76sy&st=8m5gwigw&raw=1"
               alt=""
             />
             <span class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
           </div>
           <div class="text-sm sm:text-xs">
-            <div class="font-medium text-gray-700">Steven Jobs</div>
-            <div class="text-gray-400">jobs@sailboatui.com</div>
+            <div class="font-medium text-gray-700">Rubielena López</div>
+            <div class="text-gray-400">rubielena151@gmail.com</div>
           </div>
         </th>
         <td class="px-6 py-4 text-center sm:px-4 sm:py-2 hidden md:table-cell">0412-0533144</td>
-        <td class="px-6 py-4 text-center sm:px-4 sm:py-2 hidden lg:table-cell">Masculino</td>
+        <td class="px-6 py-4 text-center sm:px-4 sm:py-2 hidden lg:table-cell">Femenino</td>
         <td class="px-6 py-4 text-center sm:px-4 sm:py-2">
           <span class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600 sm:text-xs sm:px-1 sm:py-0.5">
             Ansiedad

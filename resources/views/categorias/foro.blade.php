@@ -22,7 +22,7 @@
             </div>
             @if($post->imagen)
                 <div class="flex justify-center mb-4">
-                    <img src="/img/foros/{{$post->imagen}}" class="max-w-full h-auto rounded">
+                    <img src="/img/foros/{{$post->imagen}}" class="w-1/2 md:w-1/3 lg:w-1/4 h-auto rounded">
                 </div>
             @endif
             @include('comentarios.lista', ['lista' => $post->comentarios])

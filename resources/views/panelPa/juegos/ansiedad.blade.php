@@ -18,7 +18,7 @@
             <div class="px-6 py-4 flex flex-col items-center">
                 <div class="font-bold text-xl mb-2">Paper Fold</div>
                 <p class="text-gray-700 text-xs text-center">
-                    La mecánica del juego es realmente sencilla. Dobla las esquinas tocando sobre la parte del papel que quieras plegar y disfruta construyendo cientos de imágenes. ¡Tendrás que prestar mucha atención al orden ya que si te equivocas tendrás que volver a empezar de nuevo! Diviértete relajando tu mente.
+                     Dobla las esquinas tocando sobre la parte del papel que quieras plegar y disfruta construyendo cientos de imágenes. ¡Tendrás que prestar mucha atención al orden ya que si te equivocas tendrás que volver a empezar de nuevo! Diviértete relajando tu mente.
                 </p>
             </div>
             <div class="px-6 text-center mb-4">
@@ -34,7 +34,7 @@
             <div class="px-6 py-4 flex flex-col items-center">
                 <div class="font-bold text-xl mb-2">Colorea Mandalas</div>
                 <p class="text-gray-700 text-xs text-center">
-                    Escoge tu Mandala favorito y disfruta coloreándolo como más te guste!
+                    Escoge tu Mandala favorito!
                     Relájate coloreando hermosas imágenes. Coloréalas a tu gusto y haz del mundo un lugar más colorido. Da rienda suelta a tu imaginación y colorea todo lo que quieras.
                 </p>
             </div>

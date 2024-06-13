@@ -15,4 +15,8 @@ class Psicologos extends Model
     public function User(){
         return $this->BelongsTo('App\Models\User');
     }
+
+    public function Pacientes(){
+        return $this->hasMany('App\Models\Paciente');
+    }
 }

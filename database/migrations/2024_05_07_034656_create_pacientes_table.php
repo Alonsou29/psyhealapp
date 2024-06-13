@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('descripcion_problema')->nullable();
             $table->text('Biografia')->nullable();
             $table->unsignedBigInteger('id_user')->unique();
-            $table->unsignedBigInteger('id_psicologo')->nullable();  
-            //foreign keys 
+
+            //foreign keys
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-            //$table->foreign('id_psicologo')->references('id')->on('psicologos');
+            //$table->foreignId('id_psicologo')->constrained()->onDelete('set null');
             //end fk
             $table->timestamps();
         });

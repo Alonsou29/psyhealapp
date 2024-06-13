@@ -6,6 +6,7 @@ use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\loginPaciente;
+use App\Livewire\ChatComponent;
 
 // principal
 Route::get('/', function () {
@@ -38,6 +39,9 @@ Route::get('logout', function () {
 
 Route::post('registerPs', [loginPaciente::class, 'registroPsicologo'])->name('registrops');
 Route::post('{post}/comentario', [App\Http\Controllers\Paciente\ComentariosController::class,'store'])->name('store');
+//rutas del chat
+Route::resource('contacts', App\Http\Controllers\ModChat\ContactController::class)->except(['show']);
+Route::middleware('auth')->get('/chat', ChatComponent::class)->name('chat.index');
 
 // Paneles
 Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class]], function () {

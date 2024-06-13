@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class DeletedMensajes extends Model
 {
     use HasFactory;
+
+    public function mensaje(){
+        return $this->hasOne('App\Models\Mensajes');
+    }
 }

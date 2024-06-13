@@ -20,4 +20,7 @@ class Mensaje extends Model
     public function chat(){
         return $this->belongsTo('App\Models\Chat');
     }
+    public function delete(){
+        return $this->belongsTo('App\Models\DeletedMensajes');
+    }
 }

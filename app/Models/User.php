@@ -86,7 +86,7 @@ class User extends Authenticatable
     }
 
     //relacion uno a muchos
-    public function contact(){
+    public function contacts(){
         return $this->hasMany('App\Models\Contact');
     }
 

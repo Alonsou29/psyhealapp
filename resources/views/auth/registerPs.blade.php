@@ -4,11 +4,11 @@
         <x-authentication-card-logo />
     </x-slot>
 
-    <x-validation-errors class="mb-4" />
-
+    
     <div class="min-h-screen bg-login text-gray-900 flex justify-center">
         <div class="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-start flex-1">
             <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+                <x-validation-errors class="mb-4" />
                 <a href="{{ route('welcome') }}" class="absolute top-16 flex items-center text-cyan-600 hover:text-blue-600">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />

@@ -5,11 +5,11 @@
         <x-authentication-card-logo />
     </x-slot>
 
-    <x-validation-errors class="mb-4" />
-
+    
     <div class="min-h-screen bg-login text-gray-900 flex justify-center">
         <div class="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-start flex-1">
             <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+                <x-validation-errors class="mb-4" />
                 <a href="{{ route('welcome') }}" class="absolute top-16 flex items-center text-cyan-600 hover:text-blue-600">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -59,32 +59,32 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
                                     <x-label for="first_name" value="{{ __('Nombre:') }}" />
-                                    <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="given-name" />
+                                    <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="given-name" required />
                                 </div>
 
                                 <div>
                                     <x-label for="second_name" value="{{ __('Segundo Nombre:') }}" />
-                                    <x-input id="second_name" class="block mt-1 w-full" type="text" name="second_name" :value="old('second_name')" autocomplete="given-name" />
+                                    <x-input id="second_name" class="block mt-1 w-full" type="text" name="second_name" :value="old('second_name')" autocomplete="given-name" required />
                                 </div>
 
                                 <div>
                                     <x-label for="last_name" value="{{ __('Apellido:') }}" />
-                                    <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autocomplete="family-name" />
+                                    <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autocomplete="family-name" required/>
                                 </div>
 
                                 <div>
                                     <x-label for="second_last_name" value="{{ __('Segundo Apellido:') }}" />
-                                    <x-input id="second_last_name" class="block mt-1 w-full" type="text" name="second_last_name" :value="old('second_last_name')" autocomplete="family-name" />
+                                    <x-input id="second_last_name" class="block mt-1 w-full" type="text" name="second_last_name" :value="old('second_last_name')" autocomplete="family-name" required/>
                                 </div>
 
                                 <div>
                                     <x-label for="cedula" value="{{ __('Cedula:') }}" />
-                                    <x-input id="cedula" class="block mt-1 w-full border border-gray-300 rounded-md px-4 py-2" type="text" name="cedula" :value="old('cedula')" autocomplete="off" />
+                                    <x-input id="cedula" class="block mt-1 w-full border border-gray-300 rounded-md px-4 py-2" type="text" name="cedula" :value="old('cedula')" autocomplete="off" required />
                                 </div>
 
                                 <div>
                                     <x-label for="telefono" value="{{ __('Teléfono:') }}" />
-                                    <x-input id="telefono" class="block mt-1 w-full border border-gray-300 rounded-md px-4 py-2" type="text" name="telefono" :value="old('telefono')" autocomplete="tel" />
+                                    <x-input id="telefono" class="block mt-1 w-full border border-gray-300 rounded-md px-4 py-2" type="text" name="telefono" :value="old('telefono')" autocomplete="tel" required/>
                                 </div>
 
                                 <div>

@@ -25,10 +25,19 @@ Route::get('/psicologos', function () {
     return view('principal.psicologos');
 })->name('psicologos');
 
-// login psicologos
-Route::get('/registerPs', function () {
-    return view('auth.registerPs');
-})->name('registerPs');
+Route::middleware(\App\Http\Middleware\Redireccion::class)->group(function () {
+    Route::get('/registerPs', function () {
+        return view('auth.registerPs');
+    })->name('registerPs');
+
+    Route::get('/register', function () {
+        return view('auth.register');
+    })->name('register');
+
+    Route::get('/login', function () {
+        return view('auth.login');
+    })->name('login');
+});
 
 Route::get('logout', function () {
     auth()->logout();

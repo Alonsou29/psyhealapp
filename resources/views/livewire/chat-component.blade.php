@@ -40,14 +40,17 @@
                 @else
 
                     @foreach ($this->chats as $chatList)
-                        <div wire:key="chats-{{$chatList->id}}" wire:click="open_chat({{$chatList}})" class="flex items-center {{$chat && $chat->id == $chatList->id ? 'bg-gray-200':'bg-white'}} hover:bg-gray-100 cursor-pointer px-3 py-1">
+                        <div wire:key="chats-{{$chatList->id}}" wire:click="open_chat({{$chatList}})" class="flex items-center justify-between {{$chat && $chat->id == $chatList->id ? 'bg-gray-200':'bg-white'}} hover:bg-gray-100 cursor-pointer px-3 py-1">
                             <figure>
                                 <img class="h-12 w-12 object-center rounded-full" src="{{$chatList->image}}" alt="NA">
                             </figure>
 
-                            <div class="ml-4 flex-1 py-2 border-b border-gray-200">
-                                <p>{{$chatList->nombre}}</p>
-                                <p class="text-xs">12:45pm</p>
+                            <div class="w-[calc(100%-4rem)] py-2 border-b border-gray-200">
+                                <div class="flex justify-between items-center">
+                                    <p>{{$chatList->nombre}}</p>
+                                    <p class="text-xs">{{$chatList->last_mensaje_at->format('h:i A')}}</p>
+                                </div>
+                                <p class="text-sm text-gray-700 mt-1 truncate">{{$chatList->mensaje->last()->body}}</p>
                             </div>
 
                         </div>
@@ -84,10 +87,10 @@
                 </div>
                 <div class="h-[calc(100vh-11rem)] px-2 py-2 overflow-auto">
                     @foreach ( $this->Mensajes as $message )
-                        <div class="flex justify-end mb-2">
-                            <div class="rounded px-3 py-2 bg-gray-300 ">
+                        <div class="flex {{$message->user_id == auth()->id() ? 'justify-end' : ''}} mb-2">
+                            <div class="rounded px-3 py-2 {{$message->user_id == auth()->id() ? 'bg-blue-100' : 'bg-gray-300 '}}">
                                 <p class="text-sm ">{{$message->body}}</p>
-                                <p class="text-rigth text-xs text-gray-100 mt-1">{{$message->created_at->format('d-m-y h:i A')}}</p>
+                                <p class="{{$message->user_id == auth()->id() ? 'text-right' : ''}}  text-xs text-gray-800 mt-1">{{$message->created_at->format('d-m-y h:i A')}}</p>
                             </div>
                         </div>
 

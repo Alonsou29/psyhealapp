@@ -48,6 +48,14 @@ class Chat extends Model
         );
     }
 
+    public function lastMensajeAt(): Attribute{
+        return new Attribute(
+            get: function(){
+                return $this->mensaje->last()->created_at;
+            }
+        );
+    }
+
     //relacion uno a muchos
     public function mensaje(){
         return $this->hasMany('App\Models\Mensaje');

@@ -6,6 +6,7 @@ use App\Models\Contact;
 use App\Models\Chat;
 use App\Models\Mensaje;
 use Livewire\Component;
+use Illuminate\Support\Facades\Notification;
 
 class ChatComponent extends Component
 {
@@ -33,13 +34,13 @@ class ChatComponent extends Component
     }
 
     public function getChatsProperty(){
-        return auth()->user()->chats()->get();
+        return auth()->user()->chats()->get()->sortByDesc('last_mensaje_at');
     }
 
-    public function render()
-    {
-        return view('livewire.chat-component')->layout('layouts.chat');
+    public function getUsersNotificationsProperty(){
+        return $this->chat ? $this->chat->users->Where('id','!=',auth()->id()) : [];
     }
+
 
     public function open_chat_contact(Contact $contact){
         $chat=auth()->user()->chats()
@@ -72,12 +73,19 @@ class ChatComponent extends Component
             $this->chat->users()->attach([auth()->user()->id, $this->contactChat->contact_id]);
         }
 
+        //dd($this->users_notifications);
         $this->chat->mensaje()->create([
             'body'=>$this->bodyMessage,
             'user_id'=>auth()->user()->id
         ]);
 
+        Notification::send($this->users_notifications, new \App\Notifications\NewMensaje());
+
         $this->reset('bodyMessage', 'contactChat');
+    }
+    public function render()
+    {
+        return view('livewire.chat-component')->layout('layouts.chat');
     }
 }
 

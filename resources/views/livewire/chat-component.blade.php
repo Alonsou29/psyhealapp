@@ -95,6 +95,8 @@
                         </div>
 
                     @endforeach
+                        <span id="final"></span>
+
                 </div>
                 <form class="bg-gray-100 h-16 flex items-center px-4" wire:submit.prevent="sendMessage()">
                     <x-input type="text" wire:model.live="bodyMessage" class="flex-1" placeholder="Escriba un mensaje aqui"></x-input>
@@ -110,4 +112,12 @@
         </div>
     </div>
 
+    @push('js')
+        @script
+        <script>
+            Livewire.on('scroll', function() {
+                document.getElementById('final').scrollIntoView(true)});
+        </script>
+        @endscript
+    @endpush
 </div>

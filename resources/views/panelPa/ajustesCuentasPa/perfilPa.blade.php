@@ -17,17 +17,22 @@
                     <div class="flex flex-col items-center">
                         <img src="https://randomuser.me/api/portraits/men/94.jpg"
                             class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0">
-                        <h1 class="text-xl font-bold">John Doe</h1>
-                        <p class="text-gray-700">Psicologo</p>
+                        <h1 class="text-xl font-bold">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</h1>
+                        @php
+                            $nombreRuta = Route::currentRouteName();
+                        @endphp
+                        @if ($nombreRuta == 'perfilPa')
+                            <p class="text-gray-700">Paciente</p>
+                        @endif
                     </div>
                     <hr class="my-6 border-t border-gray-300">
                     <div class="flex flex-col">
                         <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">Información</span>
                         <ul>
-                            <li class="mb-2">C.I: 13.876.369</li>
-                            <li class="mb-2">0412-6664851</li>
-                            <li class="mb-2">JonhDoe@gmail.com</li>
-                            <li class="mb-2">Fecha de Ingreso: 23/05/2024</li>
+                            <li class="mb-2">C.I: {{auth()->user()->cedula}}</li>
+                            <li class="mb-2">Telefono: {{auth()->user()->telefono}}</li>
+                            <li class="mb-2">Correo : {{auth()->user()->email}}</li>
+                            <li class="mb-2">Fecha de Ingreso: {{auth()->user()->created_at->format('d-m-Y')}}</li>
                         </ul>
                     </div>
                 </div>
@@ -38,7 +43,7 @@
                         <div class="bg-blue-500 border border-blue-700 text-white rounded-lg p-2">
                             <i class="fas fa-download">Editar Perfil</i>
                         </div>
-                    </a> 
+                    </a>
                     <!-- Contenido de las cuatro sub-cartas -->
                     <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2">
                         <div class="bg-white shadow rounded-lg p-6">

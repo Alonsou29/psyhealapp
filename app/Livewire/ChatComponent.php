@@ -6,6 +6,7 @@ use App\Models\Contact;
 use App\Models\Chat;
 use App\Models\Mensaje;
 use Livewire\Component;
+use Livewire\Attributes\On;
 use Illuminate\Support\Facades\Notification;
 
 class ChatComponent extends Component
@@ -15,6 +16,17 @@ class ChatComponent extends Component
     public $contactChat, $chat;
 
     public $bodyMessage;
+
+    //oyentes
+
+    public function getListeners()
+    {
+        $user_id = auth()->user()->id;
+        return [
+            // Private Channel
+            "echo-notification:App.Models.User.{$user_id},notification" => 'render',
+        ];
+    }
 
     //propiedad computadas
 
@@ -85,6 +97,9 @@ class ChatComponent extends Component
     }
     public function render()
     {
+        if($this->chat){
+            $this->dispatch('scroll');
+        }
         return view('livewire.chat-component')->layout('layouts.chat');
     }
 }

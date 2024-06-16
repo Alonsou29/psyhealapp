@@ -50,8 +50,8 @@ class CreateNewUser implements CreatesNewUsers
 
         $paciente=Paciente::create([
             'id_user'=>$user->id,
-            'descripcion_problema'=>$input['descripcion_problema'],
-            'Biografia'=>$input['Biografia'],
+/*             'descripcion_problema'=>$input['descripcion_problema'],
+            'Biografia'=>$input['Biografia'], */
         ]);
 
         $user1 = User::find($user->id);

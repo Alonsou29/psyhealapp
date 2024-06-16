@@ -103,9 +103,11 @@
                     </button>
                 </form>
             @else
-                <div class="w-full h-full flex justify-center items-center">
-                    <p>AQUI VA IMAGEN DE BIENVENIDA PSYHEAL</p>
-                </div>
+            <div class="w-full h-full flex flex-col justify-center items-center">
+                <p class="text-center font-bold text-3xl mb-4">Bienvenido a</p>
+                <img src="https://www.dropbox.com/scl/fi/4n4wdkem2wqbem18a2psx/logo.png?rlkey=devzl4gbkqlzc5mwehmvo7d8r&st=93ywi7dl&raw=1" alt="" class="mb-4">
+            </div>
+
             @endif
         </div>
     </div>

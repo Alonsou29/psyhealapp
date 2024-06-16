@@ -39,43 +39,22 @@
             </div>
             <div class="sm:col-span-2 md:col-span-2 lg:col-span-3">
                 <div class="bg-cartas shadow rounded-lg p-6">
-                    <a href="#" class="flex items-center space-x-2 w-full sm:w-auto">
-                        <div class="bg-blue-500 border border-blue-700 text-white rounded-lg p-2">
-                            <i class="fas fa-download">Editar Perfil</i>
-                        </div>
-                    </a>
+                <a href="{{ route('Editarperfil') }}" class="flex items-center space-x-2 w-full sm:w-auto">
+                    <div class="bg-blue-500 border border-blue-700 text-white rounded-lg p-2">
+                        <i class="fas fa-edit">Editar Perfil</i>
+                    </div>
+                </a>
+
                     <!-- Contenido de las cuatro sub-cartas -->
                     <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2">
                         <div class="bg-white shadow rounded-lg p-6">
-                            <h2 class="text-xl font-bold mb-4">Diploma</h2>
-                            <img
-                                src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/facility/9c9cd8/9c9cd83ad04d436d6647bdc900bd2863_large.jpg"
-                                alt="">
+                            <h2 class="text-xl font-bold mb-4 text-center">Descripcion del Problema</h2>
+                            <p class="text-justify">{{ auth()->user()->paciente->descripcion_problema}}</p>
                         </div>
                         <div class="bg-white shadow rounded-lg p-6">
-                            <h2 class="text-xl font-bold mb-4">Descripción</h2>
-                            <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                                finibus est vitae
-                                tortor ullamcorper, ut vestibulum velit convallis. Aenean posuere risus non velit
-                                egestas
-                                suscipit. Nunc finibus vel ante id euismod. Vestibulum ante ipsum primis in faucibus
-                                orci luctus
-                                et ultrices posuere cubilia Curae; Aliquam erat volutpat. Nulla vulputate pharetra
-                                tellus, in
-                                luctus risus rhoncus id.
-                            </p>
+                            <h2 class="text-xl font-bold mb-4 text-center">Biografia</h2>
+                            <p class="text-gray-700 text-justify">{{ auth()->user()->paciente->Biografia }}</p>
                         </div>
-                        <div class="bg-white shadow rounded-lg p-6">
-                            <h2 class="text-xl font-bold mb-4">Universidad</h2>
-                            <p class="text-gray-700">Rafael Belloso Chacin
-                            </p>
-                        </div>
-                        <div class="bg-white shadow rounded-lg p-6">
-                            <h2 class="text-xl font-bold mb-4">Especialidad</h2>
-                            <p class="text-gray-700">Psicologia Educativa.
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

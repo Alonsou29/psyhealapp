@@ -121,7 +121,7 @@
 
     <section> 
     <div class="text-center mt-20 p-8"> 
-        <div class="flex flex-wrap items-center justify-center text-left text-center"> 
+        <div class="flex flex-wrap items-center justify-center  text-center"> 
             <div class="w-full md:w-3/5 lg:w-1/2 px-4"> 
                 <img src="https://www.dropbox.com/scl/fi/drmn2dt75pallqwd8ld0l/psico4.png?rlkey=o5f42qi097fj7fsyn8lh3d700&st=mtbxsm5i&raw=1" alt="gem" class="inline-block w-7/12" > 
             </div> 

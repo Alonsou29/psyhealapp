@@ -47,6 +47,11 @@
     gap: 100px; /* Espacio entre los videos */
 }
 
+.content-wrapper {
+    background-color: #f4f6f9;
+    min-height: 100vh;
+}
+
 
 
 @media (max-width: 768px) {

@@ -97,6 +97,11 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
         Route::get('/perfilPs', function () {
             return view('panelPs.ajustesCuentaPs.perfilPs');
         })->name('perfilPs');
+
+        Route::get('/editar-perfilPs', function () {
+            return view('panelPs.ajustesCuentaPs.EditarperfilPs');
+        })->name('EditarperfilPs');
+        
         
         Route::get('/cambiarContraseñaPs', function () {
             return view('panelPs.ajustesCuentaPs.cambiarContraseñaPs');
@@ -144,7 +149,16 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
         Route::get('/perfilPa', function () {
             return view('panelPa.ajustesCuentasPa.perfilPa');
         })->name('perfilPa');
+
+        Route::get('/EditarperfilPa', function () {
+            return view('panelPa.ajustesCuentasPa.EditarperfilPa');
+        })->name('Editarperfil');
         
+        Route::get('/editar-perfil', function () {
+            return view('panelPa.ajustesCuentasPa.EditarperfilPa');
+        })->name('Editarperfil');
+        
+                   
         Route::get('/cambiarContraseñaPa', function () {
             return view('panelPa.ajustesCuentasPa.cambiarContraseñaPa');
         })->name('cambiarContraseñaPa');
@@ -173,4 +187,3 @@ Route::middleware([
     })->name('dashboard');
 });
 
-           

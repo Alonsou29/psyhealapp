@@ -74,12 +74,13 @@ class User extends Authenticatable
         ];
     }
 
-    public function paciente(){
-        return $this->hasOne('App\Models\Paciente');
+    public function paciente()
+    {
+        return $this->hasOne(Paciente::class, 'id_user');
     }
 
     public function psicologo(){
-        return $this->hasOne('App\Models\Psicologos');
+        return $this->hasOne(Psicologos::class, 'id_user');
     }
 
     public function comentarios(){

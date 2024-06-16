@@ -152,6 +152,7 @@ return [
         Features::twoFactorAuthentication([
             'confirm' => true,
             'confirmPassword' => true,
+            'profile_photos' => true,
             // 'window' => 0,
         ]),
     ],

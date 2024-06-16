@@ -17,24 +17,25 @@
                     <div class="flex flex-col items-center">
                         <img src="https://www.ensalza.com/blog/wp-content/uploads/Diseno-web-psicologos-1024x612.jpg"
                             class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0">
-                        <h1 class="text-xl font-bold">Alejandra Mendoza</h1>
+                        <h1 class="text-xl font-bold text-center">Alejandra Mendoza</h1>
                         <p class="text-gray-700">Psicóloga</p>
+                        <p class="font-bold text-center">Años de experiencia: {{ auth()->user()->psicologo->AñosExperiencia}}</p>
                     </div>
                     <hr class="my-6 border-t border-gray-300">
                     <div class="flex flex-col">
                         <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">Información</span>
                         <ul>
-                            <li class="mb-2">C.I: 13.876.369</li>
-                            <li class="mb-2">0412-6664851</li>
-                            <li class="mb-2">AlejaM@gmail.com</li>
-                            <li class="mb-2">Fecha de Ingreso: 23/05/2024</li>
+                            <li class="mb-2">C.I: {{auth()->user()->cedula}}</li>
+                            <li class="mb-2">Telefono: {{auth()->user()->telefono}}</li>
+                            <li class="mb-2">Correo : {{auth()->user()->email}}</li>
+                            <li class="mb-2">Fecha de Ingreso: {{auth()->user()->created_at->format('d-m-Y')}}</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="sm:col-span-2 md:col-span-2 lg:col-span-3">
                 <div class="bg-cartas shadow rounded-lg p-6">
-                    <a href="#" class="flex items-center space-x-2 w-full sm:w-auto">
+                    <a href="{{ route('EditarperfilPs') }}" class="flex items-center space-x-2 w-full sm:w-auto">
                         <div class="bg-blue-500 border border-blue-700 text-white rounded-lg p-2">
                             <i class="fas fa-download">Editar Perfil</i>
                         </div>
@@ -49,17 +50,15 @@
                         </div>
                         <div class="bg-white shadow rounded-lg p-6">
                             <h2 class="text-xl font-bold mb-4">Descripción</h2>
-                            <p class="text-gray-700 text-justify">Soy la Dra. Alejandra Mendoza  una psicóloga clínica con más de 10 años de experiencia, especializada en el tratamiento de trastornos de ansiedad. Con un enfoque centrado en el paciente, utilizo técnicas basadas en la Terapia Cognitivo-Conductual (TCC) y Mindfulness para ayudar a sus pacientes a manejar y superar la ansiedad. 
+                            <p class="text-gray-700 text-justify">{{ auth()->user()->psicologo->Descripcion}}</p>
                         </div>
                         <div class="bg-white shadow rounded-lg p-6">
                             <h2 class="text-xl font-bold mb-4">Universidad</h2>
-                            <p class="text-gray-700">Universidad Javeriana
-                            </p>
+                            <p class="text-gray-700">{{ auth()->user()->psicologo->Universidad}}</p>
                         </div>
                         <div class="bg-white shadow rounded-lg p-6">
                             <h2 class="text-xl font-bold mb-4">Especialidad</h2>
-                            <p class="text-gray-700">Ansiedad.
-                            </p>
+                            <p class="text-gray-700">{{ auth()->user()->psicologo-> Especialistas}}</p>
                         </div>
                     </div>
                 </div>

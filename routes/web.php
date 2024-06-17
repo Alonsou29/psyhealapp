@@ -25,6 +25,10 @@ Route::get('/psicologos', function () {
     return view('principal.psicologos');
 })->name('psicologos');
 
+Route::get('/AgendarCita', function () {
+    return view('principal.escogerCita');
+})->name('AgendarCita');
+
 Route::middleware(\App\Http\Middleware\Redireccion::class)->group(function () {
     Route::get('/registerPs', function () {
         return view('auth.registerPs');

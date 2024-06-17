@@ -45,7 +45,7 @@
                         <div class="bg-white shadow rounded-lg p-6">
                             <h2 class="text-xl font-bold mb-4">Diploma</h2>
                             <img
-                                src="https://s3-sa-east-1.amazonaws.com/doctoralia.co/facility/9c9cd8/9c9cd83ad04d436d6647bdc900bd2863_large.jpg"
+                                src="{{ auth()->user()->psicologo->Diploma}}"
                                 alt="">
                         </div>
                         <div class="bg-white shadow rounded-lg p-6">

@@ -5,7 +5,9 @@
         <div class="col-span-1">
             <div class="bg-gray-100 h-16 flex items-center px-4">
                 <img class="rounded-full h-12 w-12 object-cover" src="/storage/{{ auth()->user()->profile_photo_path }}" alt="{{ auth()->user()->first_name }}">
+                <img class="h-8 ml-4" src="https://www.dropbox.com/scl/fi/4n4wdkem2wqbem18a2psx/logo.png?rlkey=devzl4gbkqlzc5mwehmvo7d8r&st=0j336y5c&raw=1" alt="Logo">
             </div>
+
             <div class="bg-white h-14 flex items-center px-4">
                 <x-input wire:model.live="search" type="text" class="w-full" placeholder="Buscar.."></x-input>
             </div>
@@ -104,8 +106,8 @@
                 </form>
             @else
             <div class="w-full h-full flex flex-col justify-center items-center">
-                <p class="text-center font-bold text-3xl mb-4">Bienvenido a</p>
-                <img src="https://www.dropbox.com/scl/fi/4n4wdkem2wqbem18a2psx/logo.png?rlkey=devzl4gbkqlzc5mwehmvo7d8r&st=93ywi7dl&raw=1" alt="" class="mb-4">
+                <p class="text-center font-bold text-3xl mb-4">Bienvenido a Psyheal</p>
+                <img src="https://www.dropbox.com/scl/fi/5bztcsif7p9zwp49ia9oc/login.png?rlkey=44h12n5jxic27o7e1r41aemth&st=80q1pqna&raw=1" alt="" class="mb-4">
             </div>
 
             @endif

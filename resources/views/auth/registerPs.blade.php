@@ -110,7 +110,7 @@
 
                             <div class="mt-4">
                                 <x-label for="diploma" value="{{ __('Diploma:') }}" />
-                                <x-input id="diploma" class="block mt-1 w-full" type="text" name="diploma" :value="old('diploma')" required autocomplete="off" />
+                                <x-input type="file" id="diploma" class="block mt-1 w-full" type="text" name="diploma" :value="old('diploma')" required autocomplete="off" />
                             </div>
 
                             <div class="mt-4">

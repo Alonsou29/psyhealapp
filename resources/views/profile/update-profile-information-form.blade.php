@@ -137,9 +137,9 @@
 
         <!-- Input para Especialidad -->
         <div class="col-span-6 sm:col-span-4">
-            <x-label for="Especialidad" value="{{ __('Especialidad') }}" />
-            <x-input id="Especialidad" type="text" class="mt-1 block w-full" wire:model="state.Especialidad" required />
-            <x-input-error for="Especialidad" class="mt-2" />
+            <x-label for="Especialistas" value="{{ __('Especialidad') }}" />
+            <x-input id="Especialistas" type="text" class="mt-1 block w-full" wire:model="state.Especialistas" required />
+            <x-input-error for="Especialistas" class="mt-2" />
         </div>
             @endif
         </x-slot>

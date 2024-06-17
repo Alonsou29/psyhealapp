@@ -4,7 +4,7 @@
 
         <div class="col-span-1">
             <div class="bg-gray-100 h-16 flex items-center px-4">
-                <img class="w-10 h-10 object-cover object-center" src="{{ auth()->user()->profile_photo_path }}" alt="{{ auth()->user()->first_name }}">
+                <img class="rounded-full h-12 w-12 object-cover" src="/storage/{{ auth()->user()->profile_photo_path }}" alt="{{ auth()->user()->first_name }}">
             </div>
             <div class="bg-white h-14 flex items-center px-4">
                 <x-input wire:model.live="search" type="text" class="w-full" placeholder="Buscar.."></x-input>
@@ -19,7 +19,7 @@
                                 <li class="cursor-pointer" wire:click="open_chat_contact({{ $contact }})">
                                     <div class="flex">
                                         <figure class="flex-shrink-0">
-                                            <img class="h-12 w-12 rounded-full object-cover object-center" src="{{ $contact->user->profile_photo_path }}" alt="{{ $contact->user->first_name }}">
+                                            <img class="h-12 w-12 rounded-full object-cover object-center" src="/storage/{{$contact->user->profile_photo_path}}" alt="{{ $contact->user->first_name }}">
                                         </figure>
 
                                         <div class="flex-1 ml-5 border-b border-gray-200">

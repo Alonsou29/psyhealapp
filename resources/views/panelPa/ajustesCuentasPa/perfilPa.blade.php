@@ -4,7 +4,7 @@
 
 
 @section('content_header')
-    <h1>    Perfil</h1>
+    <h1>Perfil</h1>
 @stop
 
 @section('content')
@@ -15,7 +15,7 @@
             <div class="sm:col-span-1 lg:col-span-1 sm:col-start-1 lg:col-start-1">
                 <div class="bg-cartas shadow rounded-lg p-6">
                     <div class="flex flex-col items-center">
-                        <img src="https://randomuser.me/api/portraits/men/94.jpg"
+                       <img src="/storage/{{auth()->user()->profile_photo_path}}"
                             class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0">
                         <h1 class="text-xl font-bold">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</h1>
                         @php

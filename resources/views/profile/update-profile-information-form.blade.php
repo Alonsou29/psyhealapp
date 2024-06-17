@@ -4,13 +4,13 @@
         <x-slot name="form">
             <!-- Profile Photo -->
             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 sm:col-span-4">
+                <div x-data="{photoName: true, photoPreview: null}" class="col-span-6 sm:col-span-4">
                     <!-- Profile Photo File Input -->
                     <input type="file" id="photo" class="hidden"
                            wire:model="photo"
                            x-ref="photo"
                            x-on:change="
-                               photoName = $refs.photo.files[0].name;
+                               photoName = $refs.photo.files[0].first_name;
                                const reader = new FileReader();
                                reader.onload = (e) => {
                                    photoPreview = e.target.result;
@@ -22,7 +22,7 @@
 
                     <!-- Current Profile Photo -->
                     <div class="mt-2" x-show="! photoPreview">
-                        <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" class="rounded-full h-20 w-20 object-cover">
+                        <img src="/storage/{{ Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->first_name }}" class="rounded-full h-20 w-20 object-cover">
                     </div>
 
                     <!-- New Profile Photo Preview -->
@@ -97,6 +97,7 @@
                 <x-input-error for="telefono" class="mt-2" />
             </div>
 
+            @if (auth()->user()->hasRole('paciente'))
             <!-- Descripcion del Problema -->
             <div class="col-span-6 sm:col-span-4">
                 <x-label for="descripcion_problema" value="{{ __('Descripción del Problema') }}" />
@@ -110,6 +111,10 @@
                 <textarea id="Biografia" class="mt-1 block w-full" wire:model="state.Biografia" ></textarea>
                 <x-input-error for="Biografia" class="mt-2" />
             </div>
+
+            @elseif (auth()->user()->hasRole('psicologo'))
+             {{-- aqui van los datos del psicologo --}}
+            @endif
         </x-slot>
 
         <x-slot name="actions">

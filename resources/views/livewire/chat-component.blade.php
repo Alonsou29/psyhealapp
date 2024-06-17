@@ -44,7 +44,7 @@
                     @foreach ($this->chats as $chatList)
                         <div wire:key="chats-{{ $chatList->id }}" wire:click="open_chat({{ $chatList }})" class="flex items-center justify-between {{ $chat && $chat->id == $chatList->id ? 'bg-gray-200':'bg-white' }} hover:bg-gray-100 cursor-pointer px-3 py-1">
                             <figure>
-                                <img class="h-12 w-12 object-center rounded-full" src="{{ $chatList->image }}" alt="NA">
+                                <img class="h-12 w-12 object-center rounded-full" src="/storage/{{ $chatList->image }}" alt="NA">
                             </figure>
 
                             <div class="w-[calc(100%-4rem)] py-2 border-b border-gray-200">
@@ -68,9 +68,9 @@
                 <div class="bg-gray-100 h-16 flex items-center px-3">
                     <figure>
                         @if ($chat)
-                            <img class="w-10 h-10 rounded-full object-cover object-center" src="{{ $chat->image }}" alt="{{ $chat->nombre }}">
+                            <img class="w-10 h-10 rounded-full object-cover object-center" src="/storage/{{ $chat->image }}" alt="{{ $chat->nombre }}">
                         @else
-                            <img class="w-10 h-10 rounded-full object-cover object-center" src="{{ $contactChat->user->profile_photo_path }}" alt="{{ $contactChat->user->first_name }}">
+                            <img class="w-10 h-10 rounded-full object-cover object-center" src="/storage/{{ $contactChat->user->profile_photo_path }}" alt="{{ $contactChat->user->first_name }}">
                         @endif
                     </figure>
                     <div class="ml-4">

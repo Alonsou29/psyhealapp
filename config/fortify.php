@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'home' => 'panel', 
+    'home' => 'panel',
 
     /*
     |--------------------------------------------------------------------------
@@ -153,7 +153,7 @@ return [
             'confirm' => true,
             'confirmPassword' => true,
             'profile_photos' => true,
-            // 'window' => 0,
+            'window' => 0,
         ]),
     ],
 

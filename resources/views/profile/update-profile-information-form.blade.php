@@ -47,14 +47,14 @@
             @endif
 
             <!-- First Name -->
-            <div class="col-span-4 sm:col-span-2">
+            <div class="col-span-6 sm:col-span-4">
                 <x-label for="first_name" value="{{ __('First Name') }}" />
                 <x-input id="first_name" type="text" class="mt-1 block w-full" wire:model="state.first_name" required autocomplete="first_name" />
                 <x-input-error for="first_name" class="mt-2" />
             </div>
 
             <!-- Last Name -->
-            <div class="col-span-4 sm:col-span-2">
+            <div class="col-span-6 sm:col-span-4">
                 <x-label for="last_name" value="{{ __('Last Name') }}" />
                 <x-input id="last_name" type="text" class="mt-1 block w-full" wire:model="state.last_name" required autocomplete="last_name" />
                 <x-input-error for="last_name" class="mt-2" />
@@ -113,7 +113,34 @@
             </div>
 
             @elseif (auth()->user()->hasRole('psicologo'))
-             {{-- aqui van los datos del psicologo --}}
+             <!-- Input para Imagen de Diploma -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="Diploma" value="{{ __('Imagen de Diploma') }}" />
+            <input id="Diploma" type="file" name="Diploma" class="mt-4 bg-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <!-- Puedes añadir wire:model="state.imagen_diploma" si deseas manejar la carga de la imagen con Livewire -->
+             <x-input-error for="Diploma" class="mt-2" /> 
+        </div>
+
+            <!-- Descripcion  -->
+            <div class="col-span-6 sm:col-span-4">
+                <x-label for="Descripcion" value="{{ __('Descripción del Problema') }}" />
+                <textarea id="Descripcion" class="mt-1 block w-full" wire:model="state.Descripcion" ></textarea>
+                <x-input-error for="Descripcion" class="mt-2" />
+            </div>
+
+        <!-- Input para Universidad -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="Universidad" value="{{ __('Universidad') }}" />
+            <x-input id="Universidad" type="text" class="mt-1 block w-full" wire:model="state.Universidad" required />
+            <x-input-error for="Universidad" class="mt-2" />
+        </div>
+
+        <!-- Input para Especialidad -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="Especialidad" value="{{ __('Especialidad') }}" />
+            <x-input id="Especialidad" type="text" class="mt-1 block w-full" wire:model="state.Especialidad" required />
+            <x-input-error for="Especialidad" class="mt-2" />
+        </div>
             @endif
         </x-slot>
 

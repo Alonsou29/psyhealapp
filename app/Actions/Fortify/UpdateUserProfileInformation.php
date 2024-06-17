@@ -50,6 +50,15 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                     'Biografia' => $input['Biografia'] ?? $user->paciente->Biografia,
                 ])->save();
             }
+
+            if ($user->psicologo) {
+                $user->psicologo->forceFill([
+                    'Diploma' => $input['Diploma'] ?? $user->psicologo->Diploma,
+                    'Descripcion' => $input['descripcion'] ?? $user->psicologo->Descripcion,
+                    'Universidad' => $input['descripcion'] ?? $user->psicologo->Universidad,
+                    'Especialidad' => $input['descripcion'] ?? $user->psicologo->Especialidad,
+                ])->save();
+            }
         }
     }
 
@@ -72,6 +81,13 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         // Actualizamos los campos de la relación `Paciente`
         if ($user->paciente) {
             $user->paciente->forceFill([
+                'descripcion_problema' => $input['descripcion_problema'] ?? $user->paciente->descripcion_problema,
+                'Biografia' => $input['Biografia'] ?? $user->paciente->Biografia,
+            ])->save();
+        }
+
+        if ($user->psicologo) {
+            $user->psicologo->forceFill([
                 'descripcion_problema' => $input['descripcion_problema'] ?? $user->paciente->descripcion_problema,
                 'Biografia' => $input['Biografia'] ?? $user->paciente->Biografia,
             ])->save();

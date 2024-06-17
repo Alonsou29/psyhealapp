@@ -77,6 +77,10 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
         Route::get('/tablaPa/verPa', function () {
             return view('panelPs.inicio.ver_pacientes');
         })->name('verPacientes');
+
+        Route::get('/misCitasPs', function () {
+            return view('panelPs.inicio.index_misCitasPs');
+        })->name('misCitasPs');
         
         Route::get('/recursosPs', function () {
             return view('panelPs.inicio.recursosPs');
@@ -121,6 +125,10 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
         Route::get('/psicologo/ver', function () {
             return view('panelPa.inicio.ver_psicologo');
         })->name('verPsicologo');
+
+        Route::get('/misCitasPa', function () {
+            return view('panelPa.inicio.index_misCitasPa');
+        })->name('misCitasPa');
         
         Route::get('/recursosPa', function () {
             return view('panelPa.inicio.recursosPa');

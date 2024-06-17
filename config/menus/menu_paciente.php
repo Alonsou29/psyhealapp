@@ -33,6 +33,12 @@ return [
         'label_color' => 'success',
     ],
     [
+        'text' => 'Mis Citas',
+        'url' => '/misCitasPa',
+        'icon' => 'far fa-fw fa-file',
+        'label_color' => 'success',
+    ],
+    [
         'text' => 'Recursos',
         'url' => '/recursosPa',
         'icon' => 'far fa-fw fa-file',

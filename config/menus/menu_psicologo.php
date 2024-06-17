@@ -45,6 +45,12 @@ return [
         'icon' => 'far fa-fw fa-file',
         'label_color' => 'success',
     ],
+    [
+        'text' => 'Mis Citas',
+        'url' => '/misCitasPs',
+        'icon' => 'far fa-fw fa-file',
+        'label_color' => 'success',
+    ],
     ['header' => 'FOROS'],
     [
         'text' => 'Lista de Categorías',

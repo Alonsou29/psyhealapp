@@ -17,7 +17,7 @@
                     <div class="flex flex-col items-center">
                         <img src="https://www.ensalza.com/blog/wp-content/uploads/Diseno-web-psicologos-1024x612.jpg"
                             class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0">
-                        <h1 class="text-xl font-bold text-center">Alejandra Mendoza</h1>
+                        <h1 class="text-xl font-bold text-center">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</h1>
                         <p class="text-gray-700">Psicóloga</p>
                         <p class="font-bold text-center">Años de experiencia: {{ auth()->user()->psicologo->AñosExperiencia}}</p>
                     </div>

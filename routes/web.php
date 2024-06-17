@@ -132,9 +132,9 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
             return view('panelPa.inicio.ver_psicologo');
         })->name('verPsicologo');
 
-        Route::get('/misCitasPa', function () {
-            return view('panelPa.inicio.index_misCitasPa');
-        })->name('misCitasPa');
+        // Route::get('/misCitasPa', function () {
+        //     return view('panelPa.inicio.index_misCitasPa');
+        // })->name('misCitasPa');
 
         Route::get('/recursosPa', function () {
             return view('panelPa.inicio.recursosPa');

@@ -83,6 +83,7 @@ class User extends Authenticatable
         return $this->hasOne(Psicologos::class, 'id_user');
     }
 
+
     public function comentarios(){
         return $this->hasMany('App\Models\Comentario');
     }
@@ -102,4 +103,6 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\Chat')->withPivot('color','active')
         ->withTimestamps();
     }
+
+
 }

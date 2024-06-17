@@ -1,6 +1,11 @@
 @extends('adminlte::page')
 @vite('resources/css/app.css')
+@php
+    use App\Models\Paciente;
+    use App\Models\User;
 
+
+@endphp
 <head>
     <!-- Otras etiquetas del head -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -25,18 +30,24 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+                        @foreach ($citas as $cita)
                             <tr class="hover:bg-gray-50">
-                                <td class="px-6 py-4 text-center">17/06/2024</td>
-                                <td class="px-6 py-4 text-center">1:35 am</td>
-                                <td class="px-6 py-4 text-center">Rubielena López</td>                   
+                                <td class="px-6 py-4 text-center">{{$cita->fechaConsulta}}</td>
+                                <td class="px-6 py-4 text-center">{{$cita->horaConsulta}}</td>
+                                @php
+                                   $paciente = Paciente::find($cita->paciente_id);
+                                   $user = User::find($paciente->id_user);
+                                @endphp
+                                <td class="px-6 py-4 text-center">{{$user->first_name}} {{$user->last_name}}</td>
                                 <td class="px-6 py-4 text-center">
-                                    <div class="flex justify-center gap-4">
+                                    {{-- <div class="flex justify-center gap-4">
                                         <a href="#" class="btn btn-primary">
                                             Ir
                                         </a>
-                                    </div>
+                                    </div> --}}
                                 </td>
                             </tr>
+                        @endforeach
 
                     </tbody>
                 </table>

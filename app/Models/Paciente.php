@@ -15,7 +15,12 @@ class Paciente extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    public function Psicologo(){
-        return $this->belongsTo('App\Models\Psicologo', 'idPsicologo');
+    // public function Psicologo(){
+    //     return $this->belongsTo('App\Models\Psicologo', 'idPsicologo');
+    // }
+
+    public function cita(){
+        return $this->hasOne('App\Models\Cita');
     }
+
 }

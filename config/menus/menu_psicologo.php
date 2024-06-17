@@ -47,7 +47,7 @@ return [
     ],
     [
         'text' => 'Mis Citas',
-        'url' => '/misCitasPs',
+        'url' => '/Citas',
         'icon' => 'far fa-fw fa-file',
         'label_color' => 'success',
     ],

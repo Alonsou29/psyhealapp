@@ -58,7 +58,7 @@
         <span>Volver</span>
     </a>
 
-    <div class="absolute left-0 top-8 w-screen">
+    <div class="absolute left-0 top-16 w-screen">
         <div class="container mx-auto">
             {{ $slot }}
         </div>

@@ -23,19 +23,19 @@ return [
     [
         'text' => 'Pagina Principal',
         'url' => '/panelPaciente',
-        'icon' => 'fas fa-home', 
+        'icon' => 'fas fa-home',
         'label_color' => 'success',
     ],
     [
         'text' => 'Psicologo',
         'url' => '/psicologo',
-        'icon' => 'fas fa-user-md', 
+        'icon' => 'fas fa-user-md',
         'label_color' => 'success',
     ],
     [
         'text' => 'Mis Citas',
-        'url' => '/misCitasPa',
-        'icon' => 'far fa-calendar-check', 
+        'url' => '/CitasPa',
+        'icon' => 'far fa-calendar-check',
         'label_color' => 'success',
     ],
     [
@@ -48,21 +48,21 @@ return [
     [
         'text' => 'Lista de Categorias',
         'url' => '/categorias',
-        'icon' => 'fas fa-list-ul', 
+        'icon' => 'fas fa-list-ul',
         'label_color' => 'success',
     ],
     ['header' => 'CHAT'],
     [
         'text' => 'Chat',
         'url' => '/chat',
-        'icon' => 'fas fa-comments', 
+        'icon' => 'fas fa-comments',
         'label_color' => 'success',
     ],
     ['header' => 'JUEGOS'],
     [
         'text' => 'Lista de Juegos',
         'url' => 'admin/pages',
-        'icon' => 'fas fa-gamepad', 
+        'icon' => 'fas fa-gamepad',
         'label_color' => 'success',
         'submenu' => [
             [
@@ -83,7 +83,7 @@ return [
     [
         'text' => 'Perfil',
         'url' => '/perfilPa',
-        'icon' => 'fas fa-user-circle', 
+        'icon' => 'fas fa-user-circle',
     ],
     [
         'text' => 'Cambiar Contraseña',
@@ -93,6 +93,6 @@ return [
     [
         'text' => 'Cerrar Sesión',
         'url' => 'logout',
-        'icon' => 'fas fa-sign-out-alt', 
+        'icon' => 'fas fa-sign-out-alt',
     ],
 ];

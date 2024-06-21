@@ -82,10 +82,6 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
             return view('panelPs.inicio.ver_pacientes');
         })->name('verPacientes');
 
-        // Route::get('/misCitasPs', function () {
-        //     return view('panelPs.inicio.index_misCitasPs');
-        // })->name('misCitasPs');
-
         Route::resource('Citas', App\Http\Controllers\CitasController::class);
 
         Route::get('/recursosPs', function () {
@@ -135,6 +131,8 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
         // Route::get('/misCitasPa', function () {
         //     return view('panelPa.inicio.index_misCitasPa');
         // })->name('misCitasPa');
+
+        Route::resource('CitasPa', App\Http\Controllers\CitasPaController::class);
 
         Route::get('/recursosPa', function () {
             return view('panelPa.inicio.recursosPa');

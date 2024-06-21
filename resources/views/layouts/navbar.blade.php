@@ -25,7 +25,7 @@
                     </button>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12">
-                    <a href="#" class="text-xl font-semibold leading-6 text-gray-900">Precios</a>
+                    {{-- <a href="#" class="text-xl font-semibold leading-6 text-gray-900">Precios</a> --}}
                     <a href="{{ route('preguntasF') }}" class="text-xl font-semibold leading-6 text-gray-900">Preguntas Frecuentes</a>
                     <a href="{{ route('psicologos') }}" class="text-xl font-semibold leading-6 text-gray-900">Psicologos en linea</a>
                 </div>
@@ -64,7 +64,7 @@
                     <div class="mt-6 flow-root">
                         <div class="-my-6 divide-y divide-gray-500/10">
                             <div class="space-y-2 py-6">
-                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Precios</a>
+                                {{-- <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Precios</a> --}}
                                 <a href="{{ route('preguntasF') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Preguntas Frecuentes</a>
                                 <a href="{{ route('psicologos') }}" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Psicologos en linea</a>
                             </div>

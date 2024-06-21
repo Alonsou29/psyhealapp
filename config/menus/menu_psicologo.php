@@ -41,7 +41,7 @@ return [
     ],
     [
         'text' => 'Mis Citas',
-        'url' => '/misCitasPs',
+        'url' => '/Citas',
         'icon' => 'far fa-calendar-check',
         'label_color' => 'success',
     ],
@@ -68,7 +68,7 @@ return [
 [
     'text' => 'Chat',
     'url' => '/chat',
-    'icon' => 'fas fa-comments', 
+    'icon' => 'fas fa-comments',
     'label_color' => 'success',
 ],
     ['header' => 'account_settings'],

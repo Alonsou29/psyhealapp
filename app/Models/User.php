@@ -105,4 +105,7 @@ class User extends Authenticatable
     }
 
 
+    public function adminlte_image(){
+       return '/storage/{{auth()->user()->profile_photo_path}}';
+    }
 }

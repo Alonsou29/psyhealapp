@@ -5,6 +5,9 @@
         <x-authentication-card-logo />
     </x-slot>
 
+    <!-- Agregar esto en la sección <head> de tu plantilla -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     
     <div class="min-h-screen bg-login text-gray-900 flex justify-center">
         <div class="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-start flex-1">
@@ -108,6 +111,22 @@
                             <button type="button" id="nextBtn" class="bg-blue-500 text-white px-4 py-2 rounded-md">Siguiente</button>
                         </div>
 
+                        @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+                <div class="mt-4">
+                    <x-label for="terms">
+                        <div class="flex items-center">
+                            <x-checkbox name="terms" id="terms" required />
+
+                            <div class="ms-2">
+                                {!! __('Acepto los :terminos_de_servicio y la :politica_de_privacidad', [
+                                        'terminos_de_servicio' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Términos de servicio').'</a>',
+                                        'politica_de_privacidad' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Política de privacidad').'</a>',
+                                ]) !!}
+                            </div>
+                        </div>
+                    </x-label>
+                </div>
+            @endif
                         <div class="flex items-center justify-end mt-4">
                             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                                 {{ __(' Estas registrado?') }}
@@ -164,4 +183,37 @@
 
         showStep(currentStep);
     </script>
+
+<script>
+    document.getElementById('birthdate').addEventListener('change', function () {
+        const birthdate = new Date(this.value);
+        const today = new Date();
+        let age = today.getFullYear() - birthdate.getFullYear();
+        const m = today.getMonth() - birthdate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthdate.getDate())) {
+            age--;
+        }
+
+        if (age < 18) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Debes tener al menos 18 años para registrarte.",
+            });
+            this.value = ""; // Clear the invalid input
+        }
+    });
+
+    document.querySelector('form').addEventListener('submit', function (event) {
+        const birthdate = document.getElementById('birthdate').value;
+        if (!birthdate) {
+            event.preventDefault();
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Por favor, ingresa una fecha de nacimiento válida.",
+            });
+        }
+    });
+</script>
 </x-guest-layout>

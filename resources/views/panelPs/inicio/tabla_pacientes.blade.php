@@ -7,9 +7,9 @@
 @stop
 
 @section('content')
-<!-- component -->
-<div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5">
-  <table class="min-w-full border-collapse bg-white text-left text-sm text-gray-500">
+
+<div >
+  <table id="Tablapacientes" class="min-w-full border-collapse bg-white text-left text-sm text-gray-500">
     <thead class="bg-contenidocarta">
       <tr>
         <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Nombre</th>
@@ -32,7 +32,6 @@
           </div>
           <div class="text-sm sm:text-xs">
             <div class="font-medium text-gray-700">Rubielena López</div>
-            <div class="text-gray-400">rubielena151@gmail.com</div>
           </div>
         </th>
         <td class="px-6 py-4 text-center sm:px-4 sm:py-2 hidden md:table-cell">0412-0533144</td>
@@ -91,4 +90,56 @@
 </div>
 @stop
 
+@section ('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.2/css/buttons.dataTables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+@endsection
+
+@section ('js')
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/dataTables.buttons.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js"></script>
+
+
+    <script>
+        new DataTable('#Tablapacientes', {
+            layout: {
+                topStart: {
+                    buttons: [
+                        {
+                            extend: 'copyHtml5',
+                            text: '<i class="fa fa-files-o"></i>',
+                            titleAttr: 'Copy'
+                        },
+                        {
+                            extend: 'excelHtml5',
+                            text: '<i class="fa fa-file-excel-o"></i>',
+                            titleAttr: 'Excel'
+                        },
+                        {
+                            extend: 'csvHtml5',
+                            text: '<i class="fa fa-file-text-o"></i>',
+                            titleAttr: 'CSV'
+                        },
+                        {
+                            extend: 'pdfHtml5',
+                            text: '<i class="fa fa-file-pdf-o"></i>',
+                            titleAttr: 'PDF'
+                        }
+                    ]
+                }
+            }
+        });
+    </script>
+    
+
+
+
+@endsection
 

@@ -15,16 +15,17 @@
 <div class="container mx-auto px-4">
     <div class="flex justify-center">
         <div class="w-full md:w-8/12 lg:w-6/12">
+
+            @if($post->imagen)
+                <div class="flex justify-center mt-2 mb-2">
+                    <img src="/img/foros/{{$post->imagen}}" class="tamaño_imagen_foro">
+                </div>
+            @endif
             <div class="text-center mt-2">
                 <div class="bg-gray-800 text-white rounded-full inline-block p-2">
                     <p>{{$post->descripcion}}</p>
                 </div>
             </div>
-            @if($post->imagen)
-                <div class="flex justify-center mb-4">
-                    <img src="/img/foros/{{$post->imagen}}" class="w-1/2 md:w-1/3 lg:w-1/4 h-auto rounded">
-                </div>
-            @endif
             @include('comentarios.lista', ['lista' => $post->comentarios])
             @include('comentarios.formulario')
         </div>

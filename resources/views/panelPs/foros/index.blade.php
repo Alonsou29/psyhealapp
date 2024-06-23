@@ -12,8 +12,8 @@
             <div class="mb-8 mt-2">
                 <a href="{{route('posts.create')}}" class="bg-sky-600 hover:bg-cyan-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-8 ">Crear</a>
             </div>
-            <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-">
-                <table class="min-w-full border-collapse bg-white text-left text-sm text-gray-500">
+            <div >
+                <table id="Tablaforos" class="min-w-full border-collapse bg-white text-left text-sm text-gray-500">
                     <thead class="bg-contenidocarta">
                         <tr>
                             <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">ID</th>
@@ -54,3 +54,22 @@
     </div>
 </div>
 @stop
+
+@section ('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css">
+
+
+@endsection
+
+@section ('js')
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
+
+    <script>
+        new DataTable('#Tablaforos');
+
+    </script>
+
+@endsection

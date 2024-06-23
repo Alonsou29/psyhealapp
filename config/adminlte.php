@@ -351,6 +351,16 @@ return [
                 ],
             ],
         ],
+            'jQuery' => [
+        'active' => true,
+        'files' => [
+            [
+                'type' => 'js',
+                'asset' => false,
+                'location' => '//code.jquery.com/jquery-3.3.1.min.js',
+            ],
+        ],
+    ],
         'Select2' => [
             'active' => false,
             'files' => [

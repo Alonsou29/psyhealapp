@@ -66,3 +66,11 @@
         max-width: 90vw; /* Limita el ancho máximo para mantener un margen en pantallas muy pequeñas */
     }
 }
+
+
+.tamaño_imagen_foro {
+    width: 300px;
+    height: 300px;
+    object-fit:contain; /* Escala la imagen para llenar el contenedor */
+    border-radius: 2px; /* Aplica bordes redondeados */
+}

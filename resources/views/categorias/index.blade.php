@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
         <div class="col-md-7"> <!-- Reducir el ancho de la columna -->
             <div class="max-w-2xl"> <!-- Establecer el ancho máximo -->
-                <table class="min-w-full table-auto border-collapse bg-white text-left text-sm text-gray-500">
+                <table id="categoria" class="min-w-full table-auto border-collapse bg-white text-left text-sm text-gray-500">
                     <thead class="bg-contenidocarta">
                         <tr>
                             <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Nombre</th>
@@ -39,3 +39,23 @@
     </div>
 </div>
 @stop
+
+@section ('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css">
+
+
+@endsection
+
+@section ('js')
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
+
+    
+    <script>
+        new DataTable('#categoria');
+
+    </script>
+
+@endsection

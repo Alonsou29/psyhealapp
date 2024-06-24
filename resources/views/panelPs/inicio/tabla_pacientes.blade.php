@@ -13,8 +13,8 @@
     <thead class="bg-contenidocarta">
       <tr>
         <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Nombre</th>
-        <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center hidden md:table-cell">Teléfono</th>
-        <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center hidden lg:table-cell">Género</th>
+        <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center ">Teléfono</th>
+        <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Género</th>
         <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Diagnóstico</th>
         <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center"></th>
       </tr>
@@ -34,8 +34,8 @@
             <div class="font-medium text-gray-700">Rubielena López</div>
           </div>
         </th>
-        <td class="px-6 py-4 text-center sm:px-4 sm:py-2 hidden md:table-cell">0412-0533144</td>
-        <td class="px-6 py-4 text-center sm:px-4 sm:py-2 hidden lg:table-cell">Femenino</td>
+        <td class="px-6 py-4 text-center sm:px-4 sm:py-2 ">0412-0533144</td>
+        <td class="px-6 py-4 text-center sm:px-4 sm:py-2 ">Femenino</td>
         <td class="px-6 py-4 text-center sm:px-4 sm:py-2">
           <span class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600 sm:text-xs sm:px-1 sm:py-0.5">
             Ansiedad
@@ -94,11 +94,15 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.2/css/buttons.dataTables.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.dataTables.css">
+  
 
 @endsection
 
 @section ('js')
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.dataTables.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.0.2/js/dataTables.buttons.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.dataTables.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -109,6 +113,7 @@
 
     <script>
         new DataTable('#Tablapacientes', {
+          responsive: true,
             layout: {
                 topStart: {
                     buttons: [
@@ -133,9 +138,9 @@
                             titleAttr: 'PDF'
                         }
                     ]
+                  }
                 }
-            }
-        });
+        })
     </script>
     
 

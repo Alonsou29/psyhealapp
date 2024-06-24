@@ -14,8 +14,8 @@ return [
     |
     */
 
-    'title' => 'Panel',
-    'title_prefix' => '',
+    'title' => 'Psyheal',
+    'title_prefix' => 'Panel',
     'title_postfix' => '',
 
     /*
@@ -156,7 +156,7 @@ return [
     'layout_boxed' => null,
     'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => true,
-    'layout_fixed_footer' => true,
+    'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
     /*

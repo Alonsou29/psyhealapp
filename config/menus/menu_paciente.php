@@ -3,7 +3,7 @@
 return [
     [
         'type' => 'navbar-search',
-        'text' => 'search',
+        'text' => 'search, text-secondary',
         'topnav_right' => true,
     ],
     [

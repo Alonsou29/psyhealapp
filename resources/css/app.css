@@ -74,3 +74,11 @@
     object-fit:contain; /* Escala la imagen para llenar el contenedor */
     border-radius: 2px; /* Aplica bordes redondeados */
 }
+
+
+.content-wrapper {
+
+    background-color: #f4f6f9; /* Asegúrate de que el color de fondo esté definido */
+    overflow: scroll; /* Asegura que el contenido pueda desplazarse si es necesario */
+}
+

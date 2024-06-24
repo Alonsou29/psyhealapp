@@ -15,7 +15,7 @@
             <div class="sm:col-span-1 lg:col-span-1 sm:col-start-1 lg:col-start-1">
                 <div class="bg-cartas shadow rounded-lg p-6">
                     <div class="flex flex-col items-center">
-                        <img src="https://www.ensalza.com/blog/wp-content/uploads/Diseno-web-psicologos-1024x612.jpg"
+                        <img src="/storage/{{auth()->user()->profile_photo_path}}"
                             class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0">
                         <h1 class="text-xl font-bold text-center">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</h1>
                         <p class="text-gray-700">Psicóloga</p>

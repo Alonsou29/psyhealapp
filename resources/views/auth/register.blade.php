@@ -62,32 +62,32 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
                                     <x-label for="first_name" value="{{ __('Nombre:') }}" />
-                                    <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="given-name" required />
+                                    <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="given-name" required pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '').slice(0, 20)" />
                                 </div>
 
                                 <div>
                                     <x-label for="second_name" value="{{ __('Segundo Nombre:') }}" />
-                                    <x-input id="second_name" class="block mt-1 w-full" type="text" name="second_name" :value="old('second_name')" autocomplete="given-name" required />
+                                    <x-input id="second_name" class="block mt-1 w-full" type="text" name="second_name" :value="old('second_name')" autocomplete="given-name" required pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '').slice(0, 20)" />
                                 </div>
 
                                 <div>
                                     <x-label for="last_name" value="{{ __('Apellido:') }}" />
-                                    <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autocomplete="family-name" required/>
+                                    <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autocomplete="family-name" required pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '').slice(0, 24)" />
                                 </div>
 
                                 <div>
                                     <x-label for="second_last_name" value="{{ __('Segundo Apellido:') }}" />
-                                    <x-input id="second_last_name" class="block mt-1 w-full" type="text" name="second_last_name" :value="old('second_last_name')" autocomplete="family-name" required/>
+                                    <x-input id="second_last_name" class="block mt-1 w-full" type="text" name="second_last_name" :value="old('second_last_name')" autocomplete="family-name" required pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '').slice(0, 24)" />
                                 </div>
 
                                 <div>
                                     <x-label for="cedula" value="{{ __('Cedula:') }}" />
-                                    <x-input id="cedula" class="block mt-1 w-full border border-gray-300 rounded-md px-4 py-2" type="text" name="cedula" :value="old('cedula')" autocomplete="off" required />
+                                    <x-input id="cedula" class="block mt-1 w-full border border-gray-300 rounded-md px-4 py-2" type="text" name="cedula" :value="old('cedula')" autocomplete="off" required pattern="\d+" inputmode="numeric" maxlength="8" oninput="this.value = this.value.replace(/[^\d]/g, '').slice(0, 8)" placeholder="xxxxxxxx" />
                                 </div>
 
                                 <div>
                                     <x-label for="telefono" value="{{ __('Teléfono:') }}" />
-                                    <x-input id="telefono" class="block mt-1 w-full border border-gray-300 rounded-md px-4 py-2" type="text" name="telefono" :value="old('telefono')" autocomplete="tel" required/>
+                                    <x-input id="telefono" class="block mt-1 w-full border border-gray-300 rounded-md px-4 py-2" type="text" name="telefono" :value="old('telefono')" autocomplete="tel" required pattern="\d+" inputmode="numeric" maxlength="11" oninput="this.value = this.value.replace(/[^\d]/g, '').slice(0, 11)" placeholder="04xx-xxx-xxx" />
                                 </div>
 
                                 <div>

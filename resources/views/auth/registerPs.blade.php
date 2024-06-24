@@ -58,32 +58,32 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
                                     <x-label for="first_name" value="{{ __('Nombre:') }}" />
-                                    <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="given-name" />
+                                    <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus autocomplete="given-name" pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '').slice(0, 20)" />
                                 </div>
 
                                 <div>
                                     <x-label for="second_name" value="{{ __('Segundo Nombre:') }}" />
-                                    <x-input id="second_name" class="block mt-1 w-full" type="text" name="second_name" :value="old('second_name')" autocomplete="given-name" />
+                                    <x-input id="second_name" class="block mt-1 w-full" type="text" name="second_name" :value="old('second_name')" autocomplete="given-name" pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '').slice(0, 20)" />
                                 </div>
 
                                 <div>
                                     <x-label for="last_name" value="{{ __('Apellido:') }}" />
-                                    <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autocomplete="family-name" />
+                                    <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autocomplete="family-name" pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '').slice(0, 24)" />
                                 </div>
 
                                 <div>
                                     <x-label for="second_last_name" value="{{ __('Segundo Apellido:') }}" />
-                                    <x-input id="second_last_name" class="block mt-1 w-full" type="text" name="second_last_name" :value="old('second_last_name')" autocomplete="family-name" />
+                                    <x-input id="second_last_name" class="block mt-1 w-full" type="text" name="second_last_name" :value="old('second_last_name')" autocomplete="family-name" pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '').slice(0, 24)" />
                                 </div>
 
                                 <div>
                                     <x-label for="cedula" value="{{ __('Cedula:') }}" />
-                                    <x-input id="cedula" class="block mt-1 w-full border border-gray-300 rounded-md px-4 py-2" type="text" name="cedula" :value="old('cedula')" autocomplete="off" />
+                                    <x-input id="cedula" class="block mt-1 w-full border border-gray-300 rounded-md px-4 py-2" type="text" name="cedula" :value="old('cedula')" autocomplete="off" pattern="\d+" inputmode="numeric" maxlength="8" oninput="this.value = this.value.replace(/[^\d]/g, '').slice(0, 8)" placeholder="xxxxxxxx" />
                                 </div>
 
                                 <div>
                                     <x-label for="telefono" value="{{ __('Teléfono:') }}" />
-                                    <x-input id="telefono" class="block mt-1 w-full border border-gray-300 rounded-md px-4 py-2" type="text" name="telefono" :value="old('telefono')" autocomplete="tel" />
+                                    <x-input id="telefono" class="block mt-1 w-full border border-gray-300 rounded-md px-4 py-2" type="text" name="telefono" :value="old('telefono')" autocomplete="tel" pattern="\d+" inputmode="numeric" maxlength="11" oninput="this.value = this.value.replace(/[^\d]/g, '').slice(0, 11)" placeholder="04xx-xxx-xxx" />
                                 </div>
 
                                 <div>
@@ -106,22 +106,22 @@
                         <div class="step hidden">
                             <div class="mt-4">
                                 <x-label for="universidad" value="{{ __('Universidad:') }}" />
-                                <x-input id="universidad" class="block mt-1 w-full" type="text" name="universidad" :value="old('universidad')" required autocomplete="off" />
+                                <x-input id="universidad" class="block mt-1 w-full" type="text" name="universidad" :value="old('universidad')" required autocomplete="off" pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '')" />
                             </div>
 
                             <div class="mt-4">
                                 <x-label for="diploma" value="{{ __('Diploma:') }}" />
-                                <x-input type="file" id="diploma" class="block mt-1 w-full" type="text" name="diploma" :value="old('diploma')" required autocomplete="off" />
+                                <x-input type="file" id="diploma" class="block w-full mt-2 bg-white shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="diploma" :value="old('diploma')" required autocomplete="off" />
                             </div>
 
                             <div class="mt-4">
                                 <x-label for="especialidad" value="{{ __('Especialidad:') }}" />
-                                <x-input id="especialidad" class="block mt-1 w-full" type="text" name="especialidad" :value="old('especialidad')" required autocomplete="off" />
+                                <x-input id="especialidad" class="block mt-1 w-full" type="text" name="especialidad" :value="old('especialidad')" required autocomplete="off" pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '')" />
                             </div>
 
                             <div class="mt-4">
                                 <x-label for="descripcion" value="{{ __('Descripción:') }}" />
-                                <textarea id="descripcion" class="block mt-1 w-full border-gray-300 rounded-md" name="descripcion" rows="4" :value="old('descripcion')" required></textarea>
+                                <textarea id="descripcion" class="block mt-1 w-full border-gray-300 rounded-md" name="descripcion" rows="4" :value="old('descripcion')" required pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '')" ></textarea>
                             </div>
                             <div class="form-group mb-4">
                                 <label for="imagen" class="block text-gray-700 text-sm font-bold mb-2">Imagen</label>

@@ -1,4 +1,3 @@
-
 <div>
     <x-form-section submit="updateProfileInformation">
         <x-slot name="form">
@@ -10,7 +9,7 @@
                            wire:model="photo"
                            x-ref="photo"
                            x-on:change="
-                               photoName = $refs.photo.files[0].first_name;
+                               photoName = $refs.photo.files[0].name;
                                const reader = new FileReader();
                                reader.onload = (e) => {
                                    photoPreview = e.target.result;
@@ -154,98 +153,21 @@
             </x-button>
         </x-slot>
     </x-form-section>
-
- <!-- Modal para mostrar el resultado -->
- <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modalContent">
-                <p id="modalMessage"></p>
-                <img id="successImage" src="https://www.freeiconspng.com/thumbs/success-icon/success-icon-10.png" style="display: none; max-width: 100px; margin: 0 auto;" />
-            </div>
-        </div>
-    </div>
-
-    <!-- Estilos CSS para el modal -->
-    <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-        }
-
-        .modal-content {
-            background-color: #E2F3FB;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
-            position: relative;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
-
-    <!-- Script JavaScript para manejar el modal -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const saveButton = document.getElementById('saveButton');
-            const modal = document.getElementById('myModal');
-            const modalMessage = document.getElementById('modalMessage');
-            const successImage = document.getElementById('successImage');
-            const modalContent = document.getElementById('modalContent');
-            const closeButton = document.getElementsByClassName("close")[0];
-
-            saveButton.addEventListener('click', function() {
-                // Simular respuesta del servidor
-                const savedSuccessfully = true; // Cambiar a false para simular error
-                const errorMessage = "No se pudieron guardar los cambios.";
-
-                if (savedSuccessfully) {
-                    modalMessage.innerText = "Cambios guardados exitosamente.";
-                    successImage.style.display = "block";
-                } else {
-                    modalMessage.innerText = errorMessage;
-                    successImage.style.display = "none";
-                }
-
-                modal.style.display = "block";
-                setTimeout(function() {
-                    modal.style.display = "none";
-                }, 5000); // Cambiado a 5000 milisegundos = 5 segundos
-            });
-
-            closeButton.onclick = function() {
-                modal.style.display = "none";
-            };
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            };
-        });
-    </script>
 </div>
+
+<!-- Sweetalert2 CDN -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Script de JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Escuchar evento 'saved' de Livewire
+        Livewire.on('saved', function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Éxito',
+                text: 'Tu información de perfil ha sido actualizada correctamente.',
+            });
+        });
+    });
+</script>

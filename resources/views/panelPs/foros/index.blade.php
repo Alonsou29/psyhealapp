@@ -19,7 +19,7 @@
                             <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">ID</th>
                             <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Nombre</th>
                             <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Descripción</th>
-                            <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Acción</th>
+                            <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center"></th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100 border-t border-gray-100">
@@ -58,7 +58,7 @@
 @section ('css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.2/css/responsive.bootstrap5.css">
 
 @endsection
 
@@ -66,9 +66,13 @@
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.2/js/dataTables.responsive.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.2/js/responsive.bootstrap5.js"></script>
 
     <script>
-        new DataTable('#Tablaforos');
+        new DataTable('#Tablaforos', {
+            responsive: true
+        });
 
     </script>
 

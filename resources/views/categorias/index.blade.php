@@ -54,7 +54,9 @@
 
     
     <script>
-        new DataTable('#categoria');
+        $('#categoria').DataTable( {
+            responsive: true
+        } );
 
     </script>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cita;
+use App\Models\Paciente;
 
 class CitasPaController extends Controller
 {
@@ -12,7 +13,8 @@ class CitasPaController extends Controller
      */
     public function index()
     {
-        $citas = Cita::all() ;
+        $paciente= Paciente::find(auth()->user()->id);
+        $citas = Cita::where('paciente_id', $paciente->id)->get();
         return view('PanelPa.inicio.index_misCitasPa', compact("citas"));
     }
 

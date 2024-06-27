@@ -1,11 +1,10 @@
 <x-guest-layout>
-
     <x-slot name="logo">
         <x-authentication-card-logo />
     </x-slot>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    
+
     <div class="min-h-screen bg-login text-gray-900 flex justify-center">
         <div class="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-start flex-1">
             <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">

@@ -1,6 +1,22 @@
 @extends('layouts.navbar')    
 @vite('resources/css/app.css')
 
+
+
+<div id="marketing-banner" tabindex="-1" class="fixed mt-14 z-50 flex flex-col md:flex-row justify-between w-[calc(100%-2rem)] p-4 -translate-x-1/2 bg-white border border-gray-100 rounded-lg shadow-sm lg:max-w-7xl left-1/2 top-6 dark:bg-sky-100 dark:border-gray-600">
+    <div class="flex flex-col items-start mb-3 me-4 md:items-center md:flex-row md:mb-0">
+        <a href="https://flowbite.com/" class="flex items-center mb-2 border-gray-200 md:pe-4 md:me-4 md:border-e md:mb-0 dark:border-gray-600">
+            <img src="https://www.dropbox.com/scl/fi/4n4wdkem2wqbem18a2psx/logo.png?rlkey=devzl4gbkqlzc5mwehmvo7d8r&st=93ywi7dl&raw=1" class="h-6 me-2" alt="Flowbite Logo">
+        </a>
+        <p class="flex items-center text-sm font-normal text-gray-900 dark:text-gray-900">En psyheal te proporcionamos un metodo de diagnostico certero, el Test Dass-21</p>
+    </div>
+    <div class="flex items-center flex-shrink-0">
+        <a href="{{ route('test-dass') }}" class="px-5 py-2 me-2 text-xs font-medium text-white bg-fondo rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Inicia el Test Dass-21</a>
+    </div>
+</div>
+
+
+
     <div class="bg-white">
 
 
@@ -9,7 +25,7 @@
       <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#02B9F3] to-[#93E1ED] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
     </div>
 <div >
-    <div class="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
+    <div class=" pt-20 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
       <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
         <div class="sm:max-w-lg">
           <h1 class="font text-2xl font-bold  text-gray-900 sm:text-4xl">HABLA CON UN PSICÓLOGO ONLINE DE FORMA FÁCIL, SEGURA Y PRIVADA</h1>
@@ -17,16 +33,15 @@
           paz.</p>
         </div>
         <div>
-          <div class="mt-10">
-            <!-- Decorative image grid -->
-            <div aria-hidden="true" class="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl">
-              <div class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
-                <div class="flex items-center space-x-6 lg:space-x-8">
-                  <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                  </div>
-                </div>
-              </div>
+          <div class="mt-2 mb-4">
+          <div class="flex -space-x-2">
+            <img class="z-40 inline-block border border-cyan-500 h-10 w-10 rounded-full ring-2 ring-white ring-opacity-50" src="https://www.dropbox.com/scl/fi/unewghmwdvni8ioqn66tk/lucas.jpg?rlkey=w29qulooa4dzfmciolgzf1fhr&st=04magh82&raw=1" alt="">
+            <img class="z-30 inline-block border border-cyan-500 h-10 w-10 rounded-full ring-2 ring-white ring-opacity-50" src="https://www.dropbox.com/scl/fi/xxdqlws3nwd1dr3jsvetc/i-aki.jpg?rlkey=7d9slpaw1fs1fug3oxrtkl3gt&st=hk4484kx&raw=1" alt="">
+            <img class="z-20 inline-block border border-cyan-500 h-10 w-10 rounded-full ring-2 ring-white ring-opacity-50" src="https://www.dropbox.com/scl/fi/jigkke8hc7vbv2hcuwa0m/yuqi.jpg?rlkey=kcaht7uou4i8d8hk6z4kns8pc&st=r2sjdzj8&raw=1" alt="">
+            <img class="z-10 inline-block border border-cyan-500 h-10 w-10 rounded-full ring-2 ring-white ring-opacity-50" src="https://www.dropbox.com/scl/fi/dx5e0x2k9njpg98n258ss/Q44vA_5f.jpg?rlkey=wbqfxkargr2s5z3oszc0mtt04&st=m2iaukr8&raw=1" alt="">
+        </div>
             </div>
+            
 
             <a href="{{ route('register') }}" class="inline-block rounded-md border border-transparent bg-fondo py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">Comienza Ahora!</a>
           </div>
@@ -35,7 +50,7 @@
     </div>
   </div>
   
-  <section class="pb-10 bg-blueGray-200 -mt-24">
+  <section class="pb-10 bg-blueGray-200 -mt-28">
     <div class="container mx-auto px-4">
         <div class="flex flex-wrap">
             <div class="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
@@ -196,10 +211,10 @@
                   <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-black">Registros</h2>
                   <ul class="text-gray-500 dark:text-gray-400 font-medium">
                       <li class="mb-4">
-                          <a href="https://flowbite.com/" class="hover:underline">Paciente</a>
+                          <a href="{{ route('register') }}" class="hover:underline">Paciente</a>
                       </li>
                       <li>
-                          <a href="https://tailwindcss.com/" class="hover:underline">Psicólogo</a>
+                          <a href="{{ route('registerPs') }}" class="hover:underline">Psicólogo</a>
                       </li>
                   </ul>
               </div>
@@ -207,7 +222,7 @@
                   <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-black">Diagnósticos</h2>
                   <ul class="text-gray-500 dark:text-gray-400 font-medium">
                       <li class="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Dass-21</a>
+                          <a href="{{ route('test-dass') }}" class="hover:underline ">Dass-21</a>
                       </li>
                   </ul>
               </div>
@@ -218,7 +233,7 @@
                           <a href="#" class="hover:underline">Pagos</a>
                       </li>
                       <li>
-                          <a href="#" class="hover:underline">Catalogo Psicólogos</a>
+                          <a href="{{ route('psicologos') }}" class="hover:underline">Catalogo Psicólogos</a>
                       </li>
                   </ul>
               </div>

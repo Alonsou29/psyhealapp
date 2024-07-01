@@ -103,6 +103,11 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\Chat')->withPivot('color','active')
         ->withTimestamps();
     }
+    
+    // Relación con resultados del test DASS
+    public function dassResults(){
+        return $this->hasMany('App\Models\DassResult');
+    }
 
 
     public function adminlte_image(){

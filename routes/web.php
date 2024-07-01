@@ -8,6 +8,21 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\loginPaciente;
 use App\Livewire\ChatComponent;
 
+
+// routes/web.php
+
+use App\Http\Controllers\TestDassController;
+use App\Http\Controllers\ResultadosController;
+
+Route::get('/resultados', [ResultadosController::class, 'show'])->name('resultados');
+Route::post('/guardar-resultados', [ResultadosController::class, 'store'])->name('guardar-resultados');
+
+
+Route::get('/test-dass', [TestDassController::class, 'index'])->name('test-dass');
+Route::post('/guardar-resultados', [ResultadosController::class, 'store'])->name('guardar-resultados');
+Route::get('/resultados', [ResultadosController::class, 'show'])->name('resultados');
+
+
 // principal
 Route::get('/', function () {
     return view('principal.welcome');

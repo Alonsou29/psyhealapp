@@ -75,6 +75,11 @@
     border-radius: 2px; /* Aplica bordes redondeados */
 }
 
+.tamaño_imagen_ps {
+    width: 100px;
+    height: 100px;
+}
+
 
 .content-wrapper {
 
@@ -82,6 +87,7 @@
     overflow: scroll; /* Asegura que el contenido pueda desplazarse si es necesario */
 }
 
+/* estilos de cartas welcome */
 .card {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -108,3 +114,9 @@
     font-size: 1rem;
     color: #666;
 }
+
+/* estilos cartas test*/
+
+
+
+

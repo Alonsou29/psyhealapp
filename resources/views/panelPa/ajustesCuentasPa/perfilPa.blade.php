@@ -29,10 +29,10 @@
                     <div class="flex flex-col">
                         <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">Información</span>
                         <ul>
-                            <li class="mb-2">C.I: {{auth()->user()->cedula}}</li>
-                            <li class="mb-2">Telefono: {{auth()->user()->telefono}}</li>
-                            <li class="mb-2">Correo : {{auth()->user()->email}}</li>
-                            <li class="mb-2">Fecha de Ingreso: {{auth()->user()->created_at->format('d-m-Y')}}</li>
+                            <li class="mb-2"><strong>C.I:</strong> {{auth()->user()->cedula}}</li>
+                            <li class="mb-2"><strong>Telefono:</strong> {{auth()->user()->telefono}}</li>
+                            <li class="mb-2"><strong>Correo:</strong> {{auth()->user()->email}}</li>
+                            <li class="mb-2"><strong>Fecha de Ingreso:</strong> {{auth()->user()->created_at->format('d-m-Y')}}</li>
                         </ul>
                     </div>
                 </div>

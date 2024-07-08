@@ -1,9 +1,9 @@
 <div>
-    <x-form-section submit="updateProfileInformation">
+    <x-form-section submit="updateProfileInformation" x-on:submit="return validateForm(event)">
         <x-slot name="form">
             <!-- Profile Photo -->
             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                <div x-data="{photoName: true, photoPreview: null}" class="col-span-6 sm:col-span-4">
+                <div x-data="{photoName: true, photoPreview: null}" class="text-center col-span-6 sm:col-span-4">
                     <!-- Profile Photo File Input -->
                     <input type="file" id="photo" class="hidden"
                            wire:model="photo"
@@ -17,27 +17,27 @@
                                reader.readAsDataURL($refs.photo.files[0]);
                            " />
 
-                    <x-label for="photo" value="{{ __('Photo') }}" />
+                    <x-label for="photo" value="{{ __('Foto') }}" />
 
                     <!-- Current Profile Photo -->
-                    <div class="mt-2" x-show="! photoPreview">
-                        <img src="/storage/{{ Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->first_name }}" class="rounded-full h-20 w-20 object-cover">
+                    <div class="mt-2 object-center m-auto" x-show="! photoPreview">
+                        <img src="/storage/{{ Auth::user()->profile_photo_path }}" alt="{{ Auth::user()->first_name }}" class="m-auto rounded-full h-20 w-20 object-cover">
                     </div>
 
                     <!-- New Profile Photo Preview -->
                     <div class="mt-2" x-show="photoPreview" style="display: none;">
-                        <span class="block rounded-full w-20 h-20 bg-cover bg-no-repeat bg-center"
+                        <span class="block m-auto rounded-full w-20 h-20 bg-cover bg-no-repeat bg-center"
                               x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
                         </span>
                     </div>
 
                     <x-secondary-button class="mt-2 me-2" type="button" x-on:click.prevent="$refs.photo.click()">
-                        {{ __('Select A New Photo') }}
+                        {{ __('Nueva Foto') }}
                     </x-secondary-button>
 
                     @if (Auth::user()->profile_photo_path)
                         <x-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
-                            {{ __('Remove Photo') }}
+                            {{ __('Quitar Foto') }}
                         </x-secondary-button>
                     @endif
 
@@ -47,15 +47,15 @@
 
             <!-- First Name -->
             <div class="col-span-6 sm:col-span-4">
-                <x-label for="first_name" value="{{ __('First Name') }}" />
-                <x-input id="first_name" type="text" class="mt-1 block w-full" wire:model="state.first_name" required autocomplete="first_name" />
+                <x-label for="first_name" value="{{ __('Nombre') }}" />
+                <x-input id="first_name" type="text" class="mt-1 block w-full" wire:model="state.first_name" required autocomplete="first_name" pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '').slice(0, 20)" />
                 <x-input-error for="first_name" class="mt-2" />
             </div>
 
             <!-- Last Name -->
             <div class="col-span-6 sm:col-span-4">
-                <x-label for="last_name" value="{{ __('Last Name') }}" />
-                <x-input id="last_name" type="text" class="mt-1 block w-full" wire:model="state.last_name" required autocomplete="last_name" />
+                <x-label for="last_name" value="{{ __('Apellido') }}" />
+                <x-input id="last_name" type="text" class="mt-1 block w-full" wire:model="state.last_name" required autocomplete="last_name" pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '').slice(0, 24)" />
                 <x-input-error for="last_name" class="mt-2" />
             </div>
 
@@ -85,14 +85,14 @@
             <!-- Cedula -->
             <div class="col-span-3 sm:col-span-4">
                 <x-label for="cedula" value="{{ __('Cédula') }}" />
-                <x-input id="cedula" type="text" class="mt-1 block w-full" wire:model="state.cedula" required />
+                <x-input id="cedula" type="text" class="mt-1 block w-full" wire:model="state.cedula" required pattern="[0-9]{7,8}" inputmode="numeric" minlength="7" maxlength="8" oninput="this.value = this.value.replace(/[^\d]/g, '').slice(0, 8)" placeholder="xxxxxxxx"  />
                 <x-input-error for="cedula" class="mt-2" />
             </div>
 
             <!-- Telefono -->
             <div class="col-span-6 sm:col-span-4">
                 <x-label for="telefono" value="{{ __('Teléfono') }}" />
-                <x-input id="telefono" type="text" class="mt-1 block w-full" wire:model="state.telefono" required />
+                <x-input id="telefono" type="text" class="mt-1 block w-full" wire:model="state.telefono" required pattern="^(0424|0414|0412|0416|0426)\d{7}$" inputmode="numeric" maxlength="11" oninput="this.value = this.value.replace(/[^\d]/g, '').slice(0, 11)" placeholder="04xx-xxx-xxx" />
                 <x-input-error for="telefono" class="mt-2" />
             </div>
 
@@ -122,7 +122,7 @@
 
             <!-- Descripcion  -->
             <div class="col-span-6 sm:col-span-4">
-                <x-label for="Descripcion" value="{{ __('Descripción del Problema') }}" />
+                <x-label for="Descripcion" value="{{ __('Descripción') }}" />
                 <textarea id="Descripcion" class="mt-1 block w-full" wire:model="state.Descripcion" ></textarea>
                 <x-input-error for="Descripcion" class="mt-2" />
             </div>
@@ -148,8 +148,8 @@
                 {{ __('Saved.') }}
             </x-action-message>
 
-            <x-button id="saveButton" wire:loading.attr="disabled" wire:target="photo">
-                {{ __('Save') }}
+            <x-button id="saveButton" wire:loading.attr="disabled" wire:target="photo" class="bg-fondo">
+                {{ __('Guardar Cambios') }}
             </x-button>
         </x-slot>
     </x-form-section>
@@ -170,4 +170,35 @@
             });
         });
     });
+
+    function validateForm(event) {
+        const telefono = document.getElementById("telefono").value;
+        const cedula = document.getElementById("cedula").value;
+
+        // Validación del teléfono
+        const telefonoRegex = /^(0424|0414|0412|0416|0426)\d{7}$/; // Expresión regular para validar teléfonos
+        if (!telefonoRegex.test(telefono)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Teléfono inválido',
+                text: 'El teléfono debe comenzar con 0424, 0414, 0412, 0416 o 0426 seguido de 7 números adicionales.'
+            });
+            event.preventDefault(); // Evita que el formulario se envíe si la validación falla
+            return false;
+        }
+
+        // Validación de la cédula
+        const cedulaRegex = /^[0-9]{7,8}$/; // Expresión regular para validar cédula
+        if (!cedulaRegex.test(cedula)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Cédula inválida',
+                text: 'La cédula debe tener entre 7 y 8 dígitos numéricos.'
+            });
+            event.preventDefault(); // Evita que el formulario se envíe si la validación falla
+            return false;
+        }
+
+        return true;
+    }
 </script>

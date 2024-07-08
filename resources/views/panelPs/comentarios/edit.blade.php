@@ -19,7 +19,7 @@
                     {{-- {!! Form::text('nombre', null, ['class'=>'form-control', 'placeholder'=>'Nombre', 'required']) !!} --}}
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success">modificar</button>
+                    <button type="submit" class="inline-block rounded-md border border-transparent bg-fondo py-1 px-4 text-center font-medium text-white hover:bg-indigo-700">modificar</button>
                     {{-- {!! Form::submit('Crear', ['class'=>'btn btn-primary']) !!} --}}
                 </div>
             </form>

@@ -133,7 +133,7 @@ return [
     |
     */
 
-    'usermenu_enabled' => true,
+    'usermenu_enabled' => false,
     'usermenu_header' => false,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
@@ -437,7 +437,7 @@ return [
             'close_all_other' => true,
             'scroll_left' => true,
             'scroll_right' => true,
-            'fullscreen' => true,
+            'fullscreen' => false,
         ],
         'options' => [
             'loading_screen' => 1000,

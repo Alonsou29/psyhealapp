@@ -2,12 +2,12 @@
 
 return [
     [
-        'type' => 'navbar-search',
+        // 'type' => 'navbar-search',
         'text' => 'search',
         'topnav_right' => true,
     ],
     [
-        'type' => 'fullscreen-widget',
+        'type' => '',
         'topnav_right' => true,
     ],
     [

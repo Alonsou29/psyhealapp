@@ -23,11 +23,12 @@
 
                     <div class="mb-4">
                         <div class="flex items-center">
-                            <div class="flex-1 h-2 bg-blue-500" id="progress-bar"></div>
-                            <div class="flex-1 h-2 bg-gray-300"></div>
+                            <div class="w-full bg-gray-300 rounded-full">
+                                <div id="progress-bar" class="bg-blue-500 text-xs leading-none py-1 text-center text-white rounded-full" style="width: 0%"></div>
+                            </div>
                         </div>
                         <div class="mt-2 text-center">
-                            <span id="stepIndicator">Paso 1 de 3</span>
+                            <span id="stepIndicator">Paso 1 de 2</span>
                         </div>
                     </div>
 
@@ -171,73 +172,190 @@
         }
     </style>
 
-    <script>
-        const steps = document.querySelectorAll('.step');
-        let currentStep = 0;
-        const nextBtn = document.getElementById('nextBtn');
-        const prevBtn = document.getElementById('prevBtn');
-        const stepIndicator = document.getElementById('stepIndicator');
-        const progressBar = document.getElementById('progress-bar');
+<script>
+        var currentStep = 0;
+        var steps = document.querySelectorAll(".step");
+        var nextBtn = document.getElementById("nextBtn");
+        var prevBtn = document.getElementById("prevBtn");
+        var progressBar = document.getElementById("progress-bar");
+        var stepIndicator = document.getElementById("stepIndicator");
 
-        function showStep(n) {
+        function showStep(stepIndex) {
             steps.forEach((step, index) => {
-                step.classList.toggle('hidden', index !== n);
+                step.classList.toggle("hidden", index !== stepIndex);
             });
-            prevBtn.classList.toggle('hidden', n === 0);
-            nextBtn.textContent = n === steps.length - 1 ? 'Registrarse' : 'Siguiente';
-            stepIndicator.textContent = `Paso ${n + 1} de ${steps.length}`;
-            progressBar.style.width = `${(n + 1) * (100 / steps.length)}%`;
+
+            if (stepIndex === 0) {
+                prevBtn.classList.add("hidden");
+                nextBtn.innerHTML = "Siguiente";
+            } else {
+                prevBtn.classList.remove("hidden");
+                nextBtn.innerHTML = "Registrar";
+            }
+
+            stepIndicator.textContent = `Paso ${stepIndex + 1} de ${steps.length}`;
         }
 
-        nextBtn.addEventListener('click', () => {
+        function updateProgressBar() {
+            var progress = ((currentStep + 1) / steps.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        function validateStep1() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const passwordConfirmation = document.getElementById("password_confirmation").value;
+            return email !== "" && password !== "" && passwordConfirmation !== "";
+        }
+
+        function validateStep2() {
+            const first_name = document.getElementById("first_name").value;
+            const second_name = document.getElementById("second_name").value;
+            const last_name = document.getElementById("last_name").value;
+            const second_last_name = document.getElementById("second_last_name").value;
+            const cedula = document.getElementById("cedula").value;
+            const telefono = document.getElementById("telefono").value;
+            const genero = document.getElementById("genero").value;
+            const birthdate = document.getElementById("birthdate").value;
+
+            // Verificar que todos los campos requeridos estén llenos
+            if (
+                first_name === "" ||
+                second_name === "" ||
+                last_name === "" ||
+                second_last_name === "" ||
+                cedula === "" ||
+                telefono === "" ||
+                genero === "disable" ||
+                birthdate === ""
+            ) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Campos requeridos incompletos',
+                    text: 'Por favor completa todos los campos requeridos en este paso.'
+                });
+                return false;
+            }
+
+            // Validación del teléfono
+            const telefonoRegex = /^(0424|0414|0412|0416|0426)-?\d{7}$/; // Expresión regular para validar teléfono
+            if (!telefonoRegex.test(telefono)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Teléfono inválido',
+                    text: 'El teléfono debe comenzar con 0424, 0414, 0412, 0416 o 0426 seguido de 7 números adicionales.'
+                });
+                return false;
+            }
+
+            // Validación de la cédula
+            const cedulaRegex = /^[0-9]{7,8}$/; // Expresión regular para validar cédula
+            if (!cedulaRegex.test(cedula)) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Cédula inválida',
+                    text: 'La cédula debe tener entre 7 y 8 dígitos numéricos.'
+                });
+                return false;
+            }
+
+
+            return true;
+        }
+
+        function validateStep3() {
+            const universidad = document.getElementById("universidad").value;
+            const diploma = document.getElementById("diploma").value;
+            const especialidad = document.getElementById("especialidad").value;
+            const descripcion = document.getElementById("descripcion").value;
+
+            // Verificar que todos los campos requeridos estén llenos
+            if (universidad === "" || diploma === "" || especialidad === "" || descripcion === "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Campos requeridos incompletos',
+                    text: 'Por favor completa todos los campos requeridos en este paso.'
+                });
+                return false;
+            }
+
+            return true;
+        }
+
+        nextBtn.addEventListener("click", () => {
             if (currentStep === steps.length - 1) {
-                document.getElementById('regForm').submit();
+                // Último paso, submit del formulario
+                if (validateStep3()) {
+                    document.getElementById("regForm").submit();
+                }
             } else {
+                if (currentStep === 0 && !validateStep1()) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Campos requeridos incompletos',
+                        text: 'Por favor completa todos los campos requeridos en este paso.'
+                    });
+                    return;
+                } else if (currentStep === 1 && !validateStep2()) {
+                    return;
+                }
+
                 currentStep++;
                 showStep(currentStep);
+                updateProgressBar();
             }
         });
 
-        prevBtn.addEventListener('click', () => {
-            currentStep--;
-            showStep(currentStep);
+        prevBtn.addEventListener("click", () => {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+                updateProgressBar();
+            }
         });
 
         showStep(currentStep);
+        updateProgressBar();
     </script>
 
 <script>
-    document.getElementById('birthdate').addEventListener('change', function () {
-        const birthdate = new Date(this.value);
-        const today = new Date();
-        let age = today.getFullYear() - birthdate.getFullYear();
-        const m = today.getMonth() - birthdate.getMonth();
-        if (m < 0 || (m === 0 && today.getDate() < birthdate.getDate())) {
-            age--;
-        }
+        document.getElementById('birthdate').addEventListener('change', function () {
+            const birthdate = new Date(this.value);
+            const today = new Date();
+            let age = today.getFullYear() - birthdate.getFullYear();
+            const m = today.getMonth() - birthdate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthdate.getDate())) {
+                age--;
+            }
 
-        if (age < 25) {
+            if (age < 25) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Debes tener al menos 25 años para registrarte.",
+                text: "Debes tener al menos 18 años para registrarte.",
+            });
+            this.value = ""; // Clear the invalid input
+        } else if (age > 85) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Debes tener menos de 90 años para registrarte.",
             });
             this.value = ""; // Clear the invalid input
         }
     });
 
-    document.querySelector('form').addEventListener('submit', function (event) {
-        const birthdate = document.getElementById('birthdate').value;
-        if (!birthdate) {
-            event.preventDefault();
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Por favor, ingresa una fecha de nacimiento válida.",
-            });
-        }
-    });
-</script>
-
+        document.querySelector('form').addEventListener('submit', function (event) {
+            const birthdate = document.getElementById('birthdate').value;
+            if (!birthdate) {
+                event.preventDefault();
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Por favor, ingresa una fecha de nacimiento válida.",
+                });
+            }
+        });
+    </script>
 
 </x-guest-layout>

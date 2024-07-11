@@ -29,13 +29,6 @@
                                 <p class="text-gray-700 mb-2">Cédula: {{ $datospsico->cedula }} </p>
                                 <p class="text-gray-700 mb-4">Enfoque: Ansiedad</p>
                             </div>
-                            <div class="p-4">
-                                <form action="{{route('AsignarPsicologo.store')}}" method="POST">
-                                    @csrf
-                                    <input class="hidden" type="text" value="{{$post}}" name="idpsico">
-                                    <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Seleccionar Psicologo</button>
-                                </form>
-                            </div>
                         </div>
                     @endforeach
                 </div>

@@ -58,7 +58,7 @@ return [
     [
         'text' => 'Recursos',
         'url' => '/recursosPs',
-        'icon' => 'fas fa-book-open',
+        'icon' => 'fas fa-book',
         'label_color' => 'success',
     ],
     ['header' => 'FOROS'],

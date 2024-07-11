@@ -143,6 +143,10 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
             return view('panelPa.inicio.tabla_psicologo');
         })->name('psicologo');
 
+        Route::get('/catalogo_psicologos', function () {
+            return view('principal.catalogo_psicologos');
+        })->name('catalogo_psicologos');
+
         Route::get('/psicologo/ver', function () {
             return view('panelPa.inicio.ver_psicologo');
         })->name('verPsicologo');

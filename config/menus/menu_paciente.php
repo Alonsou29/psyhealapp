@@ -27,6 +27,12 @@ return [
         'label_color' => 'success',
     ],
     [
+        'text' => 'Catálogo',
+        'url' => 'catalogo_psicologos',
+        'icon' => 'fas fa-book-open',
+        'label_color' => 'success',
+    ],
+    [
         'text' => 'Psicologo',
         'url' => '/psicologo',
         'icon' => 'fas fa-user-md',
@@ -41,7 +47,7 @@ return [
     [
         'text' => 'Recursos',
         'url' => '/recursosPa',
-        'icon' => 'fas fa-book-open',
+        'icon' => 'fas fa-book',
         'label_color' => 'success',
     ],
     ['header' => 'FOROS'],

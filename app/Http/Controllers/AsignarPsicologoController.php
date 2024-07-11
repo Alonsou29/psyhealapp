@@ -3,19 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cita;
+use App\Models\psicologo_paciente;
 use App\Models\Psicologos;
+use App\Models\Paciente;
+use Illuminate\Support\Facades\Auth;
 
-class CitasController extends Controller
+class AsignarPsicologoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $psicologo = Psicologos::where('id_user', auth()->user()->id)->first();
-        $citas = Cita::where('psicologo_id', $psicologo->id)->get();
-        return view('PanelPs.inicio.index_misCitasPs', compact("citas"));
+        //
     }
 
     /**
@@ -23,7 +23,7 @@ class CitasController extends Controller
      */
     public function create()
     {
-        return view('panelPs.inicio.crearCita');
+        //
     }
 
     /**
@@ -31,11 +31,16 @@ class CitasController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->paciente
+        $id= auth()->user()->id;
+        $psicologo = Psicologos::where('id_user', $request['idpsico'])->first();
+        $paciente = Paciente::where('id_user', $id)->first();
+        $psicolog_paciente = psicologo_paciente::create([
+            'psicologo_id' => $psicologo->id,
+            'paciente_id' => $paciente->id
+        ]);
 
-        // $cita = Cita::create([
+        $psicolog_paciente->save();
 
-        // ]);
     }
 
     /**

@@ -9,7 +9,7 @@
 <div class="container mx-auto py-6">
     <div class="md:w-10/12 lg:w-8/12 mx-auto">
         <div class="bg-cartas shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <form id="formCrearCita" class="mb-4">
+            <form action="{{route('Citas.store')}}" method="POST" class="mb-4">
                 @csrf
                 <div class="mb-4">
                     <label for="paciente" class="block text-gray-700 text-sm font-bold mb-2">Buscar Paciente</label>

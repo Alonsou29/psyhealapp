@@ -203,6 +203,8 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
     });
 });
 
+Route::resource('AsignarPsicologo', App\Http\Controllers\AsignarPsicologoController::class);
+
 // Route::get('/panelPs', function () {
 //     return view('panelPs.index');
 // })->name('panelPs');

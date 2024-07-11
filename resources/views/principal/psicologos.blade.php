@@ -18,6 +18,7 @@
                     @foreach ($psicolos as $psico)
                         @php
                             $datospsico = User::find($psico->id_user);
+                            $post = $datospsico->id
                         @endphp
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                             <div class="w-full h-64">
@@ -27,6 +28,13 @@
                                 <h2 class="text-lg font-bold mb-2">Nombre: {{ $datospsico->first_name }}</h2>
                                 <p class="text-gray-700 mb-2">Cédula: {{ $datospsico->cedula }} </p>
                                 <p class="text-gray-700 mb-4">Enfoque: Ansiedad</p>
+                            </div>
+                            <div class="p-4">
+                                <form action="{{route('AsignarPsicologo.store')}}" method="POST">
+                                    @csrf
+                                    <input class="hidden" type="text" value="{{$post}}" name="idpsico">
+                                    <button  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Seleccionar Psicologo</button>
+                                </form>
                             </div>
                         </div>
                     @endforeach

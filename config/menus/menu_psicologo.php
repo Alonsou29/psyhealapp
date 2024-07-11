@@ -49,6 +49,10 @@ return [
                 'text' => 'Crear Cita',
                 'url' => '/CrearCita',
             ],
+            [
+                'text' => 'Mis Citas',
+                'url' => '/Citas',
+            ],
         ],
     ],
     [

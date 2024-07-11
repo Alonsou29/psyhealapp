@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('psicologo_pacientes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('psicologo_id')->constrained();
             $table->foreignId('paciente_id')->constrained();
+            $table->foreignId('psicologo_id')->references('id')->on('psicologos');
             $table->timestamps();
         });
     }

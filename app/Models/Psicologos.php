@@ -23,4 +23,8 @@ class Psicologos extends Model
     public function cita(){
         return $this->hasOne('App\Models\Cita');
     }
+
+    public function Psicologo_paciente(){
+        return $this->belongsToMany('App\Models\psicologo_paciente');
+    }
 }

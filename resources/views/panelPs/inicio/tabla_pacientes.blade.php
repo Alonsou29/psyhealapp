@@ -109,40 +109,136 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
 
 
     <script>
-        new DataTable('#Tablapacientes', {
-          responsive: true,
-            layout: {
-                topStart: {
-                    buttons: [
-                        {
-                            extend: 'copyHtml5',
-                            text: '<i class="fa fa-files-o"></i>',
-                            titleAttr: 'Copy'
+    new DataTable('#Tablapacientes', {
+        responsive: true,
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copyHtml5',
+                text: '<i class="fa fa-files-o"></i>',
+                titleAttr: 'Copy'
+            },
+            {
+                extend: 'excelHtml5',
+                text: '<i class="fa fa-file-excel-o"></i>',
+                titleAttr: 'Excel'
+            },
+            {
+                extend: 'csvHtml5',
+                text: '<i class="fa fa-file-text-o"></i>',
+                titleAttr: 'CSV'
+            },
+            {
+                text: '<i class="fa fa-file-pdf-o"></i>',
+                titleAttr: 'PDF',
+                action: function (e, dt, button, config) {
+                    var data = dt.buttons.exportData();
+                    var body = [];
+
+                    // Añadir encabezados
+                    body.push([
+                        { text: 'Nombre', style: 'tableHeader' },
+                        { text: 'Email', style: 'tableHeader' },
+                        { text: 'Teléfono', style: 'tableHeader' },
+                        { text: 'Género', style: 'tableHeader' },
+                        { text: 'Diagnóstico', style: 'tableHeader' }
+                    ]);
+
+                    // Añadir datos
+                    data.body.forEach(function (row) {
+                        body.push([
+                            { text: row[0], style: 'tableBody' },
+                            { text: 'ejemplo@correo.com', style: 'tableBody' }, // Sustituye con el email real si lo tienes
+                            { text: row[1], style: 'tableBody' },
+                            { text: row[2], style: 'tableBody' },
+                            { text: row[3], style: 'tableBody' }
+                        ]);
+                    });
+
+                    // Obtener la fecha y hora actual
+                    var now = new Date();
+                    var date = now.toLocaleDateString();
+                    var time = now.toLocaleTimeString();
+
+                    // Definir el documento
+                    var docDefinition = {
+                        content: [
+                            {
+                                image: 'data:image/png;base64,{{ base64_encode(file_get_contents("https://www.dropbox.com/scl/fi/4n4wdkem2wqbem18a2psx/logo.png?rlkey=devzl4gbkqlzc5mwehmvo7d8r&st=93ywi7dl&raw=1")) }}',
+                                width: 150,
+                                height: 50,
+                                alignment: 'center'
+                            },
+                            {
+                                text: 'Registro de Pacientes',
+                                fontSize: 16,
+                                bold: true,
+                                alignment: 'center',
+                                margin: [0, 0, 0, 20]
+                            },
+                            {
+                                table: {
+                                    headerRows: 1,
+                                    widths: ['*', '*', '*', '*', '*'],
+                                    body: body
+                                },
+                                layout: {
+                                    hLineWidth: function (i, node) { return 1; },
+                                    vLineWidth: function (i, node) { return 1; },
+                                    hLineColor: function (i, node) { return 'black'; },
+                                    vLineColor: function (i, node) { return 'black'; },
+                                    paddingLeft: function (i, node) { return 4; },
+                                    paddingRight: function (i, node) { return 4; },
+                                    paddingTop: function (i, node) { return 2; },
+                                    paddingBottom: function (i, node) { return 2; },
+                                    fillColor: function (rowIndex, node, columnIndex) { return null; }
+                                }
+                            }
+                        ],
+                        styles: {
+                            tableHeader: {
+                                fillColor: '#f2f2f2',
+                                color: '#333',
+                                alignment: 'center',
+                                bold: true
+                            },
+                            tableBody: {
+                                alignment: 'center',
+                                fontSize: 10
+                            }
                         },
-                        {
-                            extend: 'excelHtml5',
-                            text: '<i class="fa fa-file-excel-o"></i>',
-                            titleAttr: 'Excel'
+                        header: {
+                            columns: [
+                                { text: 'Fecha: ' + date + ' Hora: ' + time, alignment: 'right', margin: [0, 10, 20, 0], fontSize: 10 }
+                            ]
                         },
-                        {
-                            extend: 'csvHtml5',
-                            text: '<i class="fa fa-file-text-o"></i>',
-                            titleAttr: 'CSV'
-                        },
-                        {
-                            extend: 'pdfHtml5',
-                            text: '<i class="fa fa-file-pdf-o"></i>',
-                            titleAttr: 'PDF'
+                        footer: function (currentPage, pageCount) {
+                            return {
+                                columns: [
+                                    {
+                                        text: 'Página ' + currentPage.toString() + ' de ' + pageCount,
+                                        alignment: 'center',
+                                        fontSize: 10,
+                                        margin: [0, 0, 0, 10]
+                                    }
+                                ]
+                            };
                         }
-                    ]
-                  }
+                    };
+
+                    // Abrir el PDF en una nueva ventana
+                    pdfMake.createPdf(docDefinition).open();
                 }
-        })
-    </script>
-    
+            }
+        ]
+    });
+</script>
+
 
 
 

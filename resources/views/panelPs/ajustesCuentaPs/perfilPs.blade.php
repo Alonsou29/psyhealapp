@@ -1,8 +1,6 @@
 @extends('adminlte::page')
 @vite('resources/css/app.css')
 
-
-
 @section('content_header')
     <h1>    Perfil</h1>
 @stop

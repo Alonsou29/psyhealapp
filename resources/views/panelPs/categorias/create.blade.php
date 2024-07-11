@@ -1,16 +1,15 @@
 @extends('adminlte::page')
 @vite('resources/css/app.css')
 
-
+@section('content_header')
+    <h1 class="text-2xl font-semibold">Crear Categoría</h1>
+@stop
 
 @section('content')
-<div class="bg-cover w-full flex justify-center items-center ">
-    <div class=" mt-4 w-full h-full bg-white bg-opacity-40 backdrop-filter backdrop-blur-lg rounded-3xl">
-        <div class=" mt-10 w-12/12 mx-auto rounded-2xl bg-white p-1 bg-opacity-40 backdrop-filter backdrop-blur-lg">
-            <h1 class="text-center text-3xl font-semibold">Crear Categoría</h1>
+<div class=" justify-center items-center ">
             <div class="container mx-auto">
                 <div class="mt-20 flex justify-center">
-                    <div class="w-full max-w-md">
+                    <div class="w-full md:w-10/12 lg:w-8/12">
                         <form action="{{route('categorias.store')}}" method="POST" class="bg-cartas shadow-md rounded px-8 pt-6 pb-8 mb-4">
                             @csrf
                             <div class='mb-4'>

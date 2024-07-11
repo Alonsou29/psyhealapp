@@ -14,8 +14,8 @@ use App\Livewire\ChatComponent;
 use App\Http\Controllers\TestDassController;
 use App\Http\Controllers\ResultadosController;
 
-Route::get('/resultados', [ResultadosController::class, 'show'])->name('resultados');
-Route::post('/guardar-resultados', [ResultadosController::class, 'store'])->name('guardar-resultados');
+// Route::get('/resultados', [ResultadosController::class, 'show'])->name('resultados');
+// Route::post('/guardar-resultados', [ResultadosController::class, 'store'])->name('guardar-resultados');
 
 
 Route::get('/test-dass', [TestDassController::class, 'index'])->name('test-dass');
@@ -98,6 +98,10 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
         })->name('verPacientes');
 
         Route::resource('Citas', App\Http\Controllers\CitasController::class);
+
+        Route::get('/CrearCita', function () {
+            return view('panelPs.inicio.crearCita');
+        })->name('CrearCita');
 
         Route::get('/recursosPs', function () {
             return view('panelPs.inicio.recursosPs');

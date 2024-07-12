@@ -92,9 +92,17 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
         Route::get('/tablaPa', function () {
             return view('panelPs.inicio.tabla_pacientes');
         })->name('tabla_pacientes');
-
-        Route::get('/tablaPa/verPa', function () {
-            return view('panelPs.inicio.ver_pacientes');
+        
+        Route::get('/ver-paciente/{id}', function ($id) {
+            // Aquí puedes colocar la lógica para obtener los datos del paciente según el $id
+            $paciente = App\Models\Paciente::findOrFail($id);
+            $userPaciente = App\Models\User::findOrFail($paciente->id_user);
+            $diagnostico = App\Models\psicologo_paciente::where('paciente_id', $paciente->id)->first()->diagnostico;
+        
+            // Obtener los resultados del test DASS-21 del paciente
+            $dassResult = App\Models\DassResult::where('user_id', $userPaciente->id)->first();
+        
+            return view('panelPs.inicio.ver_pacientes', compact('userPaciente', 'paciente', 'diagnostico', 'dassResult'));
         })->name('verPacientes');
 
         Route::resource('Citas', App\Http\Controllers\CitasController::class);
@@ -139,9 +147,6 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
             return view('panelPa.index');
         })->name('panelPaciente');
 
-        Route::get('/psicologo', function () {
-            return view('panelPa.inicio.tabla_psicologo');
-        })->name('psicologo');
 
         Route::get('/catalogo_psicologos', function () {
             return view('principal.catalogo_psicologos');

@@ -34,7 +34,7 @@ return [
     ],
     [
         'text' => 'Psicologo',
-        'url' => '/psicologo',
+        'url' => '/psicologo/ver',
         'icon' => 'fas fa-user-md',
         'label_color' => 'success',
     ],

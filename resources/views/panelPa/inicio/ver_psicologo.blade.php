@@ -45,7 +45,7 @@
         </div>
         <div class="grid grid-cols-2 gap-4 px-2">
         <div class="flex flex-col items-start justify-center rounded-2xl bg-contenidocarta bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-            <p class="text-sm text-gray-600">Telefono</p>
+            <p class="text-sm text-gray-600">Teléfono</p>
             <p class="text-base font-medium text-navy-700 dark:text-white">{{$UserPsico->telefono}}</p>
         </div>
 
@@ -67,7 +67,16 @@
     </div>
     </div>
 @else
-    <h2>no tienes asignado psicologo</h2>
+
+<div class="container">
+  <div class="container">
+    <div class="bg-gradiente mt-10 font-[sans-serif] p-6 rounded-3xl">
+    <div class="container mx-auto flex flex-col justify-center items-center">
+        <h2 class="text-white text-3xl font-bold mb-4"> No tienes Psicólogo Asignado</h2>
+    </div>
+</div>
+
+
 @endif
 
 

@@ -7,6 +7,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\loginPaciente;
 use App\Livewire\ChatComponent;
+use App\Http\Controllers\CitasController;
+
+
+
 
 
 // routes/web.php
@@ -21,6 +25,7 @@ use App\Http\Controllers\ResultadosController;
 Route::get('/test-dass', [TestDassController::class, 'index'])->name('test-dass');
 Route::post('/guardar-resultados', [ResultadosController::class, 'store'])->name('guardar-resultados');
 Route::get('/resultados', [ResultadosController::class, 'show'])->name('resultados');
+Route::resource('Citas', CitasController::class);
 
 
 // principal

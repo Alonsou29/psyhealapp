@@ -34,31 +34,35 @@ class CitasController extends Controller
     public function store(Request $request)
     {
         $pacienteUser = User::where('cedula', $request['paciente'])->first();
+        if (!$pacienteUser) {
+            return response()->json(['success' => false, 'message' => 'No hay paciente registrado con esa cédula']);
+        }
+    
         $paciente = Paciente::where('id_user', $pacienteUser->id)->first();
-
         $psico = Psicologos::where('id_user', auth()->user()->id)->first();
-        $citasVerfi = Cita::where('paciente_id', $pacienteUser->id);
-        if(empty($citasVerfi)){
-            if(!empty($paciente)){
+        $citasVerfi = Cita::where('paciente_id', $pacienteUser->id)->first();
+    
+        if (empty($citasVerfi)) {
+            if (!empty($paciente)) {
                 $cita = Cita::create([
-                    'motivo'=>$request->motivo,
-                    'fechaConsulta'=>$request->fecha,
-                    'horaConsulta'=>$request->hora,
-                    'paciente_id'=>$paciente->id,
-                    'psicologo_id'=>$psico->id,
+                    'motivo' => $request->motivo,
+                    'fechaConsulta' => $request->fecha,
+                    'horaConsulta' => $request->hora,
+                    'paciente_id' => $paciente->id,
+                    'psicologo_id' => $psico->id,
                 ]);
+    
                 $cita->save();
-
-                return redirect('/Citas');
-            }else{
-                echo "No hay paciente registado con esa cedula";
-                //aqui una alerta y redireccionar al registro de citas
+    
+                return response()->json(['success' => true, 'message' => 'Cita asignada correctamente', 'redirect' => url('/Citas')]);
+            } else {
+                return response()->json(['success' => false, 'message' => 'No hay paciente registrado con esa cédula']);
             }
-        }else{
-            echo "Un paciente No puede tener mas de una cita";
-            //aqui una alerta y redireccionar al registro de citas
+        } else {
+            return response()->json(['success' => false, 'message' => 'Un paciente no puede tener más de una cita']);
         }
     }
+    
 
     /**
      * Display the specified resource.

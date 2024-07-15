@@ -131,8 +131,19 @@
             }
         </style>
     @else
-        <p>No hay resultados disponibles.</p>
-        <p>Realiza el Test Dass-21 y observa tus niveles de Ansiedad, Depresión y Estrés</p>
-        <a href="{{ route('test-dass') }}" class="px-5 py-2 me-2 text-xs font-medium text-white bg-fondo rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Inicia el Test Dass-21</a>
+
+        <div class="container">
+  <div class="container">
+    <div class="bg-gradiente mt-10 font-[sans-serif] p-6 rounded-3xl">
+    <div class="text-white container mx-auto flex flex-col justify-center items-center">
+    <h2>No hay resultados disponibles.</h2>
+    <p>Realiza el Test Dass-21 y observa tus niveles de Ansiedad, Depresión y Estrés</p>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a href="{{ route('test-dass') }}" class="px-5 py-2 me-2 text-xs font-medium text-white bg-fondo rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Inicia el Test Dass-21</a>
+
+</div>
     @endif
 @stop

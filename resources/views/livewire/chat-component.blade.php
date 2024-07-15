@@ -82,7 +82,6 @@
                             @endif
                         </p>
                         <p class="text-green-600 text-xs">
-                            En linea
                             {{-- {{ $contactChat->user->email }} --}}
                         </p>
                     </div>

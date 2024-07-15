@@ -4,8 +4,19 @@
 @php
     use App\Models\Psicologos;
     use App\Models\User;
+    use Carbon\Carbon;
 
     $psicolos = Psicologos::all();
+    $fechaManana = Carbon::tomorrow();
+
+    $hora = rand(8, 19);
+    $minuto = rand(0, 59);
+
+    // Formatear la hora y el minuto para que siempre tengan dos dígitos
+    $hora_formateada = str_pad($hora, 2, '0', STR_PAD_LEFT);
+    $minuto_formateado = str_pad($minuto, 2, '0', STR_PAD_LEFT);
+
+    $hora_aleatoria = $hora_formateada . ':' . $minuto_formateado;
 @endphp
 
 @section('content_header')
@@ -39,6 +50,9 @@
                                             <form class="asignar-psicologo-form" method="POST">
                                                 @csrf
                                                 <input type="hidden" value="{{$post}}" name="idpsico">
+                                                <input type="hidden" value="{{$fechaManana->toDateString()}}" name="FechaPiCita">
+                                                <input type="hidden" value="{{$hora_aleatoria}}" name="HoraCita">
+
                                                 <button class="btn btn-primary" type="submit">Seleccionar Psicólogo</button>
                                             </form>
                                         </div>

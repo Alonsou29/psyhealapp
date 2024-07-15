@@ -15,7 +15,13 @@ class CitasPaController extends Controller
     {
         $paciente= Paciente::find(auth()->user()->id);
         $citas = Cita::where('paciente_id', $paciente->id)->get();
-        return view('PanelPa.inicio.index_misCitasPa', compact("citas"));
+        if(!empty($citas)){
+            return view('PanelPa.inicio.index_misCitasPa', compact("citas"));
+        }else{
+            $citas=[" "];
+            return view('PanelPa.inicio.index_misCitasPa', compact("citas"));
+        }
+
     }
 
     /**

@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\psicologo_paciente;
 use App\Models\Psicologos;
 use App\Models\Paciente;
+use App\Models\Cita;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class AsignarPsicologoController extends Controller
 {
@@ -35,22 +37,27 @@ class AsignarPsicologoController extends Controller
         $psicologo = Psicologos::where('id_user', $request['idpsico'])->first();
         $paciente = Paciente::where('id_user', $id)->first();
         $verificacion = psicologo_paciente::where('paciente_id', $paciente->id)->first();
-    
         if (empty($verificacion)) {
             $psicolog_paciente = psicologo_paciente::create([
                 'psicologo_id' => $psicologo->id,
                 'paciente_id' => $paciente->id
             ]);
-    
+            $cita = Cita::create([
+                'motivo'=>"Primera Cita",
+                'fechaConsulta'=>$request->FechaPiCita,
+                'horaConsulta'=>$request->HoraCita,
+                'psicologo_id' => $psicologo->id,
+                'paciente_id' => $paciente->id
+            ]);
             $psicolog_paciente->save();
+            $cita->save();
             return response()->json(['success' => true, 'redirect' => route('panelPaciente')]);
         } else {
             return response()->json(['success' => false, 'message' => 'Ya tienes asignado un psicólogo']);
         }
     }
-    
 
-    
+
 
     /**
      * Display the specified resource.

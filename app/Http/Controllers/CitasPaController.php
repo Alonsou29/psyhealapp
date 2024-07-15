@@ -13,7 +13,7 @@ class CitasPaController extends Controller
      */
     public function index()
     {
-        $paciente= Paciente::find(auth()->user()->id);
+        $paciente = Paciente::where('id_user',auth()->user()->id)->first();
         $citas = Cita::where('paciente_id', $paciente->id)->get();
         if(!empty($citas)){
             return view('PanelPa.inicio.index_misCitasPa', compact("citas"));

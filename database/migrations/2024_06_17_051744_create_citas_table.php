@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('paciente_id')->constrained();
             $table->foreignId('psicologo_id')->constrained();
 
-            //$table->timestamps();
+            $table->timestamps();
         });
     }
 

@@ -27,6 +27,7 @@
                             <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Hora</th>
                             <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Paciente</th>
                             <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center"></th>
+                            <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center"></th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100 border-t border-gray-100">
@@ -44,7 +45,16 @@
                                         <a href="#" class="btn btn-primary">
                                             Ir
                                         </a>
-                                    </div> 
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <form action="{{route('Citas.destroy', $cita->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <div class="">
+                                            <button type="submit">x</button>
+                                        </div>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

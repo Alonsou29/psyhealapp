@@ -18,6 +18,10 @@
                     <input type="hidden" id="paciente_id" name="paciente_id">
                 </div>
                 <div class="mb-4">
+                    <label for="paciente" class="block text-gray-700 text-sm font-bold mb-2">Motivo de Consulta</label>
+                    <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="paciente" name="motivo" autocomplete="off">
+                </div>
+                <div class="mb-4">
                     <label for="fecha" class="block text-gray-700 text-sm font-bold mb-2">Fecha</label>
                     <input type="date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fecha" name="fecha">
                 </div>

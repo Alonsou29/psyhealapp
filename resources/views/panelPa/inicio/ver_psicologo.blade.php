@@ -11,11 +11,10 @@
 
     $busqueda = psicologo_paciente::where('paciente_id', $paciente->id)->first();
 
-    $buscarpsicologo = Psicologos::find($busqueda->psicologo_id)->first();
+    $buscarpsicologo = Psicologos::find($busqueda->psicologo_id);
 
     $UserPsico = User::where('id',$buscarpsicologo->id_user)->first();
 
-    // dd($UserPsico, $UserPsico);
 @endphp
 
 @section('content')

@@ -34,12 +34,20 @@ class AsignarPsicologoController extends Controller
         $id= auth()->user()->id;
         $psicologo = Psicologos::where('id_user', $request['idpsico'])->first();
         $paciente = Paciente::where('id_user', $id)->first();
-        $psicolog_paciente = psicologo_paciente::create([
-            'psicologo_id' => $psicologo->id,
-            'paciente_id' => $paciente->id
-        ]);
+        $verificacion = psicologo_paciente::where('paciente_id', $paciente->id)->first();
+        if(empty($verificacion)){
+            $psicolog_paciente = psicologo_paciente::create([
+                'psicologo_id' => $psicologo->id,
+                'paciente_id' => $paciente->id
+            ]);
 
-        $psicolog_paciente->save();
+            $psicolog_paciente->save();
+            return redirect()->route('panelPaciente');
+        }else{
+            echo "ya tienes asignado un psicologo";
+            //aqui va la alerta
+        }
+
 
     }
 

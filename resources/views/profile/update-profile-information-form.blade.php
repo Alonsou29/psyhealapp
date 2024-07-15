@@ -112,13 +112,6 @@
             </div>
 
             @elseif (auth()->user()->hasRole('psicologo'))
-             <!-- Input para Imagen de Diploma -->
-        <div class="col-span-6 sm:col-span-4">
-            <x-label for="Diploma" value="{{ __('Imagen de Diploma') }}" />
-            <input id="Diploma" type="file" name="Diploma" class="mt-4 bg-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-            <!-- Puedes añadir wire:model="state.imagen_diploma" si deseas manejar la carga de la imagen con Livewire -->
-             <x-input-error for="Diploma" class="mt-2" /> 
-        </div>
 
             <!-- Descripcion  -->
             <div class="col-span-6 sm:col-span-4">
@@ -130,14 +123,14 @@
         <!-- Input para Universidad -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="Universidad" value="{{ __('Universidad') }}" />
-            <x-input id="Universidad" type="text" class="mt-1 block w-full" wire:model="state.Universidad" required />
+            <x-input id="Universidad" type="text" class="mt-1 block w-full" wire:model="state.Universidad"  />
             <x-input-error for="Universidad" class="mt-2" />
         </div>
 
         <!-- Input para Especialidad -->
         <div class="col-span-6 sm:col-span-4">
             <x-label for="Especialistas" value="{{ __('Especialidad') }}" />
-            <x-input id="Especialistas" type="text" class="mt-1 block w-full" wire:model="state.Especialistas" required />
+            <x-input id="Especialistas" type="text" class="mt-1 block w-full" wire:model="state.Especialistas"  />
             <x-input-error for="Especialistas" class="mt-2" />
         </div>
             @endif
@@ -199,6 +192,20 @@
             return false;
         }
 
+        // Validación específica de la cédula no mayor a 35 millones
+        const cedulaNumber = parseInt(cedula, 10);
+        if (cedulaNumber > 36000000) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Cédula inválida',
+                text: 'La cédula no puede ser tan mayor .'
+            });
+            event.preventDefault(); // Evita que el formulario se envíe si la validación falla
+            return false;
+        }
+
         return true;
+
+        
     }
 </script>

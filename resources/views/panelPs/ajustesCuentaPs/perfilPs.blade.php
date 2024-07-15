@@ -41,12 +41,6 @@
                     <!-- Contenido de las cuatro sub-cartas -->
                     <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2">
                         <div class="bg-white shadow rounded-lg p-6">
-                            <h2 class="text-xl font-bold mb-4">Diploma</h2>
-                            <img
-                                src="{{ auth()->user()->psicologo->Diploma}}"
-                                alt="">
-                        </div>
-                        <div class="bg-white shadow rounded-lg p-6">
                             <h2 class="text-xl font-bold mb-4">Descripción</h2>
                             <p class="text-gray-700 text-justify">{{ auth()->user()->psicologo->Descripcion}}</p>
                         </div>
@@ -54,7 +48,7 @@
                             <h2 class="text-xl font-bold mb-4">Universidad</h2>
                             <p class="text-gray-700">{{ auth()->user()->psicologo->Universidad}}</p>
                         </div>
-                        <div class="bg-white shadow rounded-lg p-6">
+                        <div class="bg-white shadow rounded-lg p-6 ">
                             <h2 class="text-xl font-bold mb-4">Especialidad</h2>
                             <p class="text-gray-700">{{ auth()->user()->psicologo-> Especialistas}}</p>
                         </div>

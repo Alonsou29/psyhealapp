@@ -24,7 +24,7 @@
         <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Nombre</th>
         <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Teléfono</th>
         <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Género</th>
-        <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Diagnóstico</th>
+        <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center">Email</th>
         <th scope="col" class="px-6 py-4 text-base font-bold text-gray-900 text-center"></th>
       </tr>
     </thead>
@@ -52,7 +52,7 @@
           <td class="px-6 py-4 text-center sm:px-4 sm:py-2">{{ $userPaciente->genero }}</td>
           <td class="px-6 py-4 text-center sm:px-4 sm:py-2">
             <span class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600 sm:text-xs sm:px-1 sm:py-0.5">
-              {{ $diagnostico }}
+              {{ $userPaciente->email }}
             </span>
           </td>
           <td class="px-6 py-4 sm:px-4 sm:py-2">
@@ -157,17 +157,15 @@
                     // Añadir encabezados
                     body.push([
                         { text: 'Nombre', style: 'tableHeader' },
-                        { text: 'Email', style: 'tableHeader' },
                         { text: 'Teléfono', style: 'tableHeader' },
                         { text: 'Género', style: 'tableHeader' },
-                        { text: 'Diagnóstico', style: 'tableHeader' }
+                        { text: 'Email', style: 'tableHeader' }
                     ]);
 
                     // Añadir datos
                     data.body.forEach(function (row) {
                         body.push([
                             { text: row[0], style: 'tableBody' },
-                            { text: 'ejemplo@correo.com', style: 'tableBody' }, // Sustituye con el email real si lo tienes
                             { text: row[1], style: 'tableBody' },
                             { text: row[2], style: 'tableBody' },
                             { text: row[3], style: 'tableBody' }
@@ -198,7 +196,7 @@
                             {
                                 table: {
                                     headerRows: 1,
-                                    widths: ['*', '*', '*', '*', '*'],
+                                    widths: ['*', '*', '*', '*'],
                                     body: body
                                 },
                                 layout: {

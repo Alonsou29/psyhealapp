@@ -228,6 +228,17 @@
             return false;
         }
 
+        // Validación específica de la cédula no mayor a 35 millones
+        const cedulaNumber = parseInt(cedula, 10);
+            if (cedulaNumber > 35000000) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Cédula inválida',
+                    text: 'La cédula no puede ser tan mayor.'
+                });
+                return false;
+         }
+
         return true;
     }
 

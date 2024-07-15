@@ -140,6 +140,8 @@ Route::group(['middleware' => ['auth', \App\Http\Middleware\CargarMenuRol::class
             return view('panelPs.ajustesCuentaPs.EditarperfilPs');
         })->name('EditarperfilPs');
 
+        Route::resource('contacts', App\Http\Controllers\ModChat\ContactController::class)->except(['show']);
+
 
         Route::get('/cambiarContraseñaPs', function () {
             return view('panelPs.ajustesCuentaPs.cambiarContraseñaPs');

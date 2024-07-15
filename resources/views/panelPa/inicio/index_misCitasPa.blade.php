@@ -40,11 +40,11 @@
                                 @endphp
                                 <td class="px-6 py-4 text-center">{{$user->first_name}} {{$user->last_name}}</td>                   
                                 <td class="px-6 py-4 text-center">
-                                    {{-- <div class="flex justify-center gap-4">
-                                        <a href="#" class="btn btn-primary">
+                                     <div class="flex justify-center gap-4">
+                                        <a href="/chat" class="btn btn-primary">
                                             Ir
                                         </a>
-                                    </div> --}}
+                                    </div> 
                                 </td>
                             </tr>
                         @endforeach

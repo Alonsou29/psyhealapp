@@ -109,10 +109,6 @@
                                 <x-input id="universidad" class="block mt-1 w-full" type="text" name="universidad" :value="old('universidad')" required autocomplete="off" pattern="[A-Za-z\s]+" inputmode="text" oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '')" />
                             </div>
 
-                            <div class="mt-4">
-                                <x-label for="diploma" value="{{ __('Diploma:') }}" />
-                                <x-input type="file" id="diploma" class="block w-full mt-2 bg-white shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="diploma" :value="old('diploma')" required autocomplete="off" />
-                            </div>
 
                             <div class="mt-4">
                                 <x-label for="especialidad" value="{{ __('Especialidad:') }}" />
@@ -258,6 +254,17 @@
                 return false;
             }
 
+                // Validación específica de la cédula no mayor a 35 millones
+            const cedulaNumber = parseInt(cedula, 10);
+            if (cedulaNumber > 36000000) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Cédula inválida',
+                    text: 'La cédula no puede ser tan mayor.'
+                });
+                return false;
+            }
+
 
             return true;
         }
@@ -331,14 +338,14 @@
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Debes tener al menos 18 años para registrarte.",
+                text: "Debes tener al menos 25 años para registrarte.",
             });
             this.value = ""; // Clear the invalid input
         } else if (age > 85) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Debes tener menos de 90 años para registrarte.",
+                text: "Debes tener menos de 85 años para registrarte.",
             });
             this.value = ""; // Clear the invalid input
         }

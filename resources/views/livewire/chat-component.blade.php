@@ -81,6 +81,7 @@
                                 {{ $contactChat->user->first_name." ".$contactChat->user->last_name }}
                             @endif
                         </p>
+                        <p class="text-green-600 text-xs">Paciente</p>
                         <p class="text-green-600 text-xs">
                             {{-- {{ $contactChat->user->email }} --}}
                         </p>

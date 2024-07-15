@@ -31,25 +31,26 @@ class AsignarPsicologoController extends Controller
      */
     public function store(Request $request)
     {
-        $id= auth()->user()->id;
+        $id = auth()->user()->id;
         $psicologo = Psicologos::where('id_user', $request['idpsico'])->first();
         $paciente = Paciente::where('id_user', $id)->first();
         $verificacion = psicologo_paciente::where('paciente_id', $paciente->id)->first();
-        if(empty($verificacion)){
+    
+        if (empty($verificacion)) {
             $psicolog_paciente = psicologo_paciente::create([
                 'psicologo_id' => $psicologo->id,
                 'paciente_id' => $paciente->id
             ]);
-
+    
             $psicolog_paciente->save();
-            return redirect()->route('panelPaciente');
-        }else{
-            echo "ya tienes asignado un psicologo";
-            //aqui va la alerta
+            return response()->json(['success' => true, 'redirect' => route('panelPaciente')]);
+        } else {
+            return response()->json(['success' => false, 'message' => 'Ya tienes asignado un psicólogo']);
         }
-
-
     }
+    
+
+    
 
     /**
      * Display the specified resource.

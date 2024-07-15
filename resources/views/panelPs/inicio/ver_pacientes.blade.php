@@ -48,7 +48,7 @@ function getNivel($valor, $tipo) {
       <h2 class="text-center text-2xl font-semibold mt-3">{{ $userPaciente->first_name }} {{ $userPaciente->last_name }}</h2>
       <div class="mt-5">
         <h3 class="text-xl font-semibold mb-2">Biografía:</h3>
-        <p class="text-gray-600 mt-2 text-justify">{{ $userPaciente->biografia }}</p>
+        <p class="text-gray-600 mt-2 text-justify">{{ $userPaciente->Biografia }}</p>
       </div>
     </div>
   </div>

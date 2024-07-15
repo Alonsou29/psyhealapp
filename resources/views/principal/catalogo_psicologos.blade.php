@@ -36,7 +36,7 @@
                                             <h2 class="text-lg font-bold mb-2">Nombre: {{ $datospsico->first_name }}</h2>
                                             <p class="text-gray-700 mb-2">Cédula: {{ $datospsico->cedula }} </p>
                                             <p class="text-gray-700 mb-4">Enfoque: Ansiedad</p>
-                                            <form action="{{route('AsignarPsicologo.store')}}" method="POST">
+                                            <form class="asignar-psicologo-form" method="POST">
                                                 @csrf
                                                 <input type="hidden" value="{{$post}}" name="idpsico">
                                                 <button class="btn btn-primary" type="submit">Seleccionar Psicólogo</button>
@@ -51,7 +51,44 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.querySelectorAll('.asignar-psicologo-form').forEach(form => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const formData = new FormData(this);
+
+                fetch("{{ route('AsignarPsicologo.store') }}", {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        Swal.fire({
+                            title: 'Psicólogo asignado!',
+                            text: 'Redirigiendo al panel del paciente...',
+                            icon: 'success',
+                            timer: 2000,
+                            showConfirmButton: false,
+                        }).then(() => {
+                            window.location.href = data.redirect;
+                        });
+                    } else {
+                        Swal.fire({
+                            title: 'Error',
+                            text: data.message,
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            });
+        });
+    </script>
 @stop
-
-
-

@@ -191,7 +191,6 @@
         // Verificar que todos los campos requeridos estén llenos
         if (
             first_name === "" ||
-            second_name === "" ||
             last_name === "" ||
             second_last_name === "" ||
             cedula === "" ||
